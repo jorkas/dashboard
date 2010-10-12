@@ -1,0 +1,28 @@
+body {
+  margin-top: 20px;
+  background: #181818;
+  color: #EBEBEB;
+  font: 25px/1.5em "gesta-1","gesta-2";
+}
+
+.widget {
+  background: #212121;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+}
+
+.widget header, .widget section {
+  padding: 10px;
+}
+
+.widget header {
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  text-align: center;
+  background: #4B4B4B;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 35px;
+}

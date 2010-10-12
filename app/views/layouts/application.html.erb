@@ -2,13 +2,16 @@
 <html>
 <head>
   <title>Dashboard</title>
+  <script type="text/javascript" src="http://use.typekit.com/bxs2wki.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
+<div class="container_19 clearfix">
+    <%= yield %>
+</div>
 
 </body>
 </html>
