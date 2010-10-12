@@ -1,17 +1,9 @@
 <article class="grid_3 widget">
     <header>
-        <h2>Visitors</h2>
+        <h2>Visits</h2>
     </header>
     <section>
-        <p>hello world</p>
-    </section>
-</article>
-
-<article class="grid_5 widget">
-    <header>
-        <h2>Latest referers</h2>
-    </header>
-    <section>
-        <p>hello world</p>
+        <p class="big"><%= number_to_human(@visits[:now],:precision => 3) %></p>
+        <p><%= number_to_percentage(@visits[:percent]) %></p>
     </section>
 </article>

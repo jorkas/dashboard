@@ -22,7 +22,17 @@ body {
   background: #4B4B4B;
 }
 
+.widget section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
 h2 {
   font-weight: bold;
   font-size: 35px;
+}
+
+.big {
+  font-size: 55px;
 }
