@@ -43,6 +43,8 @@ GEM
       launchy (~> 0.3.2)
       rest-client (>= 1.4.0, < 1.7.0)
     i18n (0.4.1)
+    jquery-rails (0.2.2)
+      rails (~> 3.0)
     json_pure (1.4.6)
     launchy (0.3.7)
       configuration (>= 0.0.5)
@@ -86,5 +88,6 @@ PLATFORMS
 DEPENDENCIES
   garb
   heroku
+  jquery-rails
   rails (= 3.0.0)
   sqlite3-ruby
