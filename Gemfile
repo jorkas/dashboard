@@ -30,5 +30,5 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 gem 'heroku'
-gem 'garb'
+gem 'garb', '0.8.4'
 gem 'jquery-rails'

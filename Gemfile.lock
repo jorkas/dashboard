@@ -86,7 +86,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  garb
+  garb (= 0.8.4)
   heroku
   jquery-rails
   rails (= 3.0.0)
