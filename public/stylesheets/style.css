@@ -15,6 +15,7 @@ body {
   -webkit-border-top-right-radius: 10px;
   -webkit-border-top-left-radius: 10px;
   min-height: 324px;
+  margin-bottom: 20px;
 }
 
 .widget header, .widget section {
@@ -69,8 +70,8 @@ h2 {
 }
 
 section ol {
-  margin-left: 3em;
-  margin-right: 2em;
+  margin-left: 80px;
+  margin-right: 40px;
 }
 
 li span {

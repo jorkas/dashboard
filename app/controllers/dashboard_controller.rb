@@ -4,8 +4,11 @@ class DashboardController < ApplicationController
     @profile = Garb::Profile.first('UA-67918-1')
 
     @visits = get_visits
+    
     @signup_journalists = get_signup_journalists
     @signup_follows = get_signup_follows
+    @signup_trails = get_signup_trails
+    
     @top_countries = get_top_countries
     @top_searches = get_top_searches
   end
@@ -29,6 +32,13 @@ class DashboardController < ApplicationController
     def get_signup_follows  
       now = Garb::Report.new(@profile, {:metrics => [:goal7Completions], :start_date => Time.now - 1.day, :end_date => Time.now - 1.day}).results.first.goal7_completions.to_i
       last = Garb::Report.new(@profile, {:metrics => [:goal7Completions], :start_date => Time.now - 8.day, :end_date => Time.now - 8.day}).results.first.goal7_completions.to_i
+      percent = (now.to_f/last.to_f)*100 - 100 
+      {:now => now, :last => last, :percent => percent}
+    end
+    
+    def get_signup_trails  
+      now = Garb::Report.new(@profile, {:metrics => [:goal1Completions], :start_date => Time.now - 1.day, :end_date => Time.now - 1.day}).results.first.goal1_completions.to_i
+      last = Garb::Report.new(@profile, {:metrics => [:goal1Completions], :start_date => Time.now - 8.day, :end_date => Time.now - 8.day}).results.first.goal1_completions.to_i
       percent = (now.to_f/last.to_f)*100 - 100 
       {:now => now, :last => last, :percent => percent}
     end

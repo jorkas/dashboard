@@ -28,6 +28,16 @@
     </section>
 </article>
 
+<article class="grid_4 widget">
+    <header>
+        <h2>New trails</h2>
+    </header>
+    <section>
+        <p class="big"><%= @signup_trails[:now] %></p>
+        <p class="<%= (@signup_trails[:percent] > 0) ? "up" : "down" %>"><%= number_to_percentage(@signup_trails[:percent], :precision => 2) %></p>
+    </section>
+</article>
+
 <article class="grid_7 widget">
     <header>
         <h2>Top countries</h2>
