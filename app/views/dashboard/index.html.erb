@@ -1,9 +1,18 @@
 <article class="grid_3 widget">
     <header>
-        <h2>Visits</h2>
+        <h2>Visits (30 days)</h2>
     </header>
     <section>
         <p class="big"><%= number_to_human(@visits[:now],:precision => 3) %></p>
-        <p><%= number_to_percentage(@visits[:percent]) %></p>
+        <p class="<%= (@visits[:percent] > 0) ? "up" : "down" %>"><%= number_to_percentage(@visits[:percent]) %></p>
+    </section>
+</article>
+
+<article class="grid_3 widget">
+    <header>
+        <h2>signup journalists</h2>
+    </header>
+    <section>
+        <p class="big"><%= @signups_journalists %></p>
     </section>
 </article>
