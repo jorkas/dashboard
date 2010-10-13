@@ -6,6 +6,10 @@ body {
   font-weight: 100;
 }
 
+.wrapper {
+  
+}
+
 .widget {
   background: #212121;
   -webkit-border-top-right-radius: 10px;
@@ -28,7 +32,9 @@ body {
   padding-bottom: 30px;
   text-align: center;
 }
-
+.left, .left *{
+  text-align: left;
+}
 h2 {
   font-weight: 600;
   font-size: 44px;
@@ -46,4 +52,14 @@ h2 {
 
 .down {
   color: #993638;
+}
+
+section ol {
+  margin-left: 3em;
+  margin-right: 2em;
+}
+
+li span {
+  display:block;
+  float: right;
 }

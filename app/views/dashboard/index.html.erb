@@ -10,7 +10,7 @@
 
 <article class="grid_4 widget">
     <header>
-        <h2>signup journalists</h2>
+        <h2>New journalists</h2>
     </header>
     <section>
         <p class="big"><%= @signup_journalists[:now] %></p>
@@ -20,10 +20,23 @@
 
 <article class="grid_4 widget">
     <header>
-        <h2>signup follows</h2>
+        <h2>New follows</h2>
     </header>
     <section>
         <p class="big"><%= @signup_follows[:now] %></p>
         <p class="<%= (@signup_follows[:percent] > 0) ? "up" : "down" %>"><%= number_to_percentage(@signup_follows[:percent], :precision => 2) %></p>
+    </section>
+</article>
+
+<article class="grid_7 widget">
+    <header>
+        <h2>Top countries</h2>
+    </header>
+    <section class="left">
+        <ol>
+        <%- @top_countries.each do |country| -%>
+            <li><%= country.country %><span><%= number_to_percentage((country.visits.to_f/@visits[:now].to_f)*100, :precision => 2) %></span></li>
+        <%- end -%>
+        </ol>
     </section>
 </article>
