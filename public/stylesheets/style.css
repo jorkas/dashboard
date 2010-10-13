@@ -14,6 +14,7 @@ body {
   background: #212121;
   -webkit-border-top-right-radius: 10px;
   -webkit-border-top-left-radius: 10px;
+  min-height: 324px;
 }
 
 .widget header, .widget section {
@@ -75,4 +76,5 @@ section ol {
 li span {
   display:block;
   float: right;
+  font-weight: 700;
 }
