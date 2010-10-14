@@ -3,7 +3,7 @@ class WidgetsController < ApplicationController
   before_filter :analytics
   
   def total_visits
-    @total_visits = analytics.visits
+    @total_visits = analytics.total_visits
   end
   
   def signup_journalists

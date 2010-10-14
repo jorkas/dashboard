@@ -5,7 +5,7 @@ class Analytics
     @profile = Garb::Profile.first('UA-67918-1')
   end
   
-  def visits
+  def total_visits
     last = Garb::Report.new(@profile, {:metrics => [:visits], :start_date => Time.now - 2.month - 1.day, :end_date => Time.now - 1.month - 1.day}).results.first.visits.to_i
     now = Garb::Report.new(@profile, {:metrics => [:visits], :start_date => Time.now - 1.month - 1.day, :end_date => Time.now - 1.day }).results.first.visits.to_i
     percent = (now.to_f/last.to_f)*100 - 100 
