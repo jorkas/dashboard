@@ -3,17 +3,28 @@
 
 
 $(document).ready(function(){
-  load_widget("total_visits", 1200000)
-  load_widget("signup_journalists", 1200000)
-  load_widget("signup_follows",1200000)
-  load_widget("signup_trails",1200000)
-  load_widget("top_searches",1200000)
-  load_widget("top_countries",1200000)
+  setTimeout(function(){
+    load_widget("total_visits", 1200000)
+  },10);
+  setTimeout(function(){
+    load_widget("signup_journalists", 1200000)
+  },500);
+  setTimeout(function(){
+    load_widget("signup_follows",1200000)
+  },1000);
+  setTimeout(function(){
+    load_widget("signup_trails",1200000)
+  },1500);
+  setTimeout(function(){
+    load_widget("top_searches",1200000)
+  },2000);
+  setTimeout(function(){
+    load_widget("top_countries",1200000)
+  },2500);
 })
 
 
 function load_widget (name,ttl) {
-  console.log("loading_widget: "+name+" ttl: "+ttl)
   $.get("/widgets/"+name, function(data) {
     div = $("#"+name)
     if ( $(".spinner",div).size() > 0) {
@@ -24,7 +35,6 @@ function load_widget (name,ttl) {
       div.html(data);
     }
     setTimeout(function(){
-      console.log("reloading "+name)
       load_widget(name,ttl)
     },ttl);
   });
