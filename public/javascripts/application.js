@@ -8,19 +8,19 @@ $(document).ready(function(){
   },10);
   setTimeout(function(){
     load_widget("signup_journalists", 1200000)
-  },1000);
-  setTimeout(function(){
-    load_widget("signup_follows",1200000)
   },2000);
   setTimeout(function(){
-    load_widget("signup_trails",1200000)
-  },3000);
-  setTimeout(function(){
-    load_widget("top_searches",1200000)
+    load_widget("signup_follows",1200000)
   },4000);
   setTimeout(function(){
+    load_widget("signup_trails",1200000)
+  },8000);
+  setTimeout(function(){
+    load_widget("top_searches",1200000)
+  },12000);
+  setTimeout(function(){
     load_widget("top_countries",1200000)
-  },5000);
+  },14000);
 })
 
 

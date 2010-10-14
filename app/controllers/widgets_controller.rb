@@ -20,6 +20,7 @@ class WidgetsController < ApplicationController
   
   def top_countries
     @top_countries = analytics.top_countries
+    @total_visits = analytics.total_visits
   end
   
   def top_searches

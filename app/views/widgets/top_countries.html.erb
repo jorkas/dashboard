@@ -4,7 +4,7 @@
 <section class="left">
     <ol>
     <%- @top_countries.each do |country| -%>
-        <li><%= country.country %><span><%#= number_to_percentage((country.visits.to_f/@visits[:now].to_f)*100, :precision => 2) %></span></li>
+        <li><%= country.country %><span><%= number_to_percentage((country.visits.to_f/@total_visits[:now].to_f)*100, :precision => 2) %></span></li>
     <%- end -%>
     </ol>
 </section>
