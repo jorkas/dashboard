@@ -2,7 +2,9 @@ class Analytics
   
   def initialize
     Garb::Session.login(CONFIG['garb_login'], CONFIG['garb_password'])
-    @profile = Garb::Profile.first('UA-67918-1')
+    @profile = Rails.cache.fetch("garb_profile", :expires_in => 1.hour) do
+      Garb::Profile.first('UA-67918-1')
+    end
   end
   
   def total_visits
