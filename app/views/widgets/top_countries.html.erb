@@ -1,0 +1,10 @@
+<header>
+    <h2>Top countries</h2>
+</header>
+<section class="left">
+    <ol>
+    <%- @top_countries.each do |country| -%>
+        <li><%= country.country %><span><%#= number_to_percentage((country.visits.to_f/@visits[:now].to_f)*100, :precision => 2) %></span></li>
+    <%- end -%>
+    </ol>
+</section>

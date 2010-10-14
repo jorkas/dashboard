@@ -1,0 +1,10 @@
+<header>
+    <h2>Top searches</h2>
+</header>
+<section class="left">
+    <ol>
+    <%- @top_searches.each do |search| -%>
+        <li><%= search[:search_term] %><span><%= search[:visits] %></span></li>
+    <%- end -%>
+    </ol>
+</section>

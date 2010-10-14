@@ -1,65 +1,23 @@
-<article class="grid_4 widget">
-    <header>
-        <h2>Visits (30 days)</h2>
-    </header>
-    <section>
-        <p class="big"><%= number_to_human(@visits[:now],:precision => 3) %></p>
-        <p class="<%= (@visits[:percent] > 0) ? "up" : "down" %>"><%= number_to_percentage(@visits[:percent], :precision => 2) %></p>
-    </section>
+<article class="grid_4 widget" id="total_visits">
+    <div class="spinner"><img src="/images/spinner.gif" alt="loading" /></div>
 </article>
 
-<article class="grid_4 widget">
-    <header>
-        <h2>New journalists</h2>
-    </header>
-    <section>
-        <p class="big"><%= @signup_journalists[:now] %></p>
-        <p class="<%= (@signup_journalists[:percent] > 0) ? "up" : "down" %>"><%= number_to_percentage(@signup_journalists[:percent], :precision => 2) %></p>
-    </section>
+<article class="grid_4 widget" id="signup_journalists">
+    <div class="spinner"><img src="/images/spinner.gif" alt="loading" /></div>
 </article>
 
-<article class="grid_4 widget">
-    <header>
-        <h2>New follows</h2>
-    </header>
-    <section>
-        <p class="big"><%= @signup_follows[:now] %></p>
-        <p class="<%= (@signup_follows[:percent] > 0) ? "up" : "down" %>"><%= number_to_percentage(@signup_follows[:percent], :precision => 2) %></p>
-    </section>
+<article class="grid_4 widget" id="signup_follows">
+    <div class="spinner"><img src="/images/spinner.gif" alt="loading" /></div>
 </article>
 
-<article class="grid_4 widget">
-    <header>
-        <h2>New trails</h2>
-    </header>
-    <section>
-        <p class="big"><%= @signup_trails[:now] %></p>
-        <p class="<%= (@signup_trails[:percent] > 0) ? "up" : "down" %>"><%= number_to_percentage(@signup_trails[:percent], :precision => 2) %></p>
-    </section>
+<article class="grid_4 widget" id="signup_trails">
+    <div class="spinner"><img src="/images/spinner.gif" alt="loading" /></div>
 </article>
 
-<article class="grid_7 widget">
-    <header>
-        <h2>Top countries</h2>
-    </header>
-    <section class="left">
-        <ol>
-        <%- @top_countries.each do |country| -%>
-            <li><%= country.country %><span><%= number_to_percentage((country.visits.to_f/@visits[:now].to_f)*100, :precision => 2) %></span></li>
-        <%- end -%>
-        </ol>
-    </section>
+<article class="grid_7 widget" id="top_countries">
+    <div class="spinner"><img src="/images/spinner.gif" alt="loading" /></div>
 </article>
 
-<article class="grid_7 widget">
-    <header>
-        <h2>Top searches</h2>
-    </header>
-    <section class="left">
-        <ol>
-        <%- @top_searches.each do |search| -%>
-            <li><%= search[:search_term] %><span><%= search[:visits] %></span></li>
-        <%- end -%>
-        </ol>
-    </section>
+<article class="grid_7 widget" id="top_searches">
+    <div class="spinner"><img src="/images/spinner.gif" alt="loading" /></div>
 </article>

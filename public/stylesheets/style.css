@@ -79,3 +79,8 @@ li span {
   float: right;
   font-weight: 700;
 }
+
+.spinner {
+  margin-top: 25%;
+  text-align: center;
+}

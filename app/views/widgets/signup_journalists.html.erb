@@ -1,0 +1,7 @@
+<header>
+    <h2>New journalists</h2>
+</header>
+<section>
+    <p class="big"><%= @signup_journalists[:now] %></p>
+    <p class="<%= (@signup_journalists[:percent] > 0) ? "up" : "down" %>"><%= number_to_percentage(@signup_journalists[:percent], :precision => 2) %></p>
+</section>

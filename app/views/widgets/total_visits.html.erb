@@ -1,0 +1,7 @@
+<header>
+    <h2>Visits (30 days)</h2>
+</header>
+<section>
+    <p class="big"><%= number_to_human(@total_visits[:now],:precision => 3) %></p>
+    <p class="<%= (@total_visits[:percent] > 0) ? "up" : "down" %>"><%= number_to_percentage(@total_visits[:percent], :precision => 2) %></p>
+</section>
