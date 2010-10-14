@@ -56,6 +56,7 @@ GEM
     memcache-client (1.8.5)
     memcached-northscale (0.19.5.4)
     mime-types (1.16)
+    nokogiri (1.4.3.1)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -93,5 +94,6 @@ DEPENDENCIES
   jquery-rails
   memcache-client
   memcached-northscale
+  nokogiri
   rails (= 3.0.0)
   sqlite3-ruby

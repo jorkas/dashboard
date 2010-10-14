@@ -74,7 +74,7 @@ section ol {
   margin-right: 40px;
 }
 
-li span {
+ol li span {
   display:block;
   float: right;
   font-weight: 700;
@@ -83,4 +83,37 @@ li span {
 .spinner {
   margin-top: 25%;
   text-align: center;
+}
+
+small {
+  font-size: 70%;
+}
+
+#recent_checkins small {
+  display: block;
+  text-align: right;
+  line-height: 1em;
+}
+
+#recent_checkins ul {
+  list-style: none;
+  margin: 0 20px;
+}
+
+#recent_checkins li {
+  margin-bottom: 1em;
+}
+
+#recent_checkins span {
+  font-weight: 700;
+}
+
+#recent_checkins li img{
+  border-bottom-left-radius: 5px 5px;
+  border-bottom-right-radius: 5px 5px;
+  border-top-left-radius: 5px 5px;
+  border-top-right-radius: 5px 5px;
+  float: left;
+  margin: 0.2em 0.5em 0px 0px;
+  width: 70px;
 }

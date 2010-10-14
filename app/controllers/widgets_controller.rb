@@ -27,6 +27,10 @@ class WidgetsController < ApplicationController
     @top_searches = analytics.top_searches
   end
   
+  def recent_checkins
+    gowalla = Gowalla.new
+    @recent_checkins = gowalla.recent_checkins
+  end
   private
   
   def analytics

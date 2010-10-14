@@ -30,8 +30,10 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 
 gem 'heroku'
-gem 'garb', '0.8.4'
 gem 'jquery-rails'
 
 gem "memcache-client"
 gem 'memcached-northscale', :require => 'memcached'
+
+gem 'garb', '0.8.4'
+gem 'nokogiri'
