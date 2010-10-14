@@ -34,4 +34,4 @@ gem 'garb', '0.8.4'
 gem 'jquery-rails'
 
 gem "memcache-client"
-gem 'memcached-northscale'
+gem 'memcached-northscale', :require => 'memcached'
