@@ -20,19 +20,21 @@ class Gowalla
   private
   
   def parse_xml(id, place)
-    require 'open-uri'
-    doc = Nokogiri::XML(open("http://gowalla.com/spots/#{id}/checkins.atom"))
-    xml_entries = doc.css("entry")
-    entries = Array.new
-    xml_entries.each do |entry|
-      name = entry.at_css("name").text
-      time = Time.parse(entry.at_css("published").text)
-      # place = entry.at_xpath("//activity:object").at_css("title").text
-      # place["MyNewsdesk"] = ""
-      # place.strip!
-      image = entry.at_css("link[rel=photo]").attr("href")
-      entries << Gowalla::Entry.new(name, time, place, image)
+    entries = Rails.cache.fetch("gowalla_#{id}", :expires_in => 10.seconds) do
+      require 'open-uri'
+      doc = Nokogiri::XML(open("http://gowalla.com/spots/#{id}/checkins.atom"))    
+      xml_entries = doc.css("entry")
+      entries = Array.new
+      xml_entries.each do |entry|
+        name = entry.at_css("name").text
+        time = Time.parse(entry.at_css("published").text)
+        # place = entry.at_xpath("//activity:object").at_css("title").text
+        # place["MyNewsdesk"] = ""
+        # place.strip!
+        image = entry.at_css("link[rel=photo]").attr("href")
+        entries << Gowalla::Entry.new(name, time, place, image)
+      end
+      entries
     end
-    entries
   end
 end
