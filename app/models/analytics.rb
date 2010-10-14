@@ -51,10 +51,9 @@ class Analytics
       does_not_contain(:page_path, 'query=&')
     end
     
-    results = report.results
     searchterms = Array.new
     
-    results.each do |result|
+    report.results.each do |result|
       search_term = CGI.parse(result.page_path)['query'].to_s
       searchterms << {:search_term => search_term, :visits => result.visits.to_i } unless search_term.empty?
     end
