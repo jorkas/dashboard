@@ -8,21 +8,25 @@ $(document).ready(function(){
   },10);
   setTimeout(function(){
     load_widget("signup_journalists", 1200000)
-  },500);
-  setTimeout(function(){
-    load_widget("signup_follows",1200000)
   },1000);
   setTimeout(function(){
-    load_widget("signup_trails",1200000)
-  },1500);
-  setTimeout(function(){
-    load_widget("top_searches",1200000)
+    load_widget("signup_follows",1200000)
   },2000);
   setTimeout(function(){
+    load_widget("signup_trails",1200000)
+  },3000);
+  setTimeout(function(){
+    load_widget("top_searches",1200000)
+  },4000);
+  setTimeout(function(){
     load_widget("top_countries",1200000)
-  },2500);
+  },5000);
 })
 
+
+$(".widget").live("click",function(){
+  load_widget($(this).attr("id"),0)
+})
 
 function load_widget (name,ttl) {
   $.get("/widgets/"+name, function(data) {
@@ -34,8 +38,10 @@ function load_widget (name,ttl) {
     } else {
       div.html(data);
     }
-    setTimeout(function(){
-      load_widget(name,ttl)
-    },ttl);
+    if (ttl > 0) {
+      setTimeout(function(){
+        load_widget(name,ttl)
+      },ttl);
+    };
   });
 }
