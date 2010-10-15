@@ -12,15 +12,17 @@ class Gowalla
   def self.recent_checkins
     #sthlm  1361526
     #malmo  3379248
-    entries = Rails.cache.fetch("gowalla", :expires_in => 5.minutes) do
-      entries = Gowalla.parse_feed(3379248, "Øresund Office") + Gowalla.parse_feed(1361526, "Stockholm Office")
+    entries = Rails.cache.fetch("gowalla", :expires_in => 30.minutes) do
+      entries = Gowalla.parse_feed(3379248) + Gowalla.parse_feed(1361526)
       entries.sort! { |a,b| b.time <=> a.time }
-      entries[0...15]
     end
-    entries
+    entries[0...15]
   end
   
-  def self.parse_xml(doc, place)
+  def self.parse_xml(doc)
+    place = doc.at_css("feed>title").text
+    place["Gowalla Checkins at MyNewsdesk"] = ""
+    place = "Stockholm office" if place.strip == "HQ"
     xml_entries = doc.css("entry")
     entries = Array.new
     xml_entries.each do |entry|
@@ -32,11 +34,11 @@ class Gowalla
     entries
   end
   
-  def self.parse_feed(id, place)
+  def self.parse_feed(id)
     entries = Rails.cache.fetch("gowalla_#{id}", :expires_in => 10.seconds) do
       require 'open-uri'
       doc = Nokogiri::XML(open("http://gowalla.com/spots/#{id}/checkins.atom"))
-      Gowalla.parse_xml(doc, place)
+      Gowalla.parse_xml(doc)
     end
   end
 end
