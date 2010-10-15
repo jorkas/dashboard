@@ -12,7 +12,7 @@ class DashboardController < ApplicationController
       render :action => "pshb", :status => 200, :layout => false
     else
       logger.info "%%%%%%%%%%%%%%%"
-      logger.info request.body
+      logger.info request.body.read
       logger.info "%%%%%%%%%%%%%%%"
       @challenge = "uhoh!"
       render :action => "pshb", :status => 404, :layout => false
