@@ -98,6 +98,8 @@ small {
 #recent_checkins ul {
   list-style: none;
   margin: 0 20px;
+  font-size: 80%;
+  line-height: 1em;
 }
 
 #recent_checkins li {
@@ -114,6 +116,6 @@ small {
   border-top-left-radius: 5px 5px;
   border-top-right-radius: 5px 5px;
   float: left;
-  margin: 0.2em 0.5em 0px 0px;
+  margin: 0 0.5em 0px 0px;
   width: 70px;
 }
