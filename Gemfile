@@ -37,3 +37,4 @@ gem 'memcached-northscale', :require => 'memcached'
 
 gem 'garb', '0.8.4'
 gem 'nokogiri'
+gem 'httparty'
