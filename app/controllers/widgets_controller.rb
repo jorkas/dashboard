@@ -33,7 +33,7 @@ class WidgetsController < ApplicationController
   private
   
   def analytics
-    analytics = Analytics.new
+    #analytics = Analytics.new
   end
   
 end
