@@ -40,11 +40,11 @@ class Analytics
       {:now => now, :last => last, :percent => percent}
     end
     
-    def signup_trails
-      last = Rails.cache.fetch("garb_signup_trails_last", :expires_in => 1.hour) do
+    def signup_trials
+      last = Rails.cache.fetch("garb_signup_trials_last", :expires_in => 1.hour) do
         Garb::Report.new(@profile, {:metrics => [:goal1Completions], :start_date => Time.now - 8.day, :end_date => Time.now - 8.day}).results.first.goal1_completions.to_i
       end
-      now = Rails.cache.fetch("garb_signup_trails_now", :expires_in => 1.hour) do
+      now = Rails.cache.fetch("garb_signup_trials_now", :expires_in => 1.hour) do
         Garb::Report.new(@profile, {:metrics => [:goal1Completions], :start_date => Time.now - 1.day, :end_date => Time.now - 1.day}).results.first.goal1_completions.to_i
       end
       percent = (now.to_f/last.to_f)*100 - 100 
