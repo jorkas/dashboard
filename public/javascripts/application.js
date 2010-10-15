@@ -4,7 +4,7 @@
 
 $(document).ready(function(){
   load_widget("recent_checkins",7000)
-
+ /*
   setTimeout(function(){
       load_widget("total_visits", 1200000)
     },10);
@@ -23,6 +23,7 @@ $(document).ready(function(){
     setTimeout(function(){
       load_widget("top_countries",1200000)
     },14000);
+    */
 })
 
 
