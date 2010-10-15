@@ -3,27 +3,38 @@
 
 
 $(document).ready(function(){
-  setTimeout(function(){
+  
+  var body = $("body")
+  
+  body.queue(function (next) {
     load_widget("recent_checkins",5000)
-  },5500);
-  setTimeout(function(){
+    next()
+  })
+  body.queue(function (next) {
     load_widget("total_visits", 1200000)
-  },10);
-  setTimeout(function(){
+    next()
+  })
+  body.queue(function (next) {
     load_widget("signup_journalists", 1200000)
-  },2000);
-  setTimeout(function(){
+    next()
+  })
+  body.queue(function (next) {
     load_widget("signup_follows",1200000)
-  },4000);
-  setTimeout(function(){
+    next()
+  })
+  body.queue(function (next) {
     load_widget("signup_trials",1200000)
-  },8000);
-  setTimeout(function(){
+    next()
+  })
+  body.queue(function (next) {
     load_widget("top_searches",1200000)
-  },12000);
-  setTimeout(function(){
+    next()
+  })
+  body.queue(function (next) {
     load_widget("top_countries",1200000)
-  },14000);
+    next()
+  })
+
 })
 
 
