@@ -28,8 +28,7 @@ class WidgetsController < ApplicationController
   end
   
   def recent_checkins
-    gowalla = Gowalla.new
-    @recent_checkins = gowalla.recent_checkins
+    @recent_checkins = Gowalla.recent_checkins
   end
   private
   

@@ -9,10 +9,10 @@ class Gowalla
     end
   end
   
-  def recent_checkins
+  def self.recent_checkins
     #sthlm  1361526
     #malmo  3379248
-    entries = Rails.cache.fetch("gowalla", :expires_in => 1.hour) do
+    entries = Rails.cache.fetch("gowalla", :expires_in => 5.minutes) do
       entries = Gowalla.parse_feed(3379248, "Øresund Office") + Gowalla.parse_feed(1361526, "Stockholm Office")
       entries.sort! { |a,b| b.time <=> a.time }
       entries[0...15]
