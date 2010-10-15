@@ -69,6 +69,25 @@ h2 {
   color: #993638;
 }
 
+.arrow {
+  display: inline-block;
+  height: 0px;
+  margin: 0px 5px 5px 0px;
+  width: 0px;
+}
+
+.up .arrow {
+  border-bottom: 13px solid #4A994D;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+}
+
+.down .arrow {
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-top: 13px solid #993638;
+}
+
 section ol {
   margin-left: 80px;
   margin-right: 40px;

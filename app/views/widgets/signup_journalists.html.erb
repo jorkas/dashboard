@@ -3,5 +3,5 @@
 </header>
 <section>
     <p class="big"><%= @signup_journalists[:now] %></p>
-    <p class="<%= (@signup_journalists[:percent] > 0) ? "up" : "down" %>"><%= number_to_percentage(@signup_journalists[:percent], :precision => 2) %></p>
+    <p class="<%= (@signup_journalists[:percent] > 0) ? "up" : "down" %>"><span class="arrow"></span><%= number_to_percentage(@signup_journalists[:percent], :precision => 2) %></p>
 </section>
