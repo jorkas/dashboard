@@ -49,9 +49,9 @@ function load_widget (name,ttl) {
       $(".spinner",div).fadeOut('slow', function() {
           div.html(data);
       });
-    } else {
-      div.html(data);
-    }
+    } 
+    div.html(data);
+    
     if (ttl > 0) {
       setTimeout(function(){
         load_widget(name,ttl)
