@@ -14,7 +14,7 @@ $(document).ready(function(){
     body.queue(function (next) {
         load_widget("recent_pressreleases",60000, "recent_pressreleases_callback")
         next()
-    }) 
+    })
     body.queue(function (next) {
         load_widget("recent_checkins",5000)
         next()
@@ -25,6 +25,10 @@ $(document).ready(function(){
     })
     body.queue(function (next) {
         load_widget("signup_journalists", 900000)
+        next()
+    })
+    body.queue(function (next) {
+        load_widget("count_pressreleases",20000)
         next()
     })
     body.queue(function (next) {
