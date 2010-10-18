@@ -9,7 +9,7 @@ $(document).ready(function(){
     var body = $("body")
     
     body.queue(function (next) {
-        load_widget("recent_pressreleases",30000, "recent_pressreleases_callback")
+        load_widget("recent_pressreleases",60000, "recent_pressreleases_callback")
         next()
     }) 
     body.queue(function (next) {
@@ -21,23 +21,23 @@ $(document).ready(function(){
         next()
     })
     body.queue(function (next) {
-        load_widget("signup_journalists", 1200000)
+        load_widget("signup_journalists", 900000)
         next()
     })
     body.queue(function (next) {
-        load_widget("signup_follows",1200000)
+        load_widget("signup_follows",1320000)
         next()
     })
     body.queue(function (next) {
-        load_widget("signup_trials",1200000)
+        load_widget("signup_trials",2100000)
         next()
     })
     body.queue(function (next) {
-        load_widget("top_searches",1200000)
+        load_widget("top_searches",1620000)
         next()
     })
     body.queue(function (next) {
-        load_widget("top_countries",1200000)
+        load_widget("top_countries",1800000)
         next()
     })
     
@@ -101,10 +101,9 @@ function recent_pressreleases_rotator() {
     };
     
     recent_pressreleases_index++;
-    lol = setTimeout(function(){
+    setTimeout(function(){
         recent_pressreleases_rotator()
-    },3000)
-    console.log(recent_pressreleases_array.length)
+    },7000)
 }
 
 function unique(arrayName) {
