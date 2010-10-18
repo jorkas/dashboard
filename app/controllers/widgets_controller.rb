@@ -35,6 +35,11 @@ class WidgetsController < ApplicationController
   def recent_checkins
     @recent_checkins = Gowalla.recent_checkins
   end
+  
+  def recent_pressreleases
+    @recent_pressreleases = Mynewsdesk.recent_pressreleases
+  end
+  
   private
   
   def analytics

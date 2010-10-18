@@ -61,6 +61,10 @@ h2 {
   line-height: 1em;
 }
 
+strong {
+  font-weight: 700;
+}
+
 .up {
   color: #4A994D;
 }
@@ -137,4 +141,24 @@ small {
   float: left;
   margin: 0 0.5em 0px 0px;
   width: 70px;
+}
+#recent_pressreleases {
+  height: 380px;
+}
+
+#recent_pressreleases li {
+  height: 76px;
+  line-height: 1em;
+  overflow: hidden;
+  padding-top: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+#recent_pressreleases strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }

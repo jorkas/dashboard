@@ -1,0 +1,10 @@
+<header>
+    <h2>Recent pressreleases</h2>
+</header>
+<section>
+    <ul class="left">
+    <%- @recent_pressreleases.each do |pressrealese| -%>
+        <li style="display:none;"><strong><%= pressrealese[:title] %></strong> <br/><%= pressrealese[:author] %></li>
+    <%- end -%>
+    </ul>
+</section>
