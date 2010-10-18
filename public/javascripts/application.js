@@ -3,6 +3,7 @@
 
 var recent_pressreleases_array = [];
 var recent_pressreleases_index = 0;
+var recent_pressreleases_timeout;
 
 jQuery.easing.def = "easeInOutBack";
 
@@ -103,7 +104,7 @@ function recent_pressreleases_rotator() {
     };
     
     recent_pressreleases_index++;
-    setTimeout(function(){
+    recent_pressreleases_timeout = setTimeout(function(){
         recent_pressreleases_rotator()
     },7000)
 }

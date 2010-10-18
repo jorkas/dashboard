@@ -16,7 +16,7 @@ class Gowalla
       entries = Gowalla.parse_feed(3379248) + Gowalla.parse_feed(1361526)
       entries.sort! { |a,b| b.time <=> a.time }
     end
-    entries[0...15]
+    entries[0...12]
   end
   
   def self.parse_xml(doc)

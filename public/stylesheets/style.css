@@ -163,3 +163,7 @@ small {
   white-space: nowrap;
   width: 100%;
 }
+
+#recent_pressreleases img {
+  margin-bottom: 6px;
+}
