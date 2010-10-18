@@ -28,7 +28,7 @@ class Gowalla
     xml_entries.each do |entry|
       name = entry.at_css("name").text
       time = Time.parse(entry.at_css("published").text)
-      image = entry.at_css("link[rel=photo]").attr("href")
+      image = entry.at_css("link[rel=photo]").try(attr("href")) || "http://gowalla.com/images/default-user.jpg"
       entries << Gowalla::Entry.new(name, time, place, image)
     end
     entries
