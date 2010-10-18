@@ -144,6 +144,7 @@ small {
 }
 #recent_pressreleases {
   height: 380px;
+  overflow: hidden;
 }
 
 #recent_pressreleases li {

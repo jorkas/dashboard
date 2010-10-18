@@ -4,6 +4,8 @@
 var recent_pressreleases_array = [];
 var recent_pressreleases_index = 0;
 
+jQuery.easing.def = "easeInOutBack";
+
 $(document).ready(function(){
 
     var body = $("body")
@@ -93,9 +95,9 @@ function recent_pressreleases_rotator() {
     li = $(recent_pressreleases_array[recent_pressreleases_index])
     ul.prepend(li)
     
-    li.slideDown("slow")
+    li.slideDown(2000)
     if ( $("li",ul).length > 3 ) {
-        $("li",ul).last().slideUp("slow", function(){
+        $("li",ul).last().slideUp(1800, function(){
             $(this).remove()
         })
     };
