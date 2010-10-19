@@ -75,16 +75,16 @@ function load_widget (name,ttl,callback) {
 
             div.html(data);
         }
-        if (ttl > 0) {
-            setTimeout(function(){
-                if (callback != undefined ) {
-                    load_widget(name,ttl,callback)
-                } else {
-                    load_widget(name,ttl)
-                }
-            },ttl);
-        };
     });
+    if (ttl > 0) {
+        setTimeout(function(){
+            if (callback != undefined ) {
+                load_widget(name,ttl,callback)
+            } else {
+                load_widget(name,ttl)
+            }
+        },ttl);
+    };
 }
 
 function recent_pressreleases_callback (data) {
