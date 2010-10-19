@@ -6,3 +6,4 @@ CONFIG = (YAML.load_file('config/config.yml')["production"] rescue {}).merge(ENV
 
 # Initialize the rails application
 Dashboard::Application.initialize!
+Time::DATE_FORMATS[:date] = "%Y-%m-%d"
