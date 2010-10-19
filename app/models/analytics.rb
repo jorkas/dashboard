@@ -9,10 +9,10 @@ class Analytics
   
   def total_visits
     last = Rails.cache.fetch("garb_total_visits_last", :expires_in => 1.hour) do
-      Garb::Report.new(@profile, {:metrics => [:visits], :start_date => Time.now - 2.month - 1.day, :end_date => Time.now - 1.month - 1.day}).results.first.visits.to_i
+      Garb::Report.new(@profile, {:metrics => [:visits], :start_date => Time.now - 8.weeks - 1.day, :end_date => Time.now - 4.weeks - 1.day}).results.first.visits.to_i
     end
     now = Rails.cache.fetch("garb_total_visits_now", :expires_in => 1.hour) do
-      Garb::Report.new(@profile, {:metrics => [:visits], :start_date => Time.now - 1.month - 1.day, :end_date => Time.now - 1.day }).results.first.visits.to_i
+      Garb::Report.new(@profile, {:metrics => [:visits], :start_date => Time.now - 4.weeks - 1.day, :end_date => Time.now - 1.day }).results.first.visits.to_i
     end
     percent = (now.to_f/last.to_f)*100 - 100 
     {:now => now, :last => last, :percent => percent}
