@@ -127,6 +127,8 @@ small {
 
 #recent_checkins li {
   margin-bottom: 1em;
+  display: block;
+  height: 76px;
 }
 
 #recent_checkins span {

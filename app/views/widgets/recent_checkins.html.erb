@@ -4,7 +4,7 @@
 <section class="left">
     <ul>
     <%- @recent_checkins.each do |checkin| -%>
-        <li><img src="<%= checkin.image %>" alt="<%= checkin.name %>" /><span><%= checkin.name %></span><br/>@ <%= checkin.place %> <small><%= time_ago_in_words(checkin.time) %> ago</small></li>
+        <li style="display: none;" data-id="<%= checkin.id %>"><img src="<%= checkin.image %>" alt="<%= checkin.name %>" /><span><%= checkin.name %></span><br/>@ <%= checkin.place %> <small><%= time_ago_in_words(checkin.time) %> ago</small></li>
     <%- end -%>
     </ul>
 </section>

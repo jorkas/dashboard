@@ -1,11 +1,12 @@
 class Gowalla
   class Entry
-    attr_accessor :name, :time, :place, :image
-    def initialize(name,time,place,image)
+    attr_accessor :name, :time, :place, :image, :id
+    def initialize(name,time,place,image, id)
       @name = name
       @time = time
       @place = place
       @image = image
+      @id = id
     end
   end
   
@@ -29,7 +30,8 @@ class Gowalla
       name = entry.at_css("name").text
       time = Time.parse(entry.at_css("published").text)
       image = entry.at_css("link[rel=photo]").try(attr("href")) || "http://gowalla.com/images/default-user.jpg"
-      entries << Gowalla::Entry.new(name, time, place, image)
+      id = entry.at_css("id").text[/\d{5,}/]
+      entries << Gowalla::Entry.new(name, time, place, image, id)
     end
     entries
   end
