@@ -2,6 +2,26 @@
     <h2>Pressreleases</h2>
 </header>
 <section>
+    <svg width="360" height="160" xmlns="http://www.w3.org/2000/svg">
+     <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+     <defs>
+      <linearGradient id="svg_2" x1="0%" y1="0%" x2="100%" y2="0%">
+       <stop offset="0" stop-color="#3E3E3E"/>
+       <stop offset="1" stop-color="#ADADAD"/>
+      </linearGradient>
+     </defs>
+     <g transform="scale(1)">
+         <%-
+            angle = @angle * Math::PI / 180
+            r = 140
+            x = 180 - (Math.cos(angle) * r).round 
+            y = 150 - (Math.sin(angle) * r).round
+         -%>
+      <path id="svg_1" d="m43.00018,150c-0.78925,-168.02631 276.14045,-167.99872 274.99936,0" stroke-width="33" stroke="url(#svg_2)" fill="none"/>
+      <!--<circle cx="180" cy="180" r="150" stroke="white" stroke-width="30" fill="black"/>-->
+      <line id="svg_5" y2="<%= y %>" x2="<%= x %>" y1="150" x1="180" stroke-linecap="round" stroke-linejoin="null" stroke-dasharray="null" stroke-width="13" stroke="#EBEBEB" fill="none"/>
+     </g>
+    </svg>
     <p><strong><%= @today %></strong> today</p>
     <p><strong><%= @yesterday %></strong> yesterday</p>
     <p><strong><%= @last_week %></strong> a week ago</p>

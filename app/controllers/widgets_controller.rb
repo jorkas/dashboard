@@ -44,6 +44,7 @@ class WidgetsController < ApplicationController
     @today = Mynewsdesk.count_today
     @yesterday = Mynewsdesk.count_yesterday
     @last_week = Mynewsdesk.count_last_week
+    @angle = 180 * (@today.to_f/@last_week.to_f)
   end
   
   private
