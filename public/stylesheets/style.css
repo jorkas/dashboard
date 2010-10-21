@@ -1,7 +1,7 @@
 body {
   margin-top: 20px;
-  background: #101010;
-  color: #EBEBEB;
+  background: #FFFFFF;
+  color: #212121;
   font: 35px/1.5em "museo-slab-1","museo-slab-2","gesta-1","gesta-2";
   font-weight: 100;
 }
@@ -11,11 +11,12 @@ body {
 }
 
 .widget {
-  background: #212121;
+  background: inherit;
   -webkit-border-top-right-radius: 10px;
   -webkit-border-top-left-radius: 10px;
   min-height: 324px;
   margin-bottom: 20px;
+  border-bottom: 6px double #212121;
 }
 
 .widget header, .widget section {
@@ -23,36 +24,26 @@ body {
 }
 
 .widget header {
-  background: -webkit-gradient(
-    linear, 0% 100%, 0% 0%,
-    color-stop(0.86, #606060),
-    color-stop(0.67, #4B4B4B),
-    color-stop(0.17, #333));
+  background: inherit;
   -webkit-border-top-right-radius: 10px;
   -webkit-border-top-left-radius: 10px;
-  text-align: center;
   color: #101010;
   text-shadow: 0px 2px 3px #373737;
+  text-transform: uppercase;
 }
 
 .widget section {
-  background: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      color-stop(0.64, rgb(33,33,33)),
-      color-stop(1, rgb(20,20,20))
-  );
+  background: #ffffff;
   padding-top: 30px;
   padding-bottom: 30px;
-  text-align: center;
+  
 }
 .left, .left *{
   text-align: left;
 }
 h2 {
   font-weight: 600;
-  font-size: 44px;
+  font-size: 35px;
 }
 
 .big {
