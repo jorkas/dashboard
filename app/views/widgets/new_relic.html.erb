@@ -24,7 +24,7 @@
     
     <ol>
     <%- @values.each do |value| -%>
-        <li><%= value[:name] %> <span class="<%= value[:color_value] %>"><%= value[:formatted_metric_value] %></span></li>
+        <li><%= value[:name] %> <span class="<%= value[:color_value].downcase %>"><%= value[:formatted_metric_value] %></span></li>
     <%- end -%>
     </ol>
 </section>
