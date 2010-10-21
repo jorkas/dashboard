@@ -8,7 +8,6 @@ class PshbController < ApplicationController
       doc = Nokogiri::XML(request.body.read)
       entries = Gowalla.parse_xml(doc)
       
-      logger.info entries.inspect
       new_checkin = Rails.cache.read("gowalla") || []
       gow_arr = Gowalla.recent_checkins
       gow_arr << new_checkin
