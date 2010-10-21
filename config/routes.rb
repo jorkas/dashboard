@@ -1,9 +1,10 @@
 Dashboard::Application.routes.draw do
   root :to => "dashboard#index"
-  get "dashboard/index"
+
   match 'gowalla' => "pshb#gowalla"
   match 'widgets/:action' => 'widgets#:action'
 
+  match 'version' => "dashboard#version"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

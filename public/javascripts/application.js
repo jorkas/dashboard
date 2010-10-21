@@ -1,6 +1,8 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
+var app_version = ""
+
 var recent_pressreleases_array = [];
 var recent_pressreleases_index = 0;
 var recent_pressreleases_timeout;
@@ -56,7 +58,7 @@ $(document).ready(function(){
     })
     
     recent_pressreleases_rotator()
-
+    check_version()
 })
 
 
@@ -65,6 +67,22 @@ $(".widget").live("click",function(){
     load_widget($(this).attr("id"),0)
 })
 
+
+function check_version () {
+    var old_version = app_version
+    
+    $.get("/version", function(data){
+        app_version = $.trim(data)
+        
+        if (old_version != app_version && old_version != "") {
+            window.location.reload()
+        }
+    })
+    
+    setTimeout(function(){
+        check_version()
+    },50000)
+}
 
 function load_widget (name,ttl,callback) {
     $.get("/widgets/"+name, function(data) {
