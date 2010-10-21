@@ -65,12 +65,16 @@ strong {
   font-weight: 700;
 }
 
-.up {
+.up, .green {
   color: #4A994D;
 }
 
-.down {
+.down, .red {
   color: #993638;
+}
+
+.yellow {
+  color: #CEC230;
 }
 
 .arrow {
@@ -168,4 +172,9 @@ small {
 
 #recent_pressreleases img {
   margin-bottom: 6px;
+}
+
+#new_relic ol {
+  list-style: none;
+  margin-left: 40px;
 }

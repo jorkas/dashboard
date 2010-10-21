@@ -44,7 +44,19 @@ class WidgetsController < ApplicationController
     @today = Mynewsdesk.count_today
     @yesterday = Mynewsdesk.count_yesterday
     @last_week = Mynewsdesk.count_last_week
-    @angle = 180 * (@today.to_f/@last_week.to_f)
+  end
+  
+  def new_relic
+    @values = Rails.cache.fetch("new_relic", :expires_in => 1.minutes) do
+      array = Array.new
+      result = NewRelicApi::Account.find(:first).applications(:params => {:conditions => {:name => 'Newsdesk (production)'}}).first.threshold_values
+      result.each do |r|
+        array << {:name => r.name, :metric_value => r.metric_value, :color_value => r.color_value, :formatted_metric_value => r.formatted_metric_value }
+      end
+      array
+    end
+    throughput = @values.select {|v| v[:name] == "Throughput"}.first
+    @angle = (throughput[:metric_value] / 1500) * 180
   end
   
   private

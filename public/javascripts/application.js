@@ -31,11 +31,15 @@ $(document).ready(function(){
         next()
     })
     body.queue(function (next) {
-        load_widget("count_pressreleases",20000)
+        load_widget("count_pressreleases",30000)
         next()
     })
     body.queue(function (next) {
         load_widget("signup_follows",1320000)
+        next()
+    })
+    body.queue(function (next) {
+        load_widget("new_relic",40000)
         next()
     })
     body.queue(function (next) {
