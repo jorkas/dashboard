@@ -57,7 +57,10 @@ class Gowalla
       'kungkeke' => 1483696,
       'iPillan' => 64229,
       'mhallqvist' => 15536,
-      'dwiberg' => 14419
+      'dwiberg' => 14419,
+      'himynameisjonas' => 63524,
+      'sofiaeiworth' => 121097,
+      'mgarbarczyk' => 1025564
       }
     if avatars.has_key? name
       return "http://s3.amazonaws.com/static.gowalla.com/users/#{avatars[name]}-thumb.jpg"
