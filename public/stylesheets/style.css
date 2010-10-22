@@ -24,7 +24,7 @@ body {
   background: inherit;
   -webkit-border-top-right-radius: 10px;
   -webkit-border-top-left-radius: 10px;
-  min-height: 324px;
+  min-height: 270px;
   margin-bottom: 20px;
   border-bottom: 6px double #EBEBEB;
 }
@@ -156,7 +156,8 @@ small {
   width: 70px;
 }
 #recent_pressreleases {
-  height: 380px;
+  height: 180px;
+  min-height: 100px;
   overflow: hidden;
 }
 
@@ -164,7 +165,6 @@ small {
   height: 76px;
   line-height: 1em;
   overflow: hidden;
-  padding-top: 6px;
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 100%;

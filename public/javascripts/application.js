@@ -131,9 +131,9 @@ function recent_pressreleases_rotator() {
     li = $(recent_pressreleases_array[recent_pressreleases_index])
     ul.prepend(li)
     
-    li.slideDown(2000)
-    if ( $("li",ul).length > 3 ) {
-        $("li",ul).last().slideUp(1800, function(){
+    li.slideDown(1000,'easeOutQuad')
+    if ( $("li",ul).length > 1 ) {
+        $("li",ul).last().slideUp(1800,'easeOutQuad', function(){
             $(this).remove()
         })
     };
