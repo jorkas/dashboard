@@ -46,6 +46,13 @@ class WidgetsController < ApplicationController
     @last_week = Mynewsdesk.count_last_week
   end
   
+  def analytics_goals
+    analytics
+    @signup_trials = analytics.signup_trials
+    @signup_follows = analytics.signup_follows
+    @signup_journalists = analytics.signup_journalists
+  end
+  
   def new_relic
     @values = Rails.cache.fetch("new_relic", :expires_in => 1.minutes) do
       array = Array.new

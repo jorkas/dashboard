@@ -29,7 +29,7 @@ $(document).ready(function(){
         next()
     })
     body.queue(function (next) {
-        load_widget("signup_journalists", 900000)
+        load_widget("analytics_goals", 900000)
         next()
     })
     body.queue(function (next) {
@@ -37,15 +37,7 @@ $(document).ready(function(){
         next()
     })
     body.queue(function (next) {
-        load_widget("signup_follows",1320000)
-        next()
-    })
-    body.queue(function (next) {
         load_widget("new_relic",40000)
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("signup_trials",2100000)
         next()
     })
     body.queue(function (next) {
