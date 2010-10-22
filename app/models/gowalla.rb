@@ -21,6 +21,7 @@ class Gowalla
   end
   
   def self.parse_xml(doc)
+    doc.remove_namespaces!
     place = doc.at_css("feed>title").text
     place["Gowalla Checkins at MyNewsdesk"] = ""
     place = "Stockholm office" if place.strip == "HQ"
@@ -29,7 +30,8 @@ class Gowalla
     xml_entries.each do |entry|
       name = entry.at_css("name").text
       time = Time.parse(entry.at_css("published").text)
-      image = entry.at_css("link[rel=photo]").try(attr("href")) || "http://gowalla.com/images/default-user.jpg"
+      username = entry.at_css("preferredUsername").text
+      image = entry.at_css("link[rel=photo]").try(attr("href")) || get_avatar(username)
       id = entry.at_css("id").text[/\d{5,}/]
       entries << Gowalla::Entry.new(name, time, place, image, id)
     end
@@ -41,6 +43,26 @@ class Gowalla
       require 'open-uri'
       doc = Nokogiri::XML(open("http://gowalla.com/spots/#{id}/checkins.atom"))
       Gowalla.parse_xml(doc)
+    end
+  end
+  
+  private
+  
+  def self.get_avatar(name)
+    avatars = {
+      'joakwest' => 16751,
+      'richardj' => 18417,
+      'dojan' => 14679,
+      'davidwennergren' => 15886,
+      'kungkeke' => 1483696,
+      'iPillan' => 64229,
+      'mhallqvist' => 15536,
+      'dwiberg' => 14419
+      }
+    if avatars.has_key? name
+      return "http://s3.amazonaws.com/static.gowalla.com/users/#{avatars[name]}-thumb.jpg"
+    else
+      return "http://gowalla.com/images/default-user.jpg"
     end
   end
 end
