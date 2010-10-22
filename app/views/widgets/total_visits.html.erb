@@ -2,6 +2,6 @@
     <h2>Visits (4 weeks)</h2>
 </header>
 <section>
-    <p class="big"><%= number_with_delimiter @total_visits[:now], :delimiter => " " %></p>
+    <p class="big"><%= number_with_delimiter @total_visits[:now]%></p>
     <p class="<%= (@total_visits[:percent] >= 0) ? "up" : "down" %>"><span class="arrow"></span><strong><%= number_to_percentage(@total_visits[:percent], :precision => 2) %></strong></p>
 </section>
