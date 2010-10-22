@@ -2,9 +2,9 @@
     <h2>Signups Yesterday</h2>
 </header>
 <section>
-    <p><span class="big"><%= @signup_follows[:now] %></span> followers <span class="<%= (@signup_follows[:percent] >= 0) ? "up" : "down" %>"><span class="arrow"></span><%= number_to_percentage(@signup_follows[:percent], :precision => 2) %></span></p>
+    <p><span class="big"><%= @signup_follows[:now] %></span> followers <span class="<%= (@signup_follows[:percent] >= 0) ? "up" : "down" %>"><span class="arrow"></span><strong><%= number_to_percentage(@signup_follows[:percent], :precision => 2) %></strong></span></p>
     
-    <p><span class="big"><%= @signup_journalists[:now] %></span> journalists <span class="<%= (@signup_journalists[:percent] >= 0) ? "up" : "down" %>"><span class="arrow"></span><%= number_to_percentage(@signup_journalists[:percent], :precision => 2) %></span></p>
+    <p><span class="big"><%= @signup_journalists[:now] %></span> journalists <span class="<%= (@signup_journalists[:percent] >= 0) ? "up" : "down" %>"><span class="arrow"></span><strong><%= number_to_percentage(@signup_journalists[:percent], :precision => 2) %></strong></span></p>
     
-    <p><span class="big"><%= @signup_trials[:now] %></span> customers <span class="<%= (@signup_trials[:percent] >= 0) ? "up" : "down" %>"><span class="arrow"></span><%= number_to_percentage(@signup_trials[:percent], :precision => 2) %></span></p>
+    <p><span class="big"><%= @signup_trials[:now] %></span> customers <span class="<%= (@signup_trials[:percent] >= 0) ? "up" : "down" %>"><span class="arrow"></span><strong><%= number_to_percentage(@signup_trials[:percent], :precision => 2) %></strong></span></p>
 </section>
