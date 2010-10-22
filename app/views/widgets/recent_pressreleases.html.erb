@@ -4,7 +4,7 @@
 <section>
     <ul class="left">
     <%- @recent_pressreleases.each do |pressrealese| -%>
-        <li style="display:none;"><strong><%= pressrealese[:title] %></strong> <br/> <img src="/images/flags/<%= pressrealese[:site] %>.png" alt="<%= pressrealese[:site] %>"/> <%= pressrealese[:author] %></li>
+        <li style="display:none;"><strong><%= pressrealese[:title] %></strong> <img src="/images/flags/<%= pressrealese[:site] %>.png" alt="<%= pressrealese[:site] %>"/> <%= pressrealese[:author] %></li>
     <%- end -%>
     </ul>
 </section>

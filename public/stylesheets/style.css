@@ -156,11 +156,14 @@ small {
   width: 70px;
 }
 #recent_pressreleases {
-  height: 180px;
-  min-height: 100px;
+  height: 70px;
+  min-height: 70px;
   overflow: hidden;
 }
 
+#recent_pressreleases section {
+  padding-top: 14px;
+}
 #recent_pressreleases li {
   height: 76px;
   line-height: 1em;

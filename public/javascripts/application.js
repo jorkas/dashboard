@@ -141,7 +141,7 @@ function recent_pressreleases_rotator() {
     recent_pressreleases_index++;
     recent_pressreleases_timeout = setTimeout(function(){
         recent_pressreleases_rotator()
-    },7000)
+    },Math.floor((9000-3000)*Math.random()) + 3000)
 }
 
 function unique(arrayName) {
