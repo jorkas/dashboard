@@ -3,5 +3,5 @@
 </header>
 <section>
     <p class="big"><%= number_to_human(@total_visits[:now],:precision => 3) %></p>
-    <p class="<%= (@total_visits[:percent] > 0) ? "up" : "down" %>"><span class="arrow"></span><%= number_to_percentage(@total_visits[:percent], :precision => 2) %></p>
+    <p class="<%= (@total_visits[:percent] >= 0) ? "up" : "down" %>"><span class="arrow"></span><%= number_to_percentage(@total_visits[:percent], :precision => 2) %></p>
 </section>
