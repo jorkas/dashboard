@@ -172,6 +172,7 @@ small {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  list-style: none;
 }
 
 #recent_pressreleases strong {
