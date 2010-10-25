@@ -8,11 +8,14 @@ class Analytics
   end
   
   def total_visits
+    now_end_date = Time.zone.now - 1.day
+    last_end_date = get_end_date(now_end_date, 30)
+    
     last = Rails.cache.fetch("garb_total_visits_last", :expires_in => 1.hour) do
-      Garb::Report.new(@profile, {:metrics => [:visits], :start_date => Time.zone.now - 8.weeks - 1.day, :end_date => Time.zone.now - 4.weeks - 1.day}).results.first.visits.to_i
+      Garb::Report.new(@profile, {:metrics => [:visits], :start_date => last_end_date - 30.days, :end_date => last_end_date}).results.first.visits.to_i
     end
     now = Rails.cache.fetch("garb_total_visits_now", :expires_in => 1.hour) do
-      Garb::Report.new(@profile, {:metrics => [:visits], :start_date => Time.zone.now - 4.weeks - 1.day, :end_date => Time.zone.now - 1.day }).results.first.visits.to_i
+      Garb::Report.new(@profile, {:metrics => [:visits], :start_date => now_end_date - 30.days, :end_date => now_end_date }).results.first.visits.to_i
     end
     percent = (now.to_f/last.to_f)*100 - 100 
     {:now => now, :last => last, :percent => percent}
@@ -84,4 +87,15 @@ class Analytics
     end
     searchterms[0...10]
   end
+  
+  private
+  
+  def get_end_date(end_date, number_of_days)
+    new_end_date = end_date - number_of_days.days
+    until new_end_date.wday == end_date.wday do
+      new_end_date -= 1.day
+    end
+    new_end_date
+  end
+  
 end
