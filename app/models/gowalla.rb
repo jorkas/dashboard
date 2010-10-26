@@ -63,7 +63,7 @@ class Gowalla
       'mgarbarczyk' => 1025564
       }
     if avatars.has_key? name
-      return "http://s3.amazonaws.com/static.gowalla.com/users/#{avatars[name]}-thumb.jpg"
+      return "http://s3.amazonaws.com/static.gowalla.com/users/#{avatars[name]}-standard.jpg"
     else
       return "http://gowalla.com/images/default-user.jpg"
     end
