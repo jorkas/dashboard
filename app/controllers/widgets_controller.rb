@@ -68,6 +68,7 @@ class WidgetsController < ApplicationController
   
   def active_visits
     @stats = Chartbeat.quickstats
+    @history = Chartbeat.history
   end
   
   private
