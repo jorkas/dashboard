@@ -62,8 +62,6 @@ class WidgetsController < ApplicationController
       end
       array
     end
-    throughput = @values.select {|v| v[:name] == "Throughput"}.first
-    @angle = (throughput[:metric_value] / 1500) * 180
   end
   
   def active_visits
