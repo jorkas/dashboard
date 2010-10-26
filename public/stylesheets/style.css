@@ -22,7 +22,7 @@ body {
 
 .widget {
   background: inherit;
-  min-height: 275px;
+  min-height: 280px;
   margin-bottom: 20px;
   border-bottom: 6px double #EBEBEB;
 }
