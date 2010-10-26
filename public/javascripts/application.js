@@ -183,15 +183,14 @@ function unique(arrayName) {
 function changeValue (element, new_value) {
     old_value = Number(element.text())
     diff = new_value - old_value
-    
-    if (diff > 0) {
+    if (diff != 0) {
         element.countTo({
                     from: old_value,
                     to: new_value,
                     speed: 1000,
                     refreshInterval: 50,
                     onComplete: function(value) {
-                        console.debug("Counted from "+old_value+" to "+new_value);
+                        
                     }
         });
     }
