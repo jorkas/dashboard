@@ -2,7 +2,7 @@
     <h2>Online visitors</h2>
 </header>
 <section>
-    <p class="big"><%= @stats['visits'] %></p>
-    <p>30-day max: <%= @history['people_max'] > @stats['visits'] ? @history['people_max'] : @stats['visits']%></p>
-    <p>30-day average: <%= @history['people_avg'].round %></p>
+    <p class="big visits_now"><%= @stats['visits'] %></p>
+    <p>30-day max: <span class="visits_max"><%= @history['people_max'] > @stats['visits'] ? @history['people_max'] : @stats['visits']%></span></p>
+    <p>30-day average: <span class="visits_avg"><%= @history['people_avg'].round %></span></p>
 </section>

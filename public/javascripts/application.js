@@ -45,7 +45,7 @@ $(document).ready(function(){
         next()
     })
     body.queue(function (next) {
-        load_widget("active_visits", 5000)
+        load_widget("active_visits", 5000, 'active_visits_callback')
         next()
     })
     
@@ -102,6 +102,22 @@ function load_widget (name,ttl,callback) {
             }
         },ttl);
     };
+}
+
+function active_visits_callback (data) {
+    now_element = $(".visits_now")
+    max_element = $(".visits_max")
+    avg_element = $(".visits_avg")
+    
+    now_value = $(".visits_now",data).text()
+    max_value = $(".visits_max",data).text()
+    avg_value = $(".visits_avg",data).text()
+    
+    changeValue(now_element, now_value)
+
+    max_element.text(max_value)
+    avg_element.text(avg_value)
+    
 }
 
 function recent_pressreleases_callback (data) {
@@ -162,4 +178,21 @@ function unique(arrayName) {
         newArray[newArray.length] = arrayName[i];
     }
     return newArray;
+}
+
+function changeValue (element, new_value) {
+    old_value = Number(element.text())
+    diff = new_value - old_value
+    
+    if (diff > 0) {
+        element.countTo({
+                    from: old_value,
+                    to: new_value,
+                    speed: 1000,
+                    refreshInterval: 50,
+                    onComplete: function(value) {
+                        console.debug("Counted from "+old_value+" to "+new_value);
+                    }
+        });
+    }
 }
