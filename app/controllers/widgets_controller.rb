@@ -66,6 +66,10 @@ class WidgetsController < ApplicationController
     @angle = (throughput[:metric_value] / 1500) * 180
   end
   
+  def active_visits
+    @stats = Chartbeat.quickstats
+  end
+  
   private
   
   def analytics

@@ -44,6 +44,10 @@ $(document).ready(function(){
         load_widget("top_countries",1800000)
         next()
     })
+    body.queue(function (next) {
+        load_widget("active_visits", 5000)
+        next()
+    })
     
     recent_pressreleases_rotator()
     check_version()
