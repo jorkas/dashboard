@@ -3,5 +3,6 @@
 </header>
 <section>
     <p class="big"><%= @stats['visits'] %></p>
-    <p>max: <%= @history['people_max'] %><br/> min: <%= @history['people_min'] %></p>
+    <p>30-day max: <%= @history['people_max'] > @stats['visits'] ? @history['people_max'] : @stats['visits']%></p>
+    <p>30-day average: <%= @history['people_avg'].round %></p>
 </section>
