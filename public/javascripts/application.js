@@ -187,7 +187,7 @@ function changeValue (element, new_value) {
         element.countTo({
                     from: old_value,
                     to: new_value,
-                    speed: 1000,
+                    speed: 2000,
                     refreshInterval: 50,
                     onComplete: function(value) {
                         
