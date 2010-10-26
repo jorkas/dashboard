@@ -120,11 +120,6 @@ small {
   font-size: 70%;
 }
 
-#analytics_goals .big {
-  display: inline-block;
-  width: 1.1em;
-}
-
 #recent_checkins small {
   display: block;
   text-align: right;
