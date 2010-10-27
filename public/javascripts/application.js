@@ -118,10 +118,8 @@ function active_visits_callback (data) {
     max_element.text(max_value)
     avg_element.text(avg_value)
     
-    new_width = (Number($("#new",data).text())/now_value)*100
-    returning_width = 100-new_width
+    new_width = (now_value/1000)*100
     $("#new").animate({width: new_width+"%"},3000)
-    $("#returning").animate({width: returning_width+"%"},3000)
 }
 
 function recent_pressreleases_callback (data) {

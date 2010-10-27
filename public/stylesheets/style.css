@@ -144,6 +144,7 @@ small {
 
 #recent_checkins span {
   font-weight: 700;
+  white-space: nowrap;
 }
 
 #recent_checkins li img{
@@ -153,7 +154,7 @@ small {
   border-top-right-radius: 5px 5px;
   float: left;
   margin: 0 0.5em 0px 0px;
-  width: 70px;
+  width: 60px;
 }
 #recent_pressreleases {
   height: 70px;
@@ -203,19 +204,7 @@ small {
 
 #new {
   float: left;
-  width: 50%;
+  width: 0;
   background: #c0009a;
   border-right:1px solid #d9dbdb
-}
-
-.new_label {
-  float: left;
-}
-.returning_label {
-  float: right;
-}
-
-.new_label, .returning_label {
-  font-size: 80%;
-  line-height: 1.4em;
 }

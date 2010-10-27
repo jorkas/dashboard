@@ -5,10 +5,7 @@
     <p class="big visits_now"><%= @stats['visits'] %></p>
     <div id="chart">
         <div id="new">
-            <%= @stats['new'] %>
-        </div>
-        <div id="returning">
-            <%= @stats['visits']-@stats['new'] %>
+            <%= @stats['visits'].to_f/1000 %>
         </div>
     </div>
     <p>30-day max: <span class="visits_max"><%= @history['people_max'] > @stats['visits'] ? @history['people_max'] : @stats['visits']%></span></p>
