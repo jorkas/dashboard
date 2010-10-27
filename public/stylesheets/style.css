@@ -9,7 +9,8 @@
 
 body {
   margin-top: 20px;
-  background: #000000;
+  background-color: #000000;
+  background-image: -webkit-gradient(radial, 50% -50%, 1500, 50% -50%, 0, from(black), to(#252525), color-stop(0.6, #252525));
   color: #EBEBEB;
   font: 35px/1.5em 'helvetica neue', helvetica, arial;
   letter-spacing: 0.05em;
