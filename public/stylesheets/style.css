@@ -190,7 +190,7 @@ small {
 }
 
 #chart, #new {
-  height: 50px;
+  height: 30px;
   overflow: hidden;
   background: #C5C5C5;
   clear: both;
@@ -217,5 +217,5 @@ small {
 
 .new_label, .returning_label {
   font-size: 80%;
-  line-height: 1.2em;
+  line-height: 1.4em;
 }
