@@ -191,7 +191,7 @@ small {
 #chart, #new {
   height: 30px;
   overflow: hidden;
-  background: #B2B2B2;
+  background: #ebeeee;
   clear: both;
 }
 
@@ -204,7 +204,8 @@ small {
 #new {
   float: left;
   width: 50%;
-  background: #467085;
+  background: #c0009a;
+  border-right:1px solid #d9dbdb
 }
 
 .new_label {

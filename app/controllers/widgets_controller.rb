@@ -23,8 +23,7 @@ class WidgetsController < ApplicationController
   
   def top_countries
     analytics
-    @top_countries = analytics.top_countries
-    @total_visits = analytics.total_visits
+    @top_countries = Chartbeat.countries[0...10]
   end
   
   def top_searches

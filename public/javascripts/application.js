@@ -41,7 +41,7 @@ $(document).ready(function(){
         next()
     })
     body.queue(function (next) {
-        load_widget("top_countries",1800000)
+        load_widget("top_countries",5000)
         next()
     })
     body.queue(function (next) {
