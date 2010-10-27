@@ -73,6 +73,10 @@ strong {
   font-weight: 700;
 }
 
+.up, .green, .down, .red {
+  white-space: nowrap;
+}
+
 .up, .green {
   color: #4A994D;
 }
@@ -192,7 +196,7 @@ small {
 #chart, #new {
   height: 30px;
   overflow: hidden;
-  background: #C5C5C5;
+  background: #B2B2B2;
   clear: both;
 }
 
