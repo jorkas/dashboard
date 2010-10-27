@@ -105,7 +105,7 @@ function load_widget (name,ttl,callback) {
 }
 
 function active_visits_callback (data) {
-    now_element = $(".visits_now")
+    now_element = $(".visits_now span")
     max_element = $(".visits_max")
     avg_element = $(".visits_avg")
     
