@@ -9,11 +9,12 @@
 
 body {
   margin-top: 20px;
-  background: #000000;
+  background: #000000 -webkit-gradient(radial, 50% -50%, 1500, 50% -50%, 0, from(black), to(#252525), color-stop(0.6, #252525));
   color: #EBEBEB;
   font: 35px/1.5em 'helvetica neue', helvetica, arial;
   letter-spacing: 0.05em;
   font-weight: 100;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -22,7 +23,6 @@ body {
 
 .widget {
   background: inherit;
-  min-height: 280px;
   margin-bottom: 20px;
   border-bottom: 6px double #EBEBEB;
 }
@@ -31,14 +31,16 @@ body {
   padding: 10px;
 }
 
+.widget header {
+  padding-top: 0;
+}
+
 #recent_pressreleases header, #recent_pressreleases section {
   padding: 0;
 }
 
 .widget header {
   background: inherit;
-  -webkit-border-top-right-radius: 10px;
-  -webkit-border-top-left-radius: 10px;
   color: #EBEBEB;
 }
 
@@ -136,7 +138,7 @@ small {
 #recent_checkins li {
   margin-bottom: 1em;
   display: block;
-  height: 76px;
+  height: 60px;
 }
 
 #recent_checkins span {
@@ -183,4 +185,35 @@ small {
 #new_relic ol {
   list-style: none;
   margin-left: 0;
+}
+
+#chart, #new {
+  height: 50px;
+  overflow: hidden;
+  background: #C5C5C5;
+  clear: both;
+}
+
+#chart {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+#new {
+  float: left;
+  width: 50%;
+  background: #EBEBEB;
+}
+
+.new_label {
+  float: left;
+}
+.returning_label {
+  float: right;
+}
+
+.new_label, .returning_label {
+  font-size: 80%;
+  line-height: 1.2em;
 }
