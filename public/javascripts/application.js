@@ -10,10 +10,21 @@ var recent_pressreleases_timeout;
 var recent_checkins_array = [];
 var recent_checkins_index = 0;
 
+var online_user_images = Array()
+
 jQuery.easing.def = "easeInOutBack";
 
 $(document).ready(function(){
 
+    for (var i=0; i < 72; i++) {
+        online_user_images[i] = $("<div>", {
+            class: 'users'
+        })
+    };
+    
+    elm = $("#online_now");
+    elm.html("").append.apply( elm, $.isArray( online_user_images) ? online_user_images : [online_user_images])
+    
     var body = $("body")
     
     body.queue(function (next) {
@@ -118,8 +129,16 @@ function active_visits_callback (data) {
     max_element.text(max_value)
     avg_element.text(avg_value)
     
-    new_width = (now_value/1000)*100
-    $("#new").animate({width: new_width+"%"},3000)
+    // new_width = (now_value/1000)*100
+    //     $("#new").animate({width: new_width+"%"},3000)
+    
+    $(online_user_images).each(function(index){
+        $(this).removeClass("active")
+    })
+    
+    for (var i=0; i < (now_value/max_value)*online_user_images.length; i++) {
+        $(online_user_images[i]).addClass("active")
+    };
 }
 
 function recent_pressreleases_callback (data) {
