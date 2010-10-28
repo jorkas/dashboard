@@ -180,6 +180,32 @@ small {
   list-style: none;
   margin-left: 0;
 }
+
+.visits_now {
+  border: #212121 solid 1px;
+  color: #212121;
+  background: rgba(255, 255, 255, 0.015625);
+  font-size: 154px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.visits_now .big {
+  color: #EBEBEB;
+  font-size: inherit;
+}
+
+.visits_now .flipclock {
+  background-color: rgba(0, 0, 0, 0.1875);
+  bottom: 0px;
+  height: 67px;
+  position: absolute;
+  width: 100%;
+  border-top: 5px solid #141414;
+}
+
+
 #online_now {
   line-height: 30px;
 }
