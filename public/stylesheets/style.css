@@ -25,28 +25,20 @@ body {
 }
 
 .widget header, .widget section {
-  padding: 10px;
+  padding: 10px 10px 20px;
 }
 
 .widget header {
+  background: inherit;
+  color: #EBEBEB;
   padding-top: 0;
+  padding-bottom: 10px;
 }
 
 #recent_pressreleases header, #recent_pressreleases section {
   padding: 0;
 }
 
-.widget header {
-  background: inherit;
-  color: #EBEBEB;
-}
-
-.widget section {
-  background: inherit;
-  padding-top: 10px;
-  padding-bottom: 30px;
-  
-}
 .left, .left *{
   text-align: left;
 }
