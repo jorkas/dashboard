@@ -197,3 +197,8 @@ small {
 #online_now .active{
   background: url('/images/users_sprite.png') center -26px no-repeat;  
 }
+
+#top_countries ol {
+  list-style-position: inside;
+  margin: 0;
+}
