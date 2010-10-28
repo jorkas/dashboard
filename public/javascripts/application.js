@@ -16,7 +16,7 @@ jQuery.easing.def = "easeInOutBack";
 
 $(document).ready(function(){
 
-    for (var i=0; i < 75; i++) {
+    for (var i=0; i < 72; i++) {
         online_user_images[i] = $("<div>", {
             class: 'users'
         })
