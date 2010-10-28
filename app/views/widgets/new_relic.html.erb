@@ -4,7 +4,7 @@
 <section class="left">
     <ol>
     <%- @values.each do |value| -%>
-        <li><%= value[:name] %> <span class="<%= value[:color_value].downcase %>"><%= value[:formatted_metric_value] %></span></li>
+        <li><%= value[:name] == "Response Time" ? "RT" : value[:name] %> <span class="<%= value[:color_value].downcase %>"><%= value[:formatted_metric_value] %></span></li>
     <%- end -%>
     </ol>
 </section>
