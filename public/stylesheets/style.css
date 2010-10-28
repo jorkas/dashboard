@@ -115,6 +115,10 @@ small {
   font-size: 70%;
 }
 
+ul {
+  list-style: none;
+}
+
 #recent_checkins small {
   display: block;
   text-align: right;

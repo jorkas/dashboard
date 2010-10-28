@@ -24,6 +24,12 @@ class Chartbeat
     countries.sort {|a,b| b[1]<=>a[1]}
   end
   
+  def self.referrers
+    visitors = recent_visitors
+    referrers = visitors.map {|visitor| visitor['r'] unless visitor['r'].blank? }.compact
+    referrers.select {|referrer| !%w"google mynews ish.my".include? URI.parse(referrer).host[4..9] }
+  end
+  
   def self.recent_visitors
     Rails.cache.fetch("chartbeat_recent_visitors", :expires_in => 5.seconds) do
       require 'open-uri'

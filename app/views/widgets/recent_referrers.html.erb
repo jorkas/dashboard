@@ -1,0 +1,10 @@
+<header>
+    <h2>recent referrers</h2>
+</header>
+<section class="left">
+    <ul>
+    <%- @referrers.each do |referrer| -%>
+        <li><%= URI.parse(referrer).host %></li>
+    <%- end -%>
+    </ul>
+</section>

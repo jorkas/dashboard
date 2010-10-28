@@ -69,6 +69,10 @@ class WidgetsController < ApplicationController
     @history = Chartbeat.history
   end
   
+  def recent_referrers
+    @referrers = Chartbeat.referrers[0...10]
+  end
+  
   private
   
   def analytics
