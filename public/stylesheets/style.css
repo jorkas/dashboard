@@ -189,20 +189,19 @@ small {
   margin-left: 0;
 }
 #online_now {
-  line-height: 38px;
-  margin-left: 5px;
+  line-height: 30px;
 }
 
 #online_now .users {
-  width: 30px;
-  height: 51px;
+  width: 15px;
+  height: 25px;
   display: inline-block;
   background: url('/images/users_sprite.png') center top no-repeat;
-  -webkit-transition: background 1.5s linear;
-  -moz-transition: background 1.5s linear;
-  -o-transition: background 1.5s linear;
-  transition: background 1.5s linear;
+  -webkit-transition: background 0.5s linear;
+  -moz-transition: background 0.5s linear;
+  -o-transition: background 0.5s linear;
+  transition: background 0.5s linear;
 }
 #online_now .active{
-  background: url('/images/users_sprite.png') center -51px no-repeat;  
+  background: url('/images/users_sprite.png') center -26px no-repeat;  
 }
