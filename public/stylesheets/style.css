@@ -193,6 +193,8 @@ ul {
   overflow: hidden;
   position: relative;
   margin-bottom: 10px;
+  text-align: right;
+  padding: 0 3px;
 }
 
 .visits_now .big {
