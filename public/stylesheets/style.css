@@ -128,14 +128,14 @@ ul {
 #recent_checkins ul {
   list-style: none;
   margin: 0;
-  font-size: 80%;
+  font-size: 72%;
   line-height: 1em;
 }
 
 #recent_checkins li {
-  margin-bottom: 1em;
   display: block;
-  height: 60px;
+  height: 72px;
+  clear: both;
 }
 
 #recent_checkins span {
