@@ -238,4 +238,10 @@ ul {
 #recent_referrers li {
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#recent_referrers li span {
+  font-size: 60%;
+  color: #9F9F9F
 }
