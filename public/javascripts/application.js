@@ -165,6 +165,9 @@ function recent_checkins_callback(data) {
             old_li.replaceWith(li)
         }
     };
+    
+    ul.children().slice(7).remove()
+    
 }
 
 function recent_pressreleases_rotator() {
