@@ -2,6 +2,6 @@
     <h2>Visits (30 days)</h2>
 </header>
 <section>
-    <p class="big"><%= number_with_delimiter @total_visits[:now]%></p>
+    <div class="flipclock_wrapper"><span class="big"><%= number_with_delimiter(@total_visits[:now], :delimiter => " ")%></span><div class="flipclock_overlay"></div></div>
     <p class="<%= (@total_visits[:percent] >= 0) ? "up" : "down" %>"><span class="arrow"></span><strong><%= number_to_percentage(@total_visits[:percent], :precision => 2) %></strong></p>
 </section>

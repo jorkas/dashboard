@@ -185,32 +185,43 @@ ul {
   margin-left: 0;
 }
 
-.visits_now {
-  border: #212121 solid 1px;
+.flipclock_wrapper {
   color: #212121;
-  background: rgba(255, 255, 255, 0.015625);
+  background: rgba(100, 100, 100, 0.105469);
   font-size: 154px;
   overflow: hidden;
   position: relative;
   margin-bottom: 10px;
   text-align: right;
+  border-bottom-left-radius: 5px 5px;
+  border-bottom-right-radius: 5px 5px;
+  border-top-left-radius: 5px 5px;
+  border-top-right-radius: 5px 5px;
+}
+
+.flipclock_wrapper .big {
+  color: #EBEBEB;
+  font-size: inherit;
   padding: 0 3px;
 }
 
-.visits_now .big {
-  color: #EBEBEB;
-  font-size: inherit;
-}
-
-.visits_now .flipclock {
-  background-color: rgba(0, 0, 0, 0.1875);
+.flipclock_wrapper .flipclock_overlay {
+  background-color: rgba(0, 0, 0, 0.433594);
   bottom: 0px;
   height: 67px;
   position: absolute;
   width: 100%;
-  border-top: 5px solid #141414;
+  border-top: 5px solid #050505;
 }
 
+#total_visits .flipclock_wrapper {
+  font-size: 77px;
+}
+
+#total_visits .flipclock_overlay {
+  height: 33px;
+  border-top-width: 3px;
+}
 
 #online_now {
   line-height: 30px;
