@@ -234,3 +234,8 @@ ul {
   list-style-position: inside;
   margin: 0;
 }
+
+#recent_referrers li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
