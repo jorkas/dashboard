@@ -20,6 +20,33 @@ class Mynewsdesk
       Mynewsdesk.xml.at_css("pressreleases a_week_ago").text.to_i
   end
   
+  def self.followers
+    xml = Mynewsdesk.xml
+    {
+      :today => xml.at_css("followers today").text.to_i,
+      :total => xml.at_css("followers total").text.to_i,
+      :yesterday => xml.at_css("followers yesterday").text.to_i
+    }
+  end
+  
+  def self.journalists
+    xml = Mynewsdesk.xml
+    {
+      :today => xml.at_css("journalists today").text.to_i,
+      :total => xml.at_css("journalists total").text.to_i,
+      :yesterday => xml.at_css("journalists yesterday").text.to_i
+    }
+  end
+  
+  def self.customers
+    xml = Mynewsdesk.xml
+    {
+      :today => xml.at_css("customers today").text.to_i,
+      :total => xml.at_css("customers total").text.to_i,
+      :yesterday => xml.at_css("customers yesterday").text.to_i
+    }
+  end
+  
   def self.xml
     doc = Rails.cache.fetch("mynewsdesk_xml", :expires_in => 4.minutes) do
       open("http://www.mynewsdesk.com/admin/dashboard.xml").read

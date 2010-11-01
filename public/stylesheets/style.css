@@ -117,6 +117,7 @@ small {
 
 ul {
   list-style: none;
+  line-height: 1.1em;
 }
 
 #recent_checkins small {

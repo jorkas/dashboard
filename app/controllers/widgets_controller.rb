@@ -58,6 +58,12 @@ class WidgetsController < ApplicationController
     @referrers = Chartbeat.referrers[0...10]
   end
   
+  def user_stats
+    @followers = Mynewsdesk.followers
+    @journalists = Mynewsdesk.journalists
+    @customers = Mynewsdesk.customers
+  end
+  
   private
   
   def analytics

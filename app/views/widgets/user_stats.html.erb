@@ -1,0 +1,13 @@
+<header>
+    <h2>User stats</h2>
+</header>
+<section>
+    <h3>Followers</h3>
+    <p><strong><%= @followers[:today] %></strong> today, <strong><%= @followers[:yesterday] %></strong> yesterday, <strong><%= @followers[:total] %></strong> total</p>
+    
+    <h3>Journalists</h3>
+    <p><strong><%= @journalists[:today] %></strong> today, <strong><%= @journalists[:yesterday] %></strong> yesterday, <strong><%= @journalists[:total] %></strong> total</p>
+    
+    <h3>Customers</h3>
+    <p><strong><%= @customers[:today] %></strong> today, <strong><%= @customers[:yesterday] %></strong> yesterday, <strong><%= @customers[:total] %></strong> total</p>
+</section>
