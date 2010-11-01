@@ -40,9 +40,9 @@ class WidgetsController < ApplicationController
   end
   
   def count_pressreleases
-    @today = Mynewsdesk.count_today
-    @yesterday = Mynewsdesk.count_yesterday
-    @last_week = Mynewsdesk.count_last_week
+    @today = Mynewsdesk.pressreleases_today
+    @yesterday = Mynewsdesk.pressreleases_yesterday
+    @last_week = Mynewsdesk.pressreleases_last_week
   end
   
   def analytics_goals

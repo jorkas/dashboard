@@ -8,24 +8,22 @@ class Mynewsdesk
     end
   end
   
-  def self.count_today
-    Rails.cache.fetch("count_today", :expires_in => 5.minutes) do
-      doc = Nokogiri::XML(open("http://www.mynewsdesk.com/se/search/pressreleases?type_of_medias=Pressrelease&subjects=&query=&date_mode=on&date_start=&date_end=&date_on=#{Time.zone.now.to_s(:date)}&subject=&g_region=&sites=all"))
-      doc.at_css('#search-hits span').text.to_i
-    end
+  def self.pressreleases_today
+    Mynewsdesk.xml.at_css("pressreleases today").text.to_i
   end
   
-  def self.count_yesterday
-    Rails.cache.fetch("count_yesterday", :expires_in => 1.hours) do
-      doc = Nokogiri::XML(open("http://www.mynewsdesk.com/se/search/pressreleases?type_of_medias=Pressrelease&subjects=&query=&date_mode=on&date_start=&date_end=&date_on=#{Time.zone.now.yesterday.to_s(:date)}&subject=&g_region=&sites=all"))
-      doc.at_css('#search-hits span').text.to_i
-    end
+  def self.pressreleases_yesterday
+    Mynewsdesk.xml.at_css("pressreleases yesterday").text.to_i
   end
   
-  def self.count_last_week
-    Rails.cache.fetch("count_last_week", :expires_in => 2.hours) do
-      doc = Nokogiri::XML(open("http://www.mynewsdesk.com/se/search/pressreleases?type_of_medias=Pressrelease&subjects=&query=&date_mode=on&date_start=&date_end=&date_on=#{(Time.zone.now - 7.days).to_s(:date)}&subject=&g_region=&sites=all"))
-      doc.at_css('#search-hits span').text.to_i
+  def self.pressreleases_last_week
+      Mynewsdesk.xml.at_css("pressreleases a_week_ago").text.to_i
+  end
+  
+  def self.xml
+    doc = Rails.cache.fetch("mynewsdesk_xml", :expires_in => 4.minutes) do
+      open("http://www.mynewsdesk.com/admin/dashboard.xml").read
     end
+    Nokogiri::XML(doc)
   end
 end
