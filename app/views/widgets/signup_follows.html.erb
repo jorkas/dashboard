@@ -1,7 +1,0 @@
-<header>
-    <h2>New follows</h2>
-</header>
-<section>
-    <p class="big"><%= @signup_follows[:now] %></p>
-    <p class="<%= (@signup_follows[:percent] >= 0) ? "up" : "down" %>"><span class="arrow"></span><%= number_to_percentage(@signup_follows[:percent], :precision => 2) %></p>
-</section>
