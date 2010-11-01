@@ -64,7 +64,7 @@ $(document).ready(function(){
         next()
     })
     body.queue(function (next) {
-        load_widget("user_stats", 5000)
+        load_widget("user_stats", 30000)
         next()
     })
     
