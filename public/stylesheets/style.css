@@ -249,7 +249,6 @@ ul {
 
 #recent_referrers li {
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
