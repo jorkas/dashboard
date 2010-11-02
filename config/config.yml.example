@@ -1,0 +1,11 @@
+production:
+  garb_login: "google@analytics.com" 
+  garb_password: "secret-gmail-password"
+  new_relic_key: "api-key"
+  new_relic_host: "rpm.newrelic.com"
+  new_relic_port: "80"
+  chartbeat_key: "apikey for chartbeat"
+  twitter_apikey: "apikey for twitter"
+  twitter_apisecret: "apikey secret for twitter"
+  twitter_oauthtoken: "twitter oauth token"
+  twitter_oauthtoken_secret: "twitter oauth token secret"
