@@ -13,8 +13,9 @@ class Gowalla
   def self.recent_checkins
     #sthlm  1361526
     #malmo  3379248
+    #gbg    6361341
     entries = Rails.cache.fetch("gowalla", :expires_in => 30.minutes) do
-      entries = Gowalla.parse_feed(3379248) + Gowalla.parse_feed(1361526)
+      entries = Gowalla.parse_feed(3379248) + Gowalla.parse_feed(1361526) + Gowalla.parse_feed(6361341)
       entries.sort! { |a,b| b.time <=> a.time }
     end
     entries[0...7]
@@ -25,6 +26,7 @@ class Gowalla
     place = doc.at_css("feed>title").text
     place["Gowalla Checkins at MyNewsdesk"] = ""
     place = "Stockholm office" if place.strip == "HQ"
+    place = "Gothenburg office" if place.strip == ""
     xml_entries = doc.css("entry")
     entries = Array.new
     xml_entries.each do |entry|
