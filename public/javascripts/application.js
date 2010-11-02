@@ -67,6 +67,10 @@ $(document).ready(function(){
         load_widget("user_stats", 30000)
         next()
     })
+    body.queue(function (next) {
+        load_widget("message", 40000)
+        next()
+    })
     
     recent_pressreleases_rotator()
     check_version()

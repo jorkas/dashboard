@@ -64,6 +64,10 @@ class WidgetsController < ApplicationController
     @customers = Mynewsdesk.customers
   end
   
+  def message
+    @message = Twitter.get_message
+  end
+  
   private
   
   def analytics

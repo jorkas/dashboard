@@ -1,0 +1,9 @@
+<header>
+    <h2>Message</h2>
+</header>
+<section>
+    <p>
+        <strong><%= @message[:message] %></strong> <small><%= time_ago_in_words @message[:datetime] %> ago from <%= @message[:from] %></small>
+    </p>
+
+</section>
