@@ -27,7 +27,7 @@ class Chartbeat
   def self.referrers
     visitors = recent_visitors
     referrers = visitors.map {|visitor| {:referrer => visitor['r'], :title => visitor['i'] } unless visitor['r'].blank? }.compact
-    referrers.select {|referrer| !%w"mynews ish.my".include? URI.parse(referrer[:referrer]).host[4..9] }
+    referrers.select {|referrer| !%w"google mynews ish.my".include? URI.parse(referrer[:referrer]).host[4..9] }
   end
   
   def self.recent_visitors
