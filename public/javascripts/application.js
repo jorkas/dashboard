@@ -74,6 +74,18 @@ $(document).ready(function(){
     
     recent_pressreleases_rotator()
     check_version()
+    
+    konami = new Konami()
+    konami.code = function() {
+        $("article").addClass("party")
+        document.getElementById('smb').play();
+        do_crazy_shit();
+    }
+
+    konami.load()
+
+
+
 })
 
 
@@ -229,4 +241,35 @@ function changeValue (element, new_value) {
             }
         });
     }
+}
+
+
+function do_crazy_shit(element){
+    setTimeout(function(){
+        do_crazy_shit()
+    }, 900)
+  if(!element){
+    var element = $("html, body, div, section, header, h2, span");
+  }
+  element.each(function(index, item){
+    animateLikeAMotherFucker(item)
+  })
+
+}
+
+function random_colour(){
+  var motherFuckingRed = Math.floor(Math.random()*256).toString(16);
+  var motherFuckingGreen = Math.floor(Math.random()*256).toString(16)
+  var motherFuckingBlue = Math.floor(Math.random()*256).toString(16)
+  var ohYeahNeedAHashInFront = "#";
+  return ohYeahNeedAHashInFront + motherFuckingRed + motherFuckingGreen + motherFuckingBlue
+}
+
+function animateLikeAMotherFucker (element){
+    try {
+        $(element).stop().animate({
+          backgroundColor: random_colour(),
+          color: random_colour()
+        }, 1500)
+    } catch(err) {}
 }

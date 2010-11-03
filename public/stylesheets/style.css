@@ -256,3 +256,11 @@ ul {
   font-size: 70%;
   color: #9F9F9F
 }
+
+
+article.party h2:after {
+  content: "!!!";
+}
+.party, .party h2 {
+  font-family: "comic sans ms";
+}
