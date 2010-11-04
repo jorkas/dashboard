@@ -261,6 +261,27 @@ ul {
 article.party h2:after {
   content: "!!!";
 }
+
 .party, .party h2 {
   font-family: "comic sans ms";
+  font-size: 30px;
+}
+
+#message {
+  z-index: 999;
+}
+#message section{
+  -webkit-transition: all 2.5s ease-in-out;
+  -moz-transition: all 2.5s ease-in-out;
+  -o-transition: all 2.5s ease-in-out;
+  transition: all 2.5s ease-in-out;
+}
+#message.newmessage section {
+  background: #4A994D;
+  z-index: 99;
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  transform: scale(2);
+  margin-left: -300px;
+  margin-right: 100px;
 }

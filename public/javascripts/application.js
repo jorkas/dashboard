@@ -68,7 +68,7 @@ $(document).ready(function(){
         next()
     })
     body.queue(function (next) {
-        load_widget("message", 40000)
+        load_widget("message", 40000, "message_callback")
         next()
     })
     
@@ -81,10 +81,7 @@ $(document).ready(function(){
         document.getElementById('smb').play();
         do_crazy_shit();
     }
-
     konami.load()
-
-
 
 })
 
@@ -137,6 +134,24 @@ function load_widget (name,ttl,callback) {
             }
         },ttl);
     };
+}
+
+function message_callback (data) {
+    oldmsg = $("#message strong").text()
+    newmsg = $("strong", data).text()
+    var div = $("#message")
+    div.html(data);
+    
+    if (oldmsg != newmsg) {
+        div.addClass("newmessage")
+        setTimeout(function(){
+            div.removeClass("newmessage")
+        }, 15000)
+    } else {
+        console.log("samma msg som tidigare")
+    }
+    
+    
 }
 
 function active_visits_callback (data) {
@@ -249,7 +264,7 @@ function do_crazy_shit(element){
         do_crazy_shit()
     }, 900)
   if(!element){
-    var element = $("html, body, div, section, header, h2, span");
+    var element = $("html, body, strong, section, header, h2, span");
   }
   element.each(function(index, item){
     animateLikeAMotherFucker(item)
