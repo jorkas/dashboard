@@ -67,7 +67,8 @@ class Gowalla
       'thompabompa' => 13865,
       'L8Fryklund' => 2113091,
       'catarinaclowe' => 2113390,
-      'torkelk' => 2112954
+      'torkelk' => 2112954,
+      'Tuorda' => 2114618
       }
     if avatars.has_key? name
       return "http://s3.amazonaws.com/static.gowalla.com/users/#{avatars[name]}-standard.jpg"
