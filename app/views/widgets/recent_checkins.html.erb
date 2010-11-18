@@ -4,7 +4,7 @@
 <section class="left">
     <ul>
     <%- @recent_checkins.each do |checkin| -%>
-        <li style="display: none;" data-id="<%= checkin.id %>"><img src="<%= checkin.image %>" alt="<%= checkin.name %>" /><span><%= checkin.name %></span><br/>@ <%= checkin.place %> <small><%= time_ago_in_words(checkin.time) %> ago</small></li>
+        <li style="display: none;" data-id="<%= checkin.id %>"><img style="height: 60px;background: url(http://gowalla.com/images/default-user.jpg); -webkit-background-size: 60px;" src="<%= checkin.image %>" alt="<%= checkin.name %>" /><span><%= checkin.name %></span><br/>@ <%= checkin.place %> <small><%= time_ago_in_words(checkin.time) %> ago</small></li>
     <%- end -%>
     </ul>
 </section>

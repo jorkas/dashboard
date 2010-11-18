@@ -62,7 +62,12 @@ class Gowalla
       'dwiberg' => 14419,
       'himynameisjonas' => 63524,
       'sofiaeiworth' => 121097,
-      'mgarbarczyk' => 1025564
+      'mgarbarczyk' => 1025564,
+      'twowe' => 226059,
+      'thompabompa' => 13865,
+      'L8Fryklund' => 2113091,
+      'catarinaclowe' => 2113390,
+      'torkelk' => 2112954
       }
     if avatars.has_key? name
       return "http://s3.amazonaws.com/static.gowalla.com/users/#{avatars[name]}-standard.jpg"
