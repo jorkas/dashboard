@@ -51,29 +51,8 @@ class Gowalla
   private
   
   def self.get_avatar(name)
-    avatars = {
-      'joakwest' => 16751,
-      'richardj' => 18417,
-      'dojan' => 14679,
-      'davidwennergren' => 15886,
-      'kungkeke' => 1483696,
-      'iPillan' => 64229,
-      'mhallqvist' => 15536,
-      'dwiberg' => 14419,
-      'himynameisjonas' => 63524,
-      'sofiaeiworth' => 121097,
-      'mgarbarczyk' => 1025564,
-      'twowe' => 226059,
-      'thompabompa' => 13865,
-      'L8Fryklund' => 2113091,
-      'catarinaclowe' => 2113390,
-      'torkelk' => 2112954,
-      'Tuorda' => 2114618
-      }
-    if avatars.has_key? name
-      return "http://s3.amazonaws.com/static.gowalla.com/users/#{avatars[name]}-standard.jpg"
-    else
-      return "http://gowalla.com/images/default-user.jpg"
-    end
+    user = GowallaUser.find_or_create_by_name(name)
+    user.image_url
   end
+  
 end
