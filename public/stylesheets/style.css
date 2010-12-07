@@ -295,6 +295,7 @@ body.visitors .flipclock_wrapper {
 }
 body.visitors .flipclock_overlay {
     height:436px;
+    border-top-width: 12px;
 }
 body.visitors p {
     display: none;
