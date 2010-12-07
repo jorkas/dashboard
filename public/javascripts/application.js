@@ -148,11 +148,7 @@ function message_callback (data) {
         setTimeout(function(){
             div.removeClass("newmessage")
         }, 15000)
-    } else {
-        console.log("samma msg som tidigare")
     }
-    
-    
 }
 
 function active_visits_callback (data) {
