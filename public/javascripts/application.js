@@ -35,7 +35,10 @@ $(document).ready(function(){
         })
     })
     
-    recent_pressreleases_rotator()
+    if ($("#recent_pressreleases").length > 0) {
+        recent_pressreleases_rotator()
+    };
+    
     check_version()
     
     konami = new Konami()
