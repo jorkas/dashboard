@@ -115,13 +115,6 @@ function load_widget (name,ttl,callback) {
             gthis[callback](data)
         } else {
             div = $("#"+name)
-
-            if ( $(".spinner",div).size() > 0) {
-                $(".spinner",div).fadeOut('slow', function() {
-                    div.html(data);
-                });
-            }
-
             div.html(data);
         }
     });
