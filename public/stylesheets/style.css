@@ -286,19 +286,19 @@ article.party h2:after {
 
 
 /* VISTOR STYLES */
-.grid_19.widget {
+body.visitors {
     border-bottom: 0;
 }
-.grid_19.widget .flipclock_wrapper {
+body.visitors .flipclock_wrapper {
     font-size: 900px;
     text-align: center;
 }
-.grid_19.widget .flipclock_overlay {
+body.visitors .flipclock_overlay {
     height:436px;
 }
-.grid_19.widget p {
+body.visitors p {
     display: none;
 }
-.grid_19.widget #online_now {
+body.visitors #online_now {
     display: none;
 }
