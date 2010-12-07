@@ -141,9 +141,10 @@ function message_callback (data) {
     newmsg = $("strong", data).text()
     var div = $("#message")
     div.html(data);
-    
     if (oldmsg != newmsg) {
-        div.addClass("newmessage")
+        if (oldmsg != "") {
+          div.addClass("newmessage")  
+        };
         setTimeout(function(){
             div.removeClass("newmessage")
         }, 15000)
