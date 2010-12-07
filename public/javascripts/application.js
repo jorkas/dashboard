@@ -27,49 +27,12 @@ $(document).ready(function(){
     
     var body = $("body")
     
-    body.queue(function (next) {
-        load_widget("recent_pressreleases",60000, "recent_pressreleases_callback")
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("recent_checkins",5000, "recent_checkins_callback")
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("total_visits", 1200000)
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("analytics_goals", 900000)
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("count_pressreleases",30000)
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("new_relic",40000)
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("top_countries",5000)
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("active_visits", 5000, 'active_visits_callback')
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("recent_referrers", 5000)
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("user_stats", 30000)
-        next()
-    })
-    body.queue(function (next) {
-        load_widget("message", 40000, "message_callback")
-        next()
+    $(".widget").each(function(i, element){
+        element = $(element);
+        body.queue(function (next) {
+            load_widget(element.attr("id"),element.data("refresh-time"), element.data("callback"))
+            next()
+        })
     })
     
     recent_pressreleases_rotator()
