@@ -1,32 +1,9 @@
 class WidgetsController < ApplicationController
   layout false
   
-  def total_visits
-    analytics
-    @total_visits = analytics.total_visits
-  end
-  
-  def top_countries
-    @top_countries = Chartbeat.countries[0...10]
-  end
-  
-  def top_searches
-    analytics
-    @top_searches = analytics.top_searches
-  end
-  
-  def recent_checkins
-    @recent_checkins = Gowalla.recent_checkins
-  end
-  
-  def recent_pressreleases
-    @recent_pressreleases = Mynewsdesk.recent_pressreleases
-  end
-  
-  def count_pressreleases
-    @today = Mynewsdesk.pressreleases_today
-    @yesterday = Mynewsdesk.pressreleases_yesterday
-    @last_week = Mynewsdesk.pressreleases_last_week
+  def active_visits
+    @stats = Chartbeat.quickstats
+    @history = Chartbeat.history
   end
   
   def analytics_goals
@@ -34,6 +11,16 @@ class WidgetsController < ApplicationController
     @signup_trials = analytics.signup_trials
     @signup_follows = analytics.signup_follows
     @signup_journalists = analytics.signup_journalists
+  end
+
+  def count_pressreleases
+    @today = Mynewsdesk.pressreleases_today
+    @yesterday = Mynewsdesk.pressreleases_yesterday
+    @last_week = Mynewsdesk.pressreleases_last_week
+  end
+  
+  def message
+    @message = Twitter.get_message
   end
   
   def new_relic
@@ -48,13 +35,26 @@ class WidgetsController < ApplicationController
     end
   end
   
-  def active_visits
-    @stats = Chartbeat.quickstats
-    @history = Chartbeat.history
+  def recent_checkins
+    @recent_checkins = Gowalla.recent_checkins
+  end
+  
+  def recent_pressreleases
+    @recent_pressreleases = Mynewsdesk.recent_pressreleases
   end
   
   def recent_referrers
     @referrers = Chartbeat.referrers[0...10]
+  end
+  
+  def total_visits
+    analytics
+    @total_visits = analytics.total_visits
+  end
+  
+  def top_searches
+    analytics
+    @top_searches = analytics.top_searches
   end
   
   def user_stats
@@ -63,8 +63,8 @@ class WidgetsController < ApplicationController
     @customers = Mynewsdesk.customers
   end
   
-  def message
-    @message = Twitter.get_message
+  def top_countries
+    @top_countries = Chartbeat.countries[0...10]
   end
   
   private
