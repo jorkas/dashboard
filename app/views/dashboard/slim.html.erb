@@ -25,14 +25,14 @@
         <div class="grid_9 suffix_1">
             <article class="widget alpha omega clearfix" id="active_visits" data-refresh-time="1200000" data-callback="active_visits_callback">
                 <section>
-                    <span class="big">553</span> <span class="description">Online right now</span>
-                    <div id="online_now"></div>
+                    <span class="big" id="online-users">553</span> <span class="description">Online right now</span>
+                    <div id="percent-bar"></div>
                 </section>
                 <section class="split" id="visitors-max"> 
-                    30-day average: <span class="visits_avg stats-val medium">340</span>
+                    30-day average: <span id="users-max" class="visits_avg stats-val medium">340</span>
                 </section>
                 <section class="slpit" id="visitors-avg"> 
-                    30-day max: <span class="visits_max stats-val medium">902</span>
+                    30-day max: <span id="users-avg" class="visits_max stats-val medium">902</span>
                 </section>
             </article>
         </div>
@@ -40,7 +40,7 @@
             <article class="widget bars">
                 <div class="clearfix">
                     <h3>Top countries right now</h3>
-                    <div class="bars">
+                    <div id="bar-chart" class="bars">
                         <div class="bar bar1"><div>&#160;</div><span>320</span><span class="country">Sweden</span></div>
                         <div class="bar bar2"><div>&#160;</div><span>123</span><span class="country">United Kingdom</span></div>
                         <div class="bar bar3"><div>&#160;</div><span>80</span><span class="country">Denmark</span></div>

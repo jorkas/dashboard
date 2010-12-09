@@ -14,7 +14,7 @@ body {
     width:100%;
     display:inline-block;
     max-height:1200px;
-    border-bottom:4px solid red;
+/*    border-bottom:4px solid red;*/
 }
 .wrapper_19{
     float:left;
@@ -117,7 +117,7 @@ header h3{
 #active_visits .description{
     font-size:60px;
 }
-#online_now{
+#percent-bar{
     margin:41px 0;
     line-height:80px;
 }
@@ -131,26 +131,27 @@ span.red{color:#ad8e21;}
 #server .stats-val{
     display:block;
 }
-#online_now span{
+#percent-bar span{
     display:inline-block;
     width:4px;
-    margin-right:4px;
+    margin-right:3px;
     background-color:#484848;
 }
-#online_now span.low{
+#percent-bar span.low{
     background-color:#ad2b21;
 }
-#online_now span.medium{
+#percent-bar span.medium{
     background-color:#9bad21;
 }
-#online_now span.high{
+#percent-bar span.high{
     background-color:#ad8e21;
 }
-#online_now span.summary{
+#percent-bar span.summary{
+    text-align:center;
     background:none;
     margin:0;
-    width:auto;
-    padding:0 0 0 5px;
+    width:170px;
+    padding:0 0 0 10px;
 }
 .grid_9 .split{
     width:440px;
@@ -204,16 +205,16 @@ div.bars{
     text-align:center;
     display:block;
 }
-.bar1 div{background:#e34300;}
-.bar2 div{background:#66aa35;}
-.bar3 div{background:#4c89d2;}
-.bar4 div{background:#edef00;}
-.bar5 div{background:#24cbe5;}
-.bar6 div{background:#64e572;}
-.bar7 div{background:#ff9655;}
-.bar8 div{background:#fff263;}
-.bar9 div{background:#6af9c4;}
-.bar10 div{background:#b2deff;}
+.bar-1 div{background:#e34300;}
+.bar-2 div{background:#66aa35;}
+.bar-3 div{background:#4c89d2;}
+.bar-4 div{background:#edef00;}
+.bar-5 div{background:#24cbe5;}
+.bar-6 div{background:#64e572;}
+.bar-7 div{background:#ff9655;}
+.bar-8 div{background:#fff263;}
+.bar-9 div{background:#6af9c4;}
+.bar-10 div{background:#b2deff;}
 
 
 
