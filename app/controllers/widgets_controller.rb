@@ -52,11 +52,6 @@ class WidgetsController < ApplicationController
     @total_visits = analytics.total_visits
   end
   
-  def top_searches
-    analytics
-    @top_searches = analytics.top_searches
-  end
-  
   def user_stats
     @followers = Mynewsdesk.followers
     @journalists = Mynewsdesk.journalists

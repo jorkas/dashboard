@@ -61,33 +61,6 @@ class Analytics
     results
   end
   
-  def top_searches
-    results = Rails.cache.fetch("garb_top_searches", :expires_in => 1.hour) do
-      report = Garb::Report.new(@profile,
-                     :limit => 20,
-                     :start_date => (Date.today - 7.day),
-                     :end_date => (Date.today + 1.day))
-      report.metrics :visits
-      report.dimensions :pagePath
-      report.sort :visits.desc
-      report.filters do
-        contains(:page_path, 'query=')
-        contains(:page_path, '/search/')
-        does_not_contain(:page_path, 'query=&')
-      end
-      report.results
-    end
-    
-    
-    searchterms = Array.new
-    
-    results.each do |result|
-      search_term = CGI.parse(result.page_path)['query'].to_s
-      searchterms << {:search_term => search_term, :visits => result.visits.to_i } unless search_term.empty?
-    end
-    searchterms[0...10]
-  end
-  
   private
   
   def get_end_date(end_date, number_of_days)
