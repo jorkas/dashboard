@@ -4,11 +4,7 @@
 <section class="left">
     <ul>
     <%- @referrers.each do |referrer| -%>
-        <%
-        uri = URI.parse(referrer[:referrer])
-        title = referrer[:title]
-        %>
-        <li><%= uri.host.gsub('www.', '').strip %><span> → <%= title[0,title.index("-")-1] %></span></li>
+        <li><%= referrer[:referrer].host.gsub('www.', '').strip %><span> → <%= referrer[:title][0,referrer[:title].index("-")-1] %></span></li>
     <%- end -%>
     </ul>
 </section>
