@@ -283,3 +283,23 @@ article.party h2:after {
   margin-left: -300px;
   margin-right: 100px;
 }
+
+
+/* VISTOR STYLES */
+body.visitors {
+    border-bottom: 0;
+}
+body.visitors .flipclock_wrapper {
+    font-size: 900px;
+    text-align: center;
+}
+body.visitors .flipclock_overlay {
+    height:436px;
+    border-top-width: 12px;
+}
+body.visitors p {
+    display: none;
+}
+body.visitors #online_now {
+    display: none;
+}

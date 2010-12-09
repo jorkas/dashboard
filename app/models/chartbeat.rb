@@ -26,12 +26,12 @@ class Chartbeat
   
   def self.referrers
     visitors = recent_visitors
-    referrers = visitors.map {|visitor| {:referrer => visitor['r'], :title => visitor['i'] } unless visitor['r'].blank? }.compact
-    referrers.select {|referrer| !%w"google mynews ish.my".include? URI.parse(referrer[:referrer]).host[4..9] }
+    referrers = visitors.map {|visitor| {:referrer => URI.parse(URI.escape(visitor['r'])), :title => visitor['i'] } unless visitor['r'].blank? }.compact
+    referrers.select {|referrer| !%w"google mynews ish.my".include? referrer[:referrer].host[4..9] }
   end
   
   def self.recent_visitors
-    Rails.cache.fetch("chartbeat_recent_visitors", :expires_in => 5.seconds) do
+    Rails.cache.fetch("chartbeat_recent_visitors", :expires_in => 7.seconds) do
       require 'open-uri'
       doc = open "http://api.chartbeat.com/recent/?host=mynewsdesk.com&limit=1000&apikey=#{CONFIG['chartbeat_key']}"
       JSON.parse doc.read.to_s

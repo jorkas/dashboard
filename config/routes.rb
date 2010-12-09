@@ -1,6 +1,6 @@
 Dashboard::Application.routes.draw do
   root :to => "dashboard#index"
-
+  match 'visitors' => "dashboard#visitors"
   match 'gowalla' => "pshb#gowalla"
   match 'widgets/:action' => 'widgets#:action'
 
