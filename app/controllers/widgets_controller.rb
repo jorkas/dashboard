@@ -7,7 +7,6 @@ class WidgetsController < ApplicationController
   end
   
   def top_countries
-    analytics
     @top_countries = Chartbeat.countries[0...10]
   end
   
