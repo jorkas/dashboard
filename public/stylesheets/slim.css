@@ -1,0 +1,220 @@
+body {
+  margin-top:0px;
+  background-color: #000000;
+  color: #EBEBEB;
+  font: 35px/1.5em 'helvetica neue', helvetica, arial;
+  letter-spacing: 0.05em;
+  font-weight: 100;
+  /*overflow: hidden;*/
+}
+.hidden{
+    display:none;
+}
+#container{
+    width:100%;
+    display:inline-block;
+    max-height:1200px;
+    border-bottom:4px solid red;
+}
+.wrapper_19{
+    float:left;
+    display:inline;
+    width:1900px;
+}
+.border{
+    border-bottom:4px solid #333333;
+}
+article.widget{
+    margin-bottom:20px;
+    padding:20px 0;
+}
+article.border-top{
+    border-top:4px solid #333333;
+}
+article.border-bottom{
+    border-bottom:4px solid #333333;
+}
+article.widget header{
+    margin-top:0;
+    margin-bottom:20px;
+}
+.stats-row{
+    padding:20px 0;
+}
+.stats-row.slim{
+    font-size:20px;
+    line-height:30px;
+}
+.stats-row.slim .stats-val{
+    font-size:30px;
+}
+ul{list-style-type:none;}
+time{
+    display:block;
+    text-align:right;
+    font-size:60px;
+    font-weight:100;
+}
+time span{
+    font-size:50%;
+}
+.big{
+    /*font-family: 'Allerta Stencil', serif;*/
+    font-size: 100px;
+    font-weight: 500;
+    line-height: 1em;
+}
+.stats-val{
+    font-size:60px;
+}
+h3{
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 1em;
+}
+header h3{
+    margin-bottom:40px;
+}
+#user-stats p{
+    margin:0px 0 20px;
+}
+#user-stats p:last-child{
+    margin:0;
+}
+#user-stats span.description{
+    padding-left:10px;
+    font-size:20px;
+}
+#pressreleases-latest{
+    text-align:right;
+}
+#pressreleases-latest time{
+    font-size:inherit;
+    display:inline-block;
+} 
+/*status arrows*/
+.arrow {
+  display: inline-block;
+  height: 0px;
+  margin: 0px 10px 5px 0px;
+  width: 0px;
+}
+
+.up .arrow {
+  border-bottom: 23px solid #9bad21;
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+}
+
+.down .arrow {
+  border-left: 23px solid transparent;
+  border-right: 23px solid transparent;
+  border-top: 23px solid #ad2121;
+}
+#active_visits .big{
+    font-size:200px;
+}
+#active_visits .description{
+    font-size:60px;
+}
+#online_now{
+    margin:41px 0;
+    line-height:80px;
+}
+span.low{color:#ad2b21;}
+time,span.medium{color:#9bad21;}
+span.high{color:#ad8e21;}
+/*server status*/
+span.yellow{color:#ad2b21;}
+span.green{color:#9bad21;}
+span.red{color:#ad8e21;}
+#server .stats-val{
+    display:block;
+}
+#online_now span{
+    display:inline-block;
+    width:4px;
+    margin-right:4px;
+    background-color:#484848;
+}
+#online_now span.low{
+    background-color:#ad2b21;
+}
+#online_now span.medium{
+    background-color:#9bad21;
+}
+#online_now span.high{
+    background-color:#ad8e21;
+}
+#online_now span.summary{
+    background:none;
+    margin:0;
+    width:auto;
+    padding:0 0 0 5px;
+}
+.grid_9 .split{
+    width:440px;
+    float:left;
+}
+.grid_9 #visitors-avg{
+    text-align:right;
+}
+/*bars*/
+article.bars h3{
+    /*color:#888;*/
+    text-align:right;
+    position:relative;
+    top:120px;
+}
+div.bars{
+    display:inline-block;
+}
+.bar .country{
+    border:0px solid red;
+    writing-mode:tb-rl;
+    -webkit-transform:rotate(-90deg);
+    -moz-transform:rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    white-space:nowrap;
+    display:block;
+    bottom:0;
+    top:-200px;
+    width:80px;
+    margin-bottom:-80px;
+    height:60px;
+    font-size:14px;
+    text-shadow: 0px 0px 1px #333;
+    position:relative;
+}
+.bar{
+    /*text-align:center;*/
+    font-size:12px;
+    bottom:0px;
+    float:left;
+    width:80px;
+    margin-right:5px;
+}
+.bar div{
+    -moz-border-radius:10px 10px 0 0;
+    -webkit-border-radius:10px 10px 0 0;
+    border-radius:10px 10px 0 0;
+}
+.bar span:nth-child(2){
+    font-size:18px;
+    text-align:center;
+    display:block;
+}
+.bar1 div{background:#e34300;}
+.bar2 div{background:#66aa35;}
+.bar3 div{background:#4c89d2;}
+.bar4 div{background:#edef00;}
+.bar5 div{background:#24cbe5;}
+.bar6 div{background:#64e572;}
+.bar7 div{background:#ff9655;}
+.bar8 div{background:#fff263;}
+.bar9 div{background:#6af9c4;}
+.bar10 div{background:#b2deff;}
+
+
+
+

@@ -5,6 +5,7 @@ Dashboard::Application.routes.draw do
   match 'widgets/:action' => 'widgets#:action'
 
   match 'version' => "dashboard#version"
+  match 'slim' => "dashboard#slim"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
