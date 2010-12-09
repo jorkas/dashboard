@@ -31,7 +31,7 @@ class Chartbeat
   end
   
   def self.recent_visitors
-    Rails.cache.fetch("chartbeat_recent_visitors", :expires_in => 5.seconds) do
+    Rails.cache.fetch("chartbeat_recent_visitors", :expires_in => 7.seconds) do
       require 'open-uri'
       doc = open "http://api.chartbeat.com/recent/?host=mynewsdesk.com&limit=1000&apikey=#{CONFIG['chartbeat_key']}"
       JSON.parse doc.read.to_s
