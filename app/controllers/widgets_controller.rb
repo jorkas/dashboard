@@ -85,6 +85,24 @@ class WidgetsController < ApplicationController
     end
   end
   
+  def combined_user_stats
+    content = {
+      :mynewsdesk => {
+        :followers => Mynewsdesk.followers,
+        :journalists => Mynewsdesk.journalists,
+        :customers => Mynewsdesk.customers      
+      },
+      :google => {
+        :signup_trials => analytics.signup_trials,
+        :signup_follows => analytics.signup_follows,
+        :signup_journalists => analytics.signup_journalists      
+      }
+    }
+    respond_to do |format|
+      format.json { render :json => content }
+    end
+  end
+  
   def user_stats
     content = {
       :followers => Mynewsdesk.followers,

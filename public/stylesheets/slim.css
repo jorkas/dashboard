@@ -98,15 +98,13 @@ header h3{
   height: 0px;
   margin: 0px 10px 5px 0px;
   width: 0px;
-}
-
-.up .arrow {
   border-bottom: 23px solid #9bad21;
   border-left: 23px solid transparent;
   border-right: 23px solid transparent;
 }
 
 .down .arrow {
+  border-bottom: 0px;
   border-left: 23px solid transparent;
   border-right: 23px solid transparent;
   border-top: 23px solid #ad2121;
