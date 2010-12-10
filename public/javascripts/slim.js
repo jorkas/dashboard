@@ -231,10 +231,8 @@ Dashboard.loader = (function(){
                 }
             });
             setTimeout(function(){
-                console.log(app_version)
-                console.log("checkversion");
                 Dashboard.loader.checkVersion();
-            },5000);
+            },50000);
         }
     };
 })();
