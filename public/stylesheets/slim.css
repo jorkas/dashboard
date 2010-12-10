@@ -21,6 +21,12 @@ body {
     display:inline;
     width:1900px;
 }
+.branding{
+    display:inline-block;
+    width:380px;
+    height:60px;
+    background:url(/images/branding.png) no-repeat right center;
+}
 .border{
     border-bottom:4px solid #333333;
 }

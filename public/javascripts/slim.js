@@ -34,7 +34,7 @@ Dashboard.app = (function(){
         return strHtml;  
     };
     var getBarItemHtml = function(max,identifier,label,value,percent){
-        return '<div class="bar bar-'+ identifier +'"><div>&#160;</div><span data-percent="'+ percent+'">'+ value +'</span><span class="country">'+ label +'</span></div>';
+        return '<div class="bar bar-'+ identifier +'"><div>&#160;</div><span data-percent="'+ percent+'">'+ value +'</span><span class="country">'+ label + '</span></div>';
     };
     var getBarsHtml = function(visitorsByCountry,minHeight){
         var countries = $(visitorsByCountry.countries);
