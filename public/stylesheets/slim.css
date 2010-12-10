@@ -5,7 +5,7 @@ body {
   font: 35px/1.5em 'helvetica neue', helvetica, arial;
   letter-spacing: 0.05em;
   font-weight: 100;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 .hidden{
     display:none;

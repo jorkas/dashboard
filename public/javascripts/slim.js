@@ -33,6 +33,17 @@ Dashboard.app = (function(){
         strHtml += "<span class=\"summary "+ getClassFromPercent(percentOfMax) +"\">"+ parseInt(percentOfMax,10) +"%</span>";
         return strHtml;  
     };
+    var formatNumber = function(number, seperator){
+        number += '';
+        x = number.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + seperator + '$2');
+        }
+        return x1 + x2;
+    };
     var getBarItemHtml = function(max,identifier,label,value,percent){
         return '<div class="bar bar-'+ identifier +'"><div>&#160;</div><span data-percent="'+ percent+'">'+ value +'</span><span class="country">'+ label +'</span></div>';
     };
@@ -157,7 +168,7 @@ Dashboard.app = (function(){
         },
         renderTotalVisits: function(data){
             var total = $("#total-visits");
-            total.find("span.big").text(data.now);
+            total.find("span.big").text(formatNumber(data.now," "));
             total.find("strong").text(roundNumber(data.percent,2) + "%");
             var arrow = total.find("span.arrow-wrapper");
             if(data.percent < 0){
