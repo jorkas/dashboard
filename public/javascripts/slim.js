@@ -6,16 +6,6 @@ var app_version = "";
 
 Dashboard.app = (function(){
     var rotator;
-    var getClassFromPercent = function(percent){
-        if(percent<30){
-            cssClass = "medium";
-        }else if(percent<75){
-            cssClass = "medium";
-        }else{
-            cssClass = "medium";
-        }
-        return cssClass;
-    };
     var getActiveGraphHtml = function(data){
         var active = data.active;
         var max = data.max;
@@ -24,13 +14,13 @@ Dashboard.app = (function(){
         var cssClass = "low";
         for(var i=0;i<100;i++){
             if(i <= percentOfMax){
-                strHtml += "<span class=\""+ getClassFromPercent(i) +"\">&#160;</span>";
+                strHtml += "<span class=\"active-color\">&#160;</span>";
             }
             else{
                 strHtml += "<span>&#160;</span>";
             }
         }
-        strHtml += "<span class=\"summary "+ getClassFromPercent(percentOfMax) +"\">"+ parseInt(percentOfMax,10) +"%</span>";
+        strHtml += "<span class=\"summary active-color\">"+ parseInt(percentOfMax,10) +"%</span>";
         return strHtml;  
     };
     var getBarItemHtml = function(max,identifier,label,value,percent){
@@ -69,7 +59,7 @@ Dashboard.app = (function(){
         var container = $("#pressreleases-latest>span");
         var dt = new Date(data[index].date);
         //var text = "<time>" + new Date(data[index].date) +"</time>" + data[index].author + " - " +data[index].title;
-        var text = "<strong class=\"high\">"+ data[index].author + "</strong> - " +data[index].title;
+        var text = "<strong class=\"text-highlight\">"+ data[index].author + "</strong> - " +data[index].title;
         container.hide();
         container.fadeIn(200).delay(3000).fadeOut(300);
         container.html(text);
@@ -98,7 +88,7 @@ Dashboard.app = (function(){
         return date.format("dashboard_date");
     };
     var getCheckinHtml = function(checkin){
-        return '<li data-id="'+checkin.id+'" class="grid_4"><img src="'+checkin.image+'"><span class="high">'+checkin.name+'</span>'+checkin.place+'<small>'+ formatDate(checkin.time) +'</small></li>';
+        return '<li data-id="'+checkin.id+'" class="grid_4"><img src="'+checkin.image+'"><span class="text-highlight">'+checkin.name+'</span>'+checkin.place+'<small>'+ formatDate(checkin.time) +'</small></li>';
     };
     return{
         init: function(){

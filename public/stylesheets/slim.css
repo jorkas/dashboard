@@ -139,12 +139,11 @@ header h3{
     margin:41px 0;
     line-height:80px;
 }
-strong.low,
-span.low{color:#ad2b21;}
-time,
-span.medium{color:#9bad21;}
-strong.high,
-span.high{color:#ad8e21;}
+.summary{
+    background-color:none;
+}
+.number-highlight{color:#9bad21;}
+.text-highlight{color:#ad8e21;}
 /*server status*/
 span.yellow{color:#ad2b21;}
 span.green{color:#9bad21;}
@@ -159,17 +158,12 @@ span.red{color:#ad8e21;}
     margin-right:3px;
     background-color:#484848;
 }
-#percent-bar span.low{
-    background-color:#ad2b21;
-}
-#percent-bar span.medium{
+#percent-bar .active-color{
     background-color:#9bad21;
-}
-#percent-bar span.high{
-    background-color:#ad8e21;
+    color:#9bad21;
 }
 #percent-bar span.summary{
-    text-align:center;
+    text-align:right;
     background:none;
     margin:0;
     width:170px;
