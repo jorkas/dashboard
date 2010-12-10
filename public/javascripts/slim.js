@@ -194,6 +194,11 @@ Dashboard.app = (function(){
                 "max": data.history.people_max
             }));
         },
+        renderMessage: function(data){
+          $("#twitter-message p.message").text(data.message);
+          $("#twitter-message span.from").text(data.from);
+          $("#twitter-message time").text(formatDate(data.datetime));
+        },
         renderRecentCheckins: function(data){
             var strHtml = "";
             $(data).each(function(i,checkin){

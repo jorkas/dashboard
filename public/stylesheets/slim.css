@@ -48,10 +48,12 @@ article.widget header{
     font-size:30px;
 }
 ul{list-style-type:none;}
-time{
+#pressreleases time{
     display:none;
-    text-align:right;
     font-size:60px;
+}
+time{
+    text-align:right;
     font-weight:100;
 }
 time span{
@@ -110,6 +112,10 @@ header h3{
   border-left: 23px solid transparent;
   border-right: 23px solid transparent;
 }
+.comment .arrow{
+    border-bottom: 0px;
+    border-top: 23px solid rgba(255,255,255,0.1);
+}
 
 .down .arrow {
   border-bottom: 0px;
@@ -127,13 +133,17 @@ header h3{
     margin:41px 0;
     line-height:80px;
 }
-strong.low,span.low{color:#ad2b21;}
-time,span.medium{color:#9bad21;}
-strong.high,span.high{color:#ad8e21;}
+strong.low,
+span.low{color:#ad2b21;}
+time,
+span.medium{color:#9bad21;}
+strong.high,
+span.high{color:#ad8e21;}
 /*server status*/
 span.yellow{color:#ad2b21;}
 span.green{color:#9bad21;}
 span.red{color:#ad8e21;}
+
 #server .stats-val{
     display:block;
 }
@@ -180,6 +190,24 @@ span.red{color:#ad8e21;}
 }
 #recent-checkins span {
     display: block;
+}
+#twitter-message{
+    line-height:30px;
+    font-size:20px;
+}
+#twitter-message .message {
+    padding: 10px 20px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+#twitter-message .description{
+    padding:0px 20px 0 0;
+    color:#484848;
+    text-align:right;
+}
+#twitter-message .description time{
+    padding-left:10px;
 }
 /*bars*/
 article.bars h3{
