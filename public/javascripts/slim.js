@@ -33,17 +33,6 @@ Dashboard.app = (function(){
         strHtml += "<span class=\"summary "+ getClassFromPercent(percentOfMax) +"\">"+ parseInt(percentOfMax,10) +"%</span>";
         return strHtml;  
     };
-    var formatNumber = function(number, seperator){
-        number += '';
-        x = number.split('.');
-        x1 = x[0];
-        x2 = x.length > 1 ? '.' + x[1] : '';
-        var rgx = /(\d+)(\d{3})/;
-        while (rgx.test(x1)) {
-            x1 = x1.replace(rgx, '$1' + seperator + '$2');
-        }
-        return x1 + x2;
-    };
     var getBarItemHtml = function(max,identifier,label,value,percent){
         return '<div class="bar bar-'+ identifier +'"><div>&#160;</div><span data-percent="'+ percent+'">'+ value +'</span><span class="country">'+ label +'</span></div>';
     };
@@ -92,8 +81,23 @@ Dashboard.app = (function(){
     var roundNumber = function(val,decimals){
       return Math.round(val*Math.pow(10,decimals))/Math.pow(10,decimals);  
     };
+    var formatNumber = function(number, seperator){
+        number += '';
+        x = number.split('.');
+        x1 = x[0];
+        x2 = x.length > 1 ? '.' + x[1] : '';
+        var rgx = /(\d+)(\d{3})/;
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + seperator + '$2');
+        }
+        return x1 + x2;
+    };
+    var formatDate = function(date){
+        date = new Date(date);
+        return date.toLocaleString();
+    };
     var getCheckinHtml = function(checkin){
-        return '<li data-id="'+checkin.id+'" class="grid_4"><img src="'+checkin.image+'"><span class="high">'+checkin.name+'</span>'+checkin.place+'<small>'+checkin.time+'</small></li>';
+        return '<li data-id="'+checkin.id+'" class="grid_4"><img src="'+checkin.image+'"><span class="high">'+checkin.name+'</span>'+checkin.place+'<small>'+ formatDate(checkin.time) +'</small></li>';
     };
     return{
         init: function(){
@@ -121,7 +125,7 @@ Dashboard.app = (function(){
             var summaryStats;
             var goals;
             var statswrapper = $(".stats-customer");
-            statswrapper.find(".total").text(data.mynewsdesk.customers.total);
+            statswrapper.find(".total").text(formatNumber(data.mynewsdesk.customers.total," "));
             //Customer
             summaryStats = statswrapper.find(".summary-stats");
             summaryStats.find(".today").text(data.mynewsdesk.customers.today);
@@ -137,7 +141,7 @@ Dashboard.app = (function(){
             
             //Followers
             statswrapper = $(".stats-followers");
-            statswrapper.find(".total").text(data.mynewsdesk.followers.total);
+            statswrapper.find(".total").text(formatNumber(data.mynewsdesk.followers.total," "));
             summaryStats = statswrapper.find(".summary-stats");
             summaryStats.find(".today").text(data.mynewsdesk.followers.today);
             summaryStats.find(".yesterday").text(data.mynewsdesk.followers.yesterday);
@@ -152,7 +156,7 @@ Dashboard.app = (function(){
             
             //Journalists
             statswrapper = $(".stats-journalists");
-            statswrapper.find(".total").text(data.mynewsdesk.journalists.total);
+            statswrapper.find(".total").text(formatNumber(data.mynewsdesk.journalists.total," "));
             summaryStats = statswrapper.find(".summary-stats");
             summaryStats.find(".today").text(data.mynewsdesk.journalists.today);
             summaryStats.find(".yesterday").text(data.mynewsdesk.journalists.yesterday);
