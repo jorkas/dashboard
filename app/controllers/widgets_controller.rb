@@ -115,7 +115,10 @@ class WidgetsController < ApplicationController
   end
   
   def top_countries
-    content = Chartbeat.countries[0...10].to_json
+    content = {
+      :countries => Chartbeat.countries[0...10],
+      :total => Chartbeat.quickstats["visits"]
+    }
     respond_to do |format|
       format.json { render :json => content }
     end

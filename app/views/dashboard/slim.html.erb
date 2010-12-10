@@ -15,32 +15,36 @@
         <div class="grid_4 stats-row">
             <time datetime="2010-12-13T12:23" class="medium">12:23 <span>13/12</span></time>
         </div>
-        <div id="pressreleases-latest" class="grid_19 dynamic-loader" data-action="/widgets/recent_pressreleases" data-callback="renderPressreleases" data-refresh-time="60000">
-            <span>&#160;</span>&#160;
-            <!--<time>12:23</time> - Kapitalinvestering öppnar ny marknad för Nordic Flanges</strong> - <span>Vinovativa</span>-->
+        <div id="pressreleases-latest" class="grid_19 dynamic-loader" data-action="/widgets/recent_pressreleases" data-callback="renderPressreleases" data-refresh-time="50000">
+            <span>&#160;</span>
         </div>
     </div>
 </div>
 <div class="container_19">
     <div class="wrapper_19 border">
         <div class="grid_9 suffix_1">
-            <article class="widget alpha omega clearfix dynamic-loader" data-action="/widgets/active_visits" data-callback="renderActiveUsersGraph" data-refresh-time="10000">
+            <article class="widget alpha omega clearfix dynamic-loader" data-action="/widgets/active_visits" data-callback="renderActiveUsersGraph" data-refresh-time="5000">
                 <section>
                     <span class="big" id="online-users">&#160;</span> <span class="description">Online right now</span>
                     <div id="percent-bar"></div>
                 </section>
-                <section class="split" id="visitors-max"> 
-                    30-day average: <span id="online-avg" class="visits_avg stats-val medium">&#160;</span>
+                <section class="split"> 
+                    30-day average: <span id="online-avg" class="stats-val medium">&#160;</span>
                 </section>
-                <section class="slpit" id="visitors-avg"> 
-                    30-day max: <span id="online-max" class="visits_max stats-val medium">&#160;</span>
+                <section class="split right"> 
+                    30-day max: <span id="online-max" class="stats-val medium">&#160;</span>
+                </section>
+                <section class="split"> 
+                    Return average: <span id="return-avg" class="stats-val medium">123</span>
+                </section>
+                <section class="split right"> 
+                    Return max: <span id="return-max" class="stats-val medium">4332</span>
                 </section>
             </article>
         </div>
         <div class="grid_9">
             <article class="widget bars dynamic-loader" data-action="/widgets/top_countries" data-callback="renderActiveUsersByCountry" data-refresh-time="5000">
                 <div class="clearfix">
-                    <h3>Top countries right now</h3>
                     <div id="bar-chart" class="bars">&#160;</div>
                 </div>
             </article>
@@ -50,23 +54,31 @@
 <div class="container_19">
     <div class="wrapper_19 border">
         <div class="grid_9 suffix_1">
-            <article id="user-stats" class="widget dynamic-loader" data-action="/widgets/combined_user_stats" data-callback="renderCombinedUserStats" data-refresh-time="5000">
-                <section>
-                    <div id="stats-customer">
-                        <p><span><span class="stats-val total">&#160;</span> Customers</span></p>
-                        <p class="summary-stats"><strong class="today">&#160;</strong> today, <strong class="yesterday">&#160;</strong> yesterday</p>
-                        <p class="goals"><strong class="yesterday">&#160;</strong> trials yesterday <span class="arrow-wrapper"><span class="arrow"></span><strong>&#160;</strong></span><span class="description">1 week</span></p>
-                    </div>
-                    <div id="stats-followers" class="hidden">
-                        <p><span><span class="stats-val total">&#160;</span> Followers</span></p>
-                        <p class="summary-stats"><strong class="today">&#160;</strong> today, <strong class="yesterday">&#160;</strong> yesterday</p>
-                        <p class="goals"><strong class="yesterday">&#160;</strong> followers yesterday <span class="arrow-wrapper"><span class="arrow"></span><strong>&#160;</strong></span><span class="description">1 week</span></p>
-                    </div>
-                    <div id="stats-journalists" class="hidden">
-                        <p><span><span class="stats-val total">&#160;</span> Journalists</span></p>
-                        <p class="summary-stats"><strong class="today">&#160;</strong> today, <strong class="yesterday">&#160;</strong> yesterday</p>
-                        <p class="goals"><strong class="yesterday">&#160;</strong> journalists yesterday <span class="arrow-wrapper"><span class="arrow"></span><strong>&#160;</strong></span><span class="description">1 week</span></p>
-                    </div>
+            <article id="user-stats" class="widget dynamic-loader" data-action="/widgets/combined_user_stats" data-callback="renderCombinedUserStats" data-refresh-time="300000">
+                <section id="slider">
+                    <ul>
+                        <li>
+                            <div class="stats-customer">
+                                <p><span><span class="stats-val total">&#160;</span> Customers</span></p>
+                                <p class="summary-stats"><strong class="today">&#160;</strong> today, <strong class="yesterday">&#160;</strong> yesterday</p>
+                                <p class="goals"><strong class="yesterday">&#160;</strong> trials yesterday <span class="arrow-wrapper"><span class="arrow"></span><strong>&#160;</strong></span><span class="description">1 week</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="stats-followers">
+                                <p><span><span class="stats-val total">&#160;</span> Followers</span></p>
+                                <p class="summary-stats"><strong class="today">&#160;</strong> today, <strong class="yesterday">&#160;</strong> yesterday</p>
+                                <p class="goals"><strong class="yesterday">&#160;</strong> followers yesterday <span class="arrow-wrapper"><span class="arrow"></span><strong>&#160;</strong></span><span class="description">1 week</span></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="stats-journalists">
+                                <p><span><span class="stats-val total">&#160;</span> Journalists</span></p>
+                                <p class="summary-stats"><strong class="today">&#160;</strong> today, <strong class="yesterday">&#160;</strong> yesterday</p>
+                                <p class="goals"><strong class="yesterday">&#160;</strong> journalists yesterday <span class="arrow-wrapper"><span class="arrow"></span><strong>&#160;</strong></span><span class="description">1 week</span></p>
+                            </div>
+                        </li>
+                    </ul>
                 </section>
             </article>
         </div>
@@ -89,6 +101,17 @@
                 </ul>
             </article>
         </div>
+    </div>
+</div>
+<div class="container_19">
+    <div id="recent-checkins" class="wrapper_19 border stats-row slim dynamic-loader" data-action="/widgets/recent_checkins" data-callback="renderRecentCheckins" data-refresh-time="5000">
+        <div class="grid_2 suffix_1">Recent checkins</div>
+        <ul>
+            <li data-id="23644167" class="grid_4"><img alt="Jonas Forsberg" src="http://s3.amazonaws.com/static.gowalla.com/users/63524-standard.jpg"><span class="high">Jonas Forsberg</span>Stockholm office <small>32 minutes ago</small></li>
+            <li data-id="23644167" class="grid_4"><img alt="Jonas Forsberg" src="http://s3.amazonaws.com/static.gowalla.com/users/63524-standard.jpg"><span class="high">Jonas Forsberg</span>Stockholm office <small>32 minutes ago</small></li>
+            <li data-id="23644167" class="grid_4"><img alt="Jonas Forsberg" src="http://s3.amazonaws.com/static.gowalla.com/users/63524-standard.jpg"><span class="high">Carl-Fredrik Wållgren</span>Stockholm office <small>32 minutes ago</small></li>
+            <li data-id="23644167" class="grid_4"><img alt="Jonas Forsberg" src="http://s3.amazonaws.com/static.gowalla.com/users/63524-standard.jpg"><span class="high">Jonas Forsberg</span>Stockholm office <small>32 minutes ago</small></li>
+        </ul>
     </div>
 </div>
 <div class="container_19">

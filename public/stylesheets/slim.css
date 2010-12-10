@@ -25,7 +25,6 @@ body {
     border-bottom:4px solid #333333;
 }
 article.widget{
-    margin-bottom:20px;
     padding:20px 0;
 }
 article.border-top{
@@ -86,12 +85,21 @@ header h3{
     font-size:20px;
 }
 #pressreleases-latest{
-    text-align:right;
+    height:60px;
 }
-#pressreleases-latest time{
-    font-size:inherit;
+#pressreleases-latest>span{
     display:inline-block;
-} 
+    width: 1880px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+#pressreleases-latest>span strong{
+    font-weight:100;
+}
+#pressreleases .stats-row {
+    padding-top: 10px;
+}
 /*status arrows*/
 .arrow {
   display: inline-block;
@@ -119,9 +127,9 @@ header h3{
     margin:41px 0;
     line-height:80px;
 }
-span.low{color:#ad2b21;}
+strong.low,span.low{color:#ad2b21;}
 time,span.medium{color:#9bad21;}
-span.high{color:#ad8e21;}
+strong.high,span.high{color:#ad8e21;}
 /*server status*/
 span.yellow{color:#ad2b21;}
 span.green{color:#9bad21;}
@@ -154,16 +162,29 @@ span.red{color:#ad8e21;}
 .grid_9 .split{
     width:440px;
     float:left;
+    margin-bottom:30px;
 }
-.grid_9 #visitors-avg{
+.grid_9 .split.right{
     text-align:right;
+}
+
+#recent-checkins img {
+    float: left;
+    width: 80px;
+    margin-right: 20px;
+}
+#recent-checkins small {
+    display: block;
+    font-size: 14px;
+    line-height: 25px;
+}
+#recent-checkins span {
+    display: block;
 }
 /*bars*/
 article.bars h3{
     /*color:#888;*/
     text-align:right;
-    position:relative;
-    top:120px;
 }
 div.bars{
     display:inline-block;
@@ -181,7 +202,8 @@ div.bars{
     width:80px;
     margin-bottom:-80px;
     height:60px;
-    font-size:14px;
+    font-size:16px;
+    font-weight: normal;
     text-shadow: 0px 0px 1px #333;
     position:relative;
 }
@@ -213,7 +235,22 @@ div.bars{
 .bar-8 div{background:#fff263;}
 .bar-9 div{background:#6af9c4;}
 .bar-10 div{background:#b2deff;}
-
-
-
-
+/* Easy Slider */
+#slider{
+    margin-top:9px;
+}
+#slider ul, #slider li,
+{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+#slider li{ 
+    /* 
+    define width and height of list item (slide)
+    entire slider area will adjust according to the parameters provided here
+    */ 
+    width:880px;
+    height:212px;
+    overflow:hidden; 
+}
