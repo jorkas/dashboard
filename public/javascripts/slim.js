@@ -94,7 +94,8 @@ Dashboard.app = (function(){
     };
     var formatDate = function(date){
         date = new Date(date);
-        return date.toLocaleString();
+        dateFormat.masks.dashboard_date = "HH:MM:ss ddd mmm dd";
+        return date.format("dashboard_date");
     };
     var getCheckinHtml = function(checkin){
         return '<li data-id="'+checkin.id+'" class="grid_4"><img src="'+checkin.image+'"><span class="high">'+checkin.name+'</span>'+checkin.place+'<small>'+ formatDate(checkin.time) +'</small></li>';
