@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
   end
   
   def slim
-    render :layout => "jocke"
+    render :layout => "slim"
   end
   
   def version
