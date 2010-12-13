@@ -209,6 +209,13 @@ span.red{color:#ad8e21;}
 #twitter-message .description time{
     padding-left:10px;
 }
+#recent-referrers{
+    font-size:20px;
+    line-height:30px;
+}
+#recent-referrers span.title{
+    font-size:20px;
+}
 /*bars*/
 article.bars h3{
     /*color:#888;*/
@@ -266,6 +273,15 @@ div.bars{
 /* Easy Slider */
 #slider{
     margin-top:9px;
+}
+#slider-top-right li{
+    width:880px;
+    height:500px;
+    overflow:hidden;
+    background:red;
+}
+#slider-top-right li ul li{
+    height:auto;
 }
 #slider ul, #slider li,
 {

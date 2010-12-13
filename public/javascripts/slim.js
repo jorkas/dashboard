@@ -189,6 +189,14 @@ Dashboard.app = (function(){
           $("#twitter-message span.from").text(data.from);
           $("#twitter-message time").text(formatDate(data.datetime));
         },
+        renderRecentReferrers: function(data){
+            var strHtml = "";
+            $(data).each(function(i,referrer){
+               //strHtml += "<li><span class=\"text-highlight\">"+referrer.host+"</span> → <span class=\"title\">"+referrer.title+"</span></li>";
+               strHtml += "<p><span class=\"text-highlight\">"+referrer.host+"</span> → <span class=\"title\">"+referrer.title+"</span></p>";
+            });
+            $(".recent-referrers ul").html(strHtml);
+        },
         renderRecentCheckins: function(data){
             var strHtml = "";
             $(data).each(function(i,checkin){
@@ -205,11 +213,11 @@ Dashboard.loader = (function(){
     var loadWidget = function(settings){
         $.get(settings.action + ".json", function(data,status){
             Dashboard.app[settings.callback](data);
-            if(settings.refreshTime){
+            /*if(settings.refreshTime){
                 setTimeout(function(){
                     loadWidget(settings);
                 },settings.refreshTime);
-            }
+            }*/
             if(settings.onSuccess){
                 settings.element.removeClass("dynamic-loader");
                 settings.onSuccess();
@@ -250,10 +258,17 @@ Dashboard.loader = (function(){
 $(document).ready(function(){
     Dashboard.loader.init();
     Dashboard.loader.checkVersion();
+	$("#slider-top-right").easySlider({
+		auto: true, 
+		pause: 30000,
+		controlsShow:false,
+		continuous: true
+	});
     $("#slider").easySlider({
 		auto: true, 
 		pause: 6000,
 		controlsShow:false,
 		continuous: true
 	});
+
 });
