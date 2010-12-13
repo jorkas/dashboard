@@ -221,11 +221,11 @@ Dashboard.loader = (function(){
     var loadWidget = function(settings){
         $.get(settings.action + ".json", function(data,status){
             Dashboard.app[settings.callback](data);
-            /*if(settings.refreshTime){
+            if(settings.refreshTime){
                 setTimeout(function(){
                     loadWidget(settings);
                 },settings.refreshTime);
-            }*/
+            }
             if(settings.onSuccess){
                 settings.element.removeClass("dynamic-loader");
                 settings.onSuccess();
