@@ -61,12 +61,12 @@ Dashboard.app = (function(){
         //var text = "<time>" + new Date(data[index].date) +"</time>" + data[index].author + " - " +data[index].title;
         var text = "<strong class=\"text-highlight\">"+ data[index].author + "</strong> - " +data[index].title;
         container.hide();
-        container.fadeIn(200).delay(3000).fadeOut(300);
+        container.fadeIn(200).delay(6000).fadeOut(300);
         container.html(text);
         rotator = setTimeout(function(){
             index = ((index + 1) >= data.length) ? 0 : index+1;
             rotatePressreleases(data, index);
-        },4000);
+        },7000);
     };
     var roundNumber = function(val,decimals){
       return Math.round(val*Math.pow(10,decimals))/Math.pow(10,decimals);  
