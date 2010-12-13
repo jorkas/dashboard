@@ -92,7 +92,7 @@ Dashboard.app = (function(){
     };
     return{
         init: function(){
-            check_version();
+            Dashboard.app.renderClock();
         },
         renderActiveUsersByCountry: function(data){
             getBarsHtml(data,400);
@@ -205,6 +205,14 @@ Dashboard.app = (function(){
                 }
             });
             $("#recent-checkins ul").html(strHtml);
+        },
+        renderClock: function(){
+            var dt = new Date();
+            dateFormat.masks.clock = "HH:MM:ss";
+            $("#pressreleases time").html(dt.format("clock"));
+            setTimeout(function(){
+                Dashboard.app.renderClock();
+            },500);
         }
     };
 })();
@@ -258,6 +266,7 @@ Dashboard.loader = (function(){
 $(document).ready(function(){
     Dashboard.loader.init();
     Dashboard.loader.checkVersion();
+    Dashboard.app.init();
 	$("#slider-top-right").easySlider({
 		auto: true, 
 		pause: 30000,

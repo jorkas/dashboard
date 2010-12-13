@@ -55,8 +55,9 @@ article.widget header{
 }
 ul{list-style-type:none;}
 #pressreleases time{
-    display:none;
+    display:block;
     font-size:60px;
+    text-align:right;
 }
 time{
     text-align:right;
