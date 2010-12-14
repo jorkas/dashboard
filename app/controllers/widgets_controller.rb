@@ -42,7 +42,7 @@ class WidgetsController < ApplicationController
   end
   
   def new_relic
-    content = NewRelic.server_status
+    content = NewRelicApi.server_status
     respond_to do |format|
       format.json { render :json => content }
     end
