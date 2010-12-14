@@ -1,5 +1,3 @@
-require "rexml/document"
-
 class NewRelic
   def self.server_status
     expires_in = Rails.env.production? ? 1.minutes : 10.minutes
