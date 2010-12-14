@@ -108,9 +108,20 @@ Dashboard.app = (function(){
         $("#recent-checkins").hide();
         serverCheckinsSlider();
     };
+    var rightLargeColumnSwapper = function(){
+        $("#recent-referrers,#top-countries").slideToggle(2000);
+        setTimeout(function(){
+            rightLargeColumnSwapper();
+        },30000);
+    };
+    var initRightLargeColumnSwapper = function(){
+        $("#recent-referrers").hide();
+        rightLargeColumnSwapper();
+    };
     return{
         init: function(){
             renderClock();
+            initRightLargeColumnSwapper();
             initBottomSlider();
         },
         renderActiveUsersByCountry: function(data){
@@ -278,12 +289,6 @@ $(document).ready(function(){
     Dashboard.loader.init();
     Dashboard.loader.checkVersion();
     Dashboard.app.init();
-	$("#slider-top-right").easySlider({
-		auto: true, 
-		pause: 30000,
-		controlsShow:false,
-		continuous: true
-	});
     $("#slider").easySlider({
 		auto: true, 
 		pause: 6000,

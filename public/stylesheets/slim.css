@@ -212,8 +212,12 @@ span.red{color:#ad8e21;}
     padding-left:10px;
 }
 #recent-referrers{
+    margin-bottom:40px;
     font-size:20px;
     line-height:30px;
+}
+#recent-referrers ul{
+    margin-top:40px;
 }
 #recent-referrers span.title{
     font-size:20px;
