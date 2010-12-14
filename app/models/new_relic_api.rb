@@ -1,4 +1,4 @@
-class NewRelic
+class NewRelicApi
   def self.server_status
     expires_in = Rails.env.production? ? 1.minutes : 10.minutes
     result = Rails.cache.fetch("new_relic", :expires_in => expires_in) do
