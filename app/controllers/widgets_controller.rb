@@ -42,15 +42,7 @@ class WidgetsController < ApplicationController
   end
   
   def new_relic
-    expires_in = Rails.env.production? ? 1.minutes : 10.minutes
-    content = Rails.cache.fetch("new_relic", :expires_in => expires_in) do
-      array = Array.new
-      result = NewRelicApi::Account.find(:first).applications(:params => {:conditions => {:name => 'Newsdesk (production)'}}).first.threshold_values
-      result.each do |r|
-        array << {:name => r.name, :metric_value => r.metric_value, :color_value => r.color_value, :formatted_metric_value => r.formatted_metric_value }
-      end
-      array
-    end
+    content = NewRelic.server_status
     respond_to do |format|
       format.json { render :json => content }
     end
