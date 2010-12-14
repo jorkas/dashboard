@@ -90,9 +90,28 @@ Dashboard.app = (function(){
     var getCheckinHtml = function(checkin){
         return '<li data-id="'+checkin.id+'" class="grid_4"><img src="'+checkin.image+'"><span class="text-highlight">'+checkin.name+'</span>'+checkin.place+'<small>'+ formatDate(checkin.time) +'</small></li>';
     };
+    var renderClock = function(){
+        var dt = new Date();
+        dateFormat.masks.clock = "HH:MM:ss";
+        $("#pressreleases time").html(dt.format("clock"));
+        setTimeout(function(){
+            renderClock();
+        },500);
+    };
+    var serverCheckinsSlider = function(){
+        $("#recent-checkins,#server").slideToggle(2000);
+        setTimeout(function(){
+            serverCheckinsSlider();
+        },30000);
+    };
+    var initBottomSlider = function(){
+        $("#recent-checkins").hide();
+        serverCheckinsSlider();
+    };
     return{
         init: function(){
-            Dashboard.app.renderClock();
+            renderClock();
+            initBottomSlider();
         },
         renderActiveUsersByCountry: function(data){
             getBarsHtml(data,400);
@@ -205,14 +224,6 @@ Dashboard.app = (function(){
                 }
             });
             $("#recent-checkins ul").html(strHtml);
-        },
-        renderClock: function(){
-            var dt = new Date();
-            dateFormat.masks.clock = "HH:MM:ss";
-            $("#pressreleases time").html(dt.format("clock"));
-            setTimeout(function(){
-                Dashboard.app.renderClock();
-            },500);
         }
     };
 })();
