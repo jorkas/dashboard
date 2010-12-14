@@ -43,21 +43,18 @@
             </article>
         </div>
         <div class="grid_9">
-            <div id="sl-ider-top-right">
-                <ul>
-                    <li>
-                        <article class="widget bars dynamic-loader" data-action="/widgets/top_countries" data-callback="renderActiveUsersByCountry" data-refresh-time="5000">
-                            <div class="clearfix">
-                                <div id="bar-chart" class="bars">&#160;</div>
-                            </div>
-                        </article>
-                    </li>
-                    <!--<li>
-                        <article class="widget dynamic-loader recent-referrers" data-action="/widgets/recent_referrers" data-callback="renderRecentReferrers" data-refresh-time="50000">
-                        </article>
-                    </li>-->
-                </ul>
-            </div>
+
+            <article id="top-countries" class="widget bars dynamic-loader" data-action="/widgets/top_countries" data-callback="renderActiveUsersByCountry" data-refresh-time="5000">
+                <div class="clearfix">
+                    <div id="bar-chart" class="bars">&#160;</div>
+                </div>
+            </article>
+
+            <article id="recent-referrers" class="hidden widget dynamic-loader recent-referrers" data-action="/widgets/recent_referrers" data-callback="renderRecentReferrers" data-refresh-time="50000">
+                <h3>Recent referrers</h3>
+                <ul></ul>
+            </article>
+
         </div>
     </div>
 </div>
@@ -104,14 +101,14 @@
     </div>
 </div>
 <div class="container_19">
-    <div id="server" class="wrapper_19 stats-row border slim dynamic-loader" data-action="/widgets/new_relic" data-callback="renderNewRelic" data-refresh-time="40000">
+    <div id="server" class="wrapper_19 stats-row slim dynamic-loader" data-action="/widgets/new_relic" data-callback="renderNewRelic" data-refresh-time="40000">
         <div class="grid_2 suffix_1">Server status</div>
         <div id="server-update"></div>
         <div class="grid_4"></div>
     </div>
 </div>
 <div class="container_19">
-    <div id="recent-checkins" class="wrapper_19 stats-row slim dynamic-loader" data-action="/widgets/recent_checkins" data-callback="renderRecentCheckins" data-refresh-time="5000">
+    <div id="recent-checkins" class=" wrapper_19 stats-row slim dynamic-loader" data-action="/widgets/recent_checkins" data-callback="renderRecentCheckins" data-refresh-time="5000">
         <div class="grid_2 suffix_1">Recent checkins</div>
         <ul>
         </ul>

@@ -61,12 +61,12 @@ Dashboard.app = (function(){
         //var text = "<time>" + new Date(data[index].date) +"</time>" + data[index].author + " - " +data[index].title;
         var text = "<strong class=\"text-highlight\">"+ data[index].author + "</strong> - " +data[index].title;
         container.hide();
-        container.fadeIn(200).delay(3000).fadeOut(300);
+        container.fadeIn(200).delay(6000).fadeOut(300);
         container.html(text);
         rotator = setTimeout(function(){
             index = ((index + 1) >= data.length) ? 0 : index+1;
             rotatePressreleases(data, index);
-        },4000);
+        },7000);
     };
     var roundNumber = function(val,decimals){
       return Math.round(val*Math.pow(10,decimals))/Math.pow(10,decimals);  
@@ -90,9 +90,39 @@ Dashboard.app = (function(){
     var getCheckinHtml = function(checkin){
         return '<li data-id="'+checkin.id+'" class="grid_4"><img src="'+checkin.image+'"><span class="text-highlight">'+checkin.name+'</span>'+checkin.place+'<small>'+ formatDate(checkin.time) +'</small></li>';
     };
+    var renderClock = function(){
+        var dt = new Date();
+        dateFormat.masks.clock = "HH:MM:ss";
+        $("#pressreleases time").html(dt.format("clock"));
+        setTimeout(function(){
+            renderClock();
+        },500);
+    };
+    var serverCheckinsSlider = function(){
+        $("#recent-checkins,#server").slideToggle(2000);
+        setTimeout(function(){
+            serverCheckinsSlider();
+        },30000);
+    };
+    var initBottomSlider = function(){
+        $("#recent-checkins").hide();
+        serverCheckinsSlider();
+    };
+    var rightLargeColumnSwapper = function(){
+        $("#recent-referrers,#top-countries").slideToggle(2000);
+        setTimeout(function(){
+            rightLargeColumnSwapper();
+        },30000);
+    };
+    var initRightLargeColumnSwapper = function(){
+        $("#recent-referrers").hide();
+        rightLargeColumnSwapper();
+    };
     return{
         init: function(){
-            Dashboard.app.renderClock();
+            renderClock();
+            initRightLargeColumnSwapper();
+            initBottomSlider();
         },
         renderActiveUsersByCountry: function(data){
             getBarsHtml(data,400);
@@ -205,14 +235,6 @@ Dashboard.app = (function(){
                 }
             });
             $("#recent-checkins ul").html(strHtml);
-        },
-        renderClock: function(){
-            var dt = new Date();
-            dateFormat.masks.clock = "HH:MM:ss";
-            $("#pressreleases time").html(dt.format("clock"));
-            setTimeout(function(){
-                Dashboard.app.renderClock();
-            },500);
         }
     };
 })();
@@ -221,11 +243,11 @@ Dashboard.loader = (function(){
     var loadWidget = function(settings){
         $.get(settings.action + ".json", function(data,status){
             Dashboard.app[settings.callback](data);
-            /*if(settings.refreshTime){
+            if(settings.refreshTime){
                 setTimeout(function(){
                     loadWidget(settings);
                 },settings.refreshTime);
-            }*/
+            }
             if(settings.onSuccess){
                 settings.element.removeClass("dynamic-loader");
                 settings.onSuccess();
@@ -267,12 +289,6 @@ $(document).ready(function(){
     Dashboard.loader.init();
     Dashboard.loader.checkVersion();
     Dashboard.app.init();
-	$("#slider-top-right").easySlider({
-		auto: true, 
-		pause: 30000,
-		controlsShow:false,
-		continuous: true
-	});
     $("#slider").easySlider({
 		auto: true, 
 		pause: 6000,

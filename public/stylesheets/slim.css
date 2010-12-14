@@ -26,6 +26,7 @@ body {
     width:380px;
     height:60px;
     background:url(/images/branding.png) no-repeat right center;
+    display:none;
 }
 .border{
     border-bottom:4px solid #333333;
@@ -211,8 +212,13 @@ span.red{color:#ad8e21;}
     padding-left:10px;
 }
 #recent-referrers{
+    margin-top:10px;
+    margin-bottom:40px;
     font-size:20px;
     line-height:30px;
+}
+#recent-referrers ul{
+    margin-top:40px;
 }
 #recent-referrers span.title{
     font-size:20px;
