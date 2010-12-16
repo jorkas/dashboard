@@ -1,4 +1,19 @@
-class Mynewsdesk
+class MyNewsdesk
+  def self.count_pressreleases
+    {
+      :today => self.pressreleases_today,
+      :yesterday => self.pressreleases_yesterday,
+      :last_week => self.pressreleases_last_week
+    }
+  end
+  
+  def self.user_stats
+    {
+      :followers => self.followers,
+      :journalists => self.journalists,
+      :customers => self.customers
+    }
+  end
 
   def self.recent_pressreleases
     Rails.cache.fetch("recent_pressreleases", :expires_in => 1.minutes) do
@@ -8,19 +23,19 @@ class Mynewsdesk
   end
   
   def self.pressreleases_today
-    Mynewsdesk.xml.at_css("pressreleases today").text.to_i
+    self.xml.at_css("pressreleases today").text.to_i
   end
   
   def self.pressreleases_yesterday
-    Mynewsdesk.xml.at_css("pressreleases yesterday").text.to_i
+    self.xml.at_css("pressreleases yesterday").text.to_i
   end
   
   def self.pressreleases_last_week
-      Mynewsdesk.xml.at_css("pressreleases a_week_ago").text.to_i
+      self.xml.at_css("pressreleases a_week_ago").text.to_i
   end
   
   def self.followers
-    xml = Mynewsdesk.xml
+    xml = self.xml
     {
       :today => xml.at_css("followers today").text.to_i,
       :total => xml.at_css("followers total").text.to_i,
@@ -29,7 +44,7 @@ class Mynewsdesk
   end
   
   def self.journalists
-    xml = Mynewsdesk.xml
+    xml = self.xml
     {
       :today => xml.at_css("journalists today").text.to_i,
       :total => xml.at_css("journalists total").text.to_i,
@@ -38,7 +53,7 @@ class Mynewsdesk
   end
   
   def self.customers
-    xml = Mynewsdesk.xml
+    xml = self.xml
     {
       :today => xml.at_css("customers today").text.to_i,
       :total => xml.at_css("customers total").text.to_i,

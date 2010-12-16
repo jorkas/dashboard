@@ -7,6 +7,14 @@ class Analytics
     end
   end
   
+  def analytics_goals
+    {
+      :signup_trials => signup_trials,
+      :signup_follows => signup_follows,
+      :signup_journalists => signup_journalists      
+    }
+  end
+  
   def total_visits
     now_end_date = Time.zone.now - 1.day
     last_end_date = get_end_date(now_end_date, 30)

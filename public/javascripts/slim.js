@@ -248,10 +248,8 @@ Dashboard.loader = (function(){
                     loadWidget(settings);
                 },settings.refreshTime);
             }
-            if(settings.onSuccess){
-                settings.element.removeClass("dynamic-loader");
-                settings.onSuccess();
-            }
+            settings.element.removeClass("dynamic-loader");
+            initWidgets();
         });  
     };
     var initWidgets = function(){
@@ -262,7 +260,6 @@ Dashboard.loader = (function(){
                 "action": element.data("action"),
                 "callback": element.data("callback"),
                 "refreshTime": element.data("refresh-time"),
-                "onSuccess": initWidgets,
                 "element": element
             });
         };
