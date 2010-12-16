@@ -71,6 +71,20 @@ Dashboard.app = (function(){
     var roundNumber = function(val,decimals){
       return Math.round(val*Math.pow(10,decimals))/Math.pow(10,decimals);  
     };
+    var changeValue = function(element, new_value) {
+        old_value = Number(element.text())
+        diff = new_value - old_value
+        if (diff != 0) {
+            element.countTo({
+                from: old_value,
+                to: new_value,
+                speed: 2000,
+                refreshInterval: 50,
+                onComplete: function(value) {
+                }
+            });
+        }
+    };
     var formatNumber = function(number, seperator){
         number += '';
         x = number.split('.');
@@ -213,7 +227,8 @@ Dashboard.app = (function(){
             }
         },
         renderActiveUsersGraph: function(data){
-            $("#online-users").html(data.stats.visits);
+            // $("#online-users").html(data.stats.visits);
+            changeValue($("#online-users"),data.stats.visits);
             $("#online-avg").html(parseInt(data.history.people_avg,10));
             $("#online-max").html(data.history.people_max);
             $("#return-avg").html(parseInt(data.history.return_avg,10));
