@@ -1,6 +1,23 @@
+@font-face {
+	font-family: 'LeagueGothicRegular';
+	src: url('league_gothic-webfont.eot');
+	src: local('☺'), url('league_gothic-webfont.woff') format('woff'), url('league_gothic-webfont.ttf') format('truetype'), url('league_gothic-webfont.svg#webfontXIjGlPir') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 body{
     font: 200px/1em arial;
     background:#000;
+}
+h1{
+    font-family: 'LeagueGothicRegular';
+    text-transform:uppercase;
+    line-height:80px;
+    font-size:60px;
+    font-weight:100;
+    color:#9BAD21;
+    padding:0;
+    margin:0;
 }
 article, header{
     display:block;
