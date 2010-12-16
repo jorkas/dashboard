@@ -122,7 +122,7 @@ Dashboard.app = (function(){
         });
         setTimeout(function(){
             rightLargeColumnSwapper();
-        },5000);
+        },15000);
     };
     var initRightLargeColumnSwapper = function(){
         $("#recent-referrers").hide();
