@@ -21,6 +21,9 @@ body {
     display:inline;
     width:1900px;
 }
+#right-column {
+    height: 482px;
+}
 .branding{
     display:inline-block;
     width:380px;
@@ -215,7 +218,7 @@ span.red{color:#ad8e21;}
     margin-top:10px;
     margin-bottom:40px;
     font-size:20px;
-    line-height:30px;
+    line-height:33px;
 }
 #recent-referrers ul{
     margin-top:20px;

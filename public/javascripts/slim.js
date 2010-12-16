@@ -109,10 +109,20 @@ Dashboard.app = (function(){
         serverCheckinsSlider();
     };
     var rightLargeColumnSwapper = function(){
-        $("#recent-referrers,#top-countries").slideToggle(2000);
+        $("#recent-referrers,#top-countries").each(function(i, elm){
+            elm = $(elm);
+           if(elm.is(':visible')){
+               elm.fadeOut(300);
+           }
+           else{
+               setTimeout(function(){
+                   elm.fadeIn(400);
+               }, 400);
+           }
+        });
         setTimeout(function(){
             rightLargeColumnSwapper();
-        },30000);
+        },5000);
     };
     var initRightLargeColumnSwapper = function(){
         $("#recent-referrers").hide();
@@ -222,8 +232,7 @@ Dashboard.app = (function(){
         renderRecentReferrers: function(data){
             var strHtml = "";
             $(data).each(function(i,referrer){
-               //strHtml += "<li><span class=\"text-highlight\">"+referrer.host+"</span> → <span class=\"title\">"+referrer.title+"</span></li>";
-               strHtml += "<p><span class=\"text-highlight\">"+referrer.host+"</span> → <span class=\"title\">"+referrer.title+"</span></p>";
+               strHtml += "<li><span class=\"text-highlight\">"+referrer.host+"</span> → <span class=\"title\">"+referrer.title+"</span></li>";
             });
             $(".recent-referrers ul").html(strHtml);
         },
