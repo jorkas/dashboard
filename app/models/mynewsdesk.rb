@@ -1,5 +1,4 @@
 class Mynewsdesk
-  require 'open-uri'
 
   def self.recent_pressreleases
     Rails.cache.fetch("recent_pressreleases", :expires_in => 1.minutes) do

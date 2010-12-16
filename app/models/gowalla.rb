@@ -42,7 +42,6 @@ class Gowalla
   
   def self.parse_feed(id)
     entries = Rails.cache.fetch("gowalla_#{id}", :expires_in => 10.seconds) do
-      require 'open-uri'
       doc = Nokogiri::XML(open("http://gowalla.com/spots/#{id}/checkins.atom"))
       Gowalla.parse_xml(doc)
     end
