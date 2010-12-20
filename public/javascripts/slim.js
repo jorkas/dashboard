@@ -227,8 +227,7 @@ Dashboard.app = (function(){
             }
         },
         renderActiveUsersGraph: function(data){
-            // $("#online-users").html(data.stats.visits);
-            changeValue($("#online-users"),data.stats.visits);
+            changeValue($("#online-users"), data.stats.visits);
             $("#online-avg").html(parseInt(data.history.people_avg,10));
             $("#online-max").html(data.history.people_max);
             $("#return-avg").html(parseInt(data.history.return_avg,10));
@@ -277,9 +276,10 @@ Dashboard.loader = (function(){
         });  
     };
     var initWidgets = function(){
-        element = $(".dynamic-loader");
-        if (element.length > 0 ) {
-            element = element.first();
+        var elements = $(".dynamic-loader");
+        if (elements.length > 0 ) {
+            var rand = Math.floor(Math.random() * elements.length);
+            var element = elements.eq(rand);
             loadWidget({
                 "action": element.data("action"),
                 "callback": element.data("callback"),
