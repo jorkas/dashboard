@@ -72,8 +72,8 @@ Dashboard.app = (function(){
       return Math.round(val*Math.pow(10,decimals))/Math.pow(10,decimals);  
     };
     var changeValue = function(element, new_value) {
-        old_value = Number(element.text())
-        diff = new_value - old_value
+        old_value = Number(element.text());
+        diff = new_value - old_value;
         if (diff != 0) {
             element.countTo({
                 from: old_value,
@@ -273,7 +273,8 @@ Dashboard.loader = (function(){
             }
             settings.element.removeClass("dynamic-loader");
             initWidgets();
-        });  
+        });
+        settings.element.removeClass("dynamic-loader"); // temp fix to stop trying to fetch google analytics
     };
     var initWidgets = function(){
         var elements = $(".dynamic-loader");
