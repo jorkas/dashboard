@@ -226,6 +226,19 @@ span.red{color:#ad8e21;}
 #recent-referrers span.title{
     font-size:20px;
 }
+
+#total-visits div {
+    float: right;
+}
+
+#total-visits .big {
+    float: left;
+}
+
+#twitter-message {
+    clear: both;
+}
+
 /*bars*/
 article.bars h3{
     /*color:#888;*/

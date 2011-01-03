@@ -218,9 +218,16 @@ Dashboard.app = (function(){
         renderTotalVisits: function(data){
             var total = $("#total-visits");
             total.find("span.big").text(formatNumber(data.now," "));
-            total.find("strong").text(roundNumber(data.percent,2) + "%");
-            var arrow = total.find("span.arrow-wrapper");
+            total.find("strong").first().text(roundNumber(data.percent,2) + "%");
+            total.find("strong").last().text(roundNumber(data.last_year_percent,2) + "%");
+            var arrow = total.find("span.arrow-wrapper").first();
             if(data.percent < 0){
+                arrow.addClass("down");
+            } else {
+                arrow.removeClass("down");
+            }
+            arrow = total.find("span.arrow-wrapper").last();
+            if(data.last_year_percent < 0){
                 arrow.addClass("down");
             } else {
                 arrow.removeClass("down");

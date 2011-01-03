@@ -25,8 +25,12 @@ class Analytics
     now = Rails.cache.fetch("garb_total_visits_now", :expires_in => 1.hour) do
       Garb::Report.new(@profile, {:metrics => [:visits], :start_date => now_end_date - 30.days, :end_date => now_end_date }).results.first.visits.to_i
     end
+    last_year = Rails.cache.fetch("garb_total_visits_last_year", :expires_in => 1.hour) do
+      Garb::Report.new(@profile, {:metrics => [:visits], :start_date => now_end_date - 1.year - 30.days, :end_date => now_end_date - 1.year }).results.first.visits.to_i
+    end
     percent = (now.to_f/last.to_f)*100 - 100 
-    {:now => now, :last => last, :percent => percent}
+    last_year_percent = (now.to_f/last_year.to_f)*100 - 100 
+    {:now => now, :last => last, :percent => percent, :last_year => last_year, :last_year_percent => last_year_percent}
   end
   
   def signup_journalists
