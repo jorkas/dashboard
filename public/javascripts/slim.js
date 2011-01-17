@@ -71,6 +71,20 @@ Dashboard.app = (function(){
     var roundNumber = function(val,decimals){
       return Math.round(val*Math.pow(10,decimals))/Math.pow(10,decimals);  
     };
+    var changeValue = function(element, new_value) {
+        old_value = Number(element.text());
+        diff = new_value - old_value;
+        if (diff != 0) {
+            element.countTo({
+                from: old_value,
+                to: new_value,
+                speed: 2000,
+                refreshInterval: 50,
+                onComplete: function(value) {
+                }
+            });
+        }
+    };
     var formatNumber = function(number, seperator){
         number += '';
         x = number.split('.');
@@ -109,10 +123,20 @@ Dashboard.app = (function(){
         serverCheckinsSlider();
     };
     var rightLargeColumnSwapper = function(){
-        $("#recent-referrers,#top-countries").slideToggle(2000);
+        $("#recent-referrers,#top-countries").each(function(i, elm){
+            elm = $(elm);
+           if(elm.is(':visible')){
+               elm.fadeOut(300);
+           }
+           else{
+               setTimeout(function(){
+                   elm.fadeIn(400);
+               }, 400);
+           }
+        });
         setTimeout(function(){
             rightLargeColumnSwapper();
-        },30000);
+        },15000);
     };
     var initRightLargeColumnSwapper = function(){
         $("#recent-referrers").hide();
@@ -194,16 +218,23 @@ Dashboard.app = (function(){
         renderTotalVisits: function(data){
             var total = $("#total-visits");
             total.find("span.big").text(formatNumber(data.now," "));
-            total.find("strong").text(roundNumber(data.percent,2) + "%");
-            var arrow = total.find("span.arrow-wrapper");
+            total.find("strong").first().text(roundNumber(data.percent,2) + "%");
+            total.find("strong").last().text(roundNumber(data.last_year_percent,2) + "%");
+            var arrow = total.find("span.arrow-wrapper").first();
             if(data.percent < 0){
+                arrow.addClass("down");
+            } else {
+                arrow.removeClass("down");
+            }
+            arrow = total.find("span.arrow-wrapper").last();
+            if(data.last_year_percent < 0){
                 arrow.addClass("down");
             } else {
                 arrow.removeClass("down");
             }
         },
         renderActiveUsersGraph: function(data){
-            $("#online-users").html(data.stats.visits);
+            changeValue($("#online-users"), data.stats.visits);
             $("#online-avg").html(parseInt(data.history.people_avg,10));
             $("#online-max").html(data.history.people_max);
             $("#return-avg").html(parseInt(data.history.return_avg,10));
@@ -222,8 +253,7 @@ Dashboard.app = (function(){
         renderRecentReferrers: function(data){
             var strHtml = "";
             $(data).each(function(i,referrer){
-               //strHtml += "<li><span class=\"text-highlight\">"+referrer.host+"</span> → <span class=\"title\">"+referrer.title+"</span></li>";
-               strHtml += "<p><span class=\"text-highlight\">"+referrer.host+"</span> → <span class=\"title\">"+referrer.title+"</span></p>";
+               strHtml += "<li><span class=\"text-highlight\">"+referrer.host+"</span> → <span class=\"title\">"+referrer.title+"</span></li>";
             });
             $(".recent-referrers ul").html(strHtml);
         },
@@ -248,21 +278,20 @@ Dashboard.loader = (function(){
                     loadWidget(settings);
                 },settings.refreshTime);
             }
-            if(settings.onSuccess){
-                settings.element.removeClass("dynamic-loader");
-                settings.onSuccess();
-            }
-        });  
+            settings.element.removeClass("dynamic-loader");
+            initWidgets();
+        });
+        settings.element.removeClass("dynamic-loader"); // temp fix to stop trying to fetch google analytics
     };
     var initWidgets = function(){
-        element = $(".dynamic-loader");
-        if (element.length > 0 ) {
-            element = element.first();
+        var elements = $(".dynamic-loader");
+        if (elements.length > 0 ) {
+            var rand = Math.floor(Math.random() * elements.length);
+            var element = elements.eq(rand);
             loadWidget({
                 "action": element.data("action"),
                 "callback": element.data("callback"),
                 "refreshTime": element.data("refresh-time"),
-                "onSuccess": initWidgets,
                 "element": element
             });
         };

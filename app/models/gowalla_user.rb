@@ -7,7 +7,6 @@ class GowallaUser < ActiveRecord::Base
   
   private
   def get_gowalla_id
-    require 'open-uri'
     self.gowalla_id = JSON.parse(open("http://api.gowalla.com/users/#{self.name}.json").read)['url'].split('/').last
   end
 end

@@ -1,0 +1,58 @@
+@font-face {
+	font-family: 'LeagueGothicRegular';
+	src: url('league_gothic-webfont.eot');
+	src: local('☺'), url('league_gothic-webfont.woff') format('woff'), url('league_gothic-webfont.ttf') format('truetype'), url('league_gothic-webfont.svg#webfontXIjGlPir') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+body{
+    font: 200px/1em arial;
+    background:#000;
+}
+h1{
+    font-family: 'LeagueGothicRegular';
+    text-transform:uppercase;
+    line-height:80px;
+    font-size:60px;
+    font-weight:100;
+    color:#9BAD21;
+    padding:0;
+    margin:0;
+}
+article, header{
+    display:block;
+}
+.flipclock_wrapper {
+  color: #212121;
+  background: rgba(100, 100, 100, 0.105469);
+  position:relative;
+  text-align: center;
+  border-bottom-left-radius: 5px 5px;
+  border-bottom-right-radius: 5px 5px;
+  border-top-left-radius: 5px 5px;
+  border-top-right-radius: 5px 5px;
+}
+
+.flipclock_wrapper .big {
+  color: #EBEBEB;
+  font-size:600px;
+  line-height:600px;
+}
+
+.flipclock_wrapper .flipclock_overlay {
+  background-color: rgba(0, 0, 0, 0.433594);
+  bottom: 0px;
+  height: 313px;
+  position: absolute;
+  width: 100%;
+  border-top: 5px solid #050505;
+}
+
+#total_visits .flipclock_wrapper {
+  /*font-size: 75px;*/
+}
+
+#total_visits .flipclock_overlay {
+  height: 33px;
+  border-top-width: 3px;
+}
