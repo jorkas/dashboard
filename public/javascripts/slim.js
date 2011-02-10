@@ -116,7 +116,7 @@ Dashboard.app = (function(){
         $("#recent-checkins,#server").slideToggle(2000);
         setTimeout(function(){
             serverCheckinsSlider();
-        },30000);
+        },10000);
     };
     var initBottomSlider = function(){
         $("#recent-checkins").hide();
