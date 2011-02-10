@@ -281,7 +281,6 @@ Dashboard.loader = (function(){
             settings.element.removeClass("dynamic-loader");
             initWidgets();
         });
-        settings.element.removeClass("dynamic-loader"); // temp fix to stop trying to fetch google analytics
     };
     var initWidgets = function(){
         var elements = $(".dynamic-loader");
