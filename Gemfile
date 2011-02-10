@@ -15,3 +15,6 @@ gem 'garb', '0.8.4'
 gem 'nokogiri'
 gem 'httparty'
 gem 'oauth'
+
+
+gem 'gcal4ruby'

@@ -41,6 +41,9 @@ GEM
     garb (0.8.4)
       activesupport (>= 2.2.0)
       crack (>= 0.1.6)
+    gcal4ruby (0.5.5)
+      gdata4ruby (>= 0.1.5)
+    gdata4ruby (0.1.5)
     gem_plugin (0.2.3)
     heroku (1.10.14)
       json_pure (>= 1.2.0, < 1.5.0)
@@ -102,6 +105,7 @@ PLATFORMS
 
 DEPENDENCIES
   garb (= 0.8.4)
+  gcal4ruby
   heroku
   httparty
   jquery-rails

@@ -1,11 +1,15 @@
 Dashboard::Application.routes.draw do
   root :to => "dashboard#slim"
+  
+  match 'slim' => "dashboard#slim"
   match 'visitors' => "dashboard#visitors"
+  match 'calendars' => "dashboard#calendars"
+  
   match 'gowalla' => "pshb#gowalla"
   match 'widgets/:action' => 'widgets#:action'
 
   match 'version' => "dashboard#version"
-  match 'slim' => "dashboard#slim"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

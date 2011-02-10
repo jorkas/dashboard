@@ -76,4 +76,10 @@ class WidgetsController < ApplicationController
       format.json { render :json => Chartbeat.top_countries }
     end
   end
+  
+  def calendar_events
+    respond_to do |format|
+      format.json { render :json => Calendar.get_events }
+    end
+  end
 end
