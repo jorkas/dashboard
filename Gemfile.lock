@@ -31,13 +31,17 @@ GEM
     arel (1.0.1)
       activesupport (~> 3.0.0)
     builder (2.1.2)
+    cgi_multipart_eof_fix (2.5.0)
     configuration (1.1.0)
     crack (0.1.8)
+    daemons (1.1.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    fastthread (1.0.7)
     garb (0.8.4)
       activesupport (>= 2.2.0)
       crack (>= 0.1.6)
+    gem_plugin (0.2.3)
     heroku (1.10.14)
       json_pure (>= 1.2.0, < 1.5.0)
       launchy (~> 0.3.2)
@@ -58,6 +62,11 @@ GEM
     memcache-client (1.8.5)
     memcached-northscale (0.19.5.4)
     mime-types (1.16)
+    mongrel (1.1.5)
+      cgi_multipart_eof_fix (>= 2.4)
+      daemons (>= 1.0.3)
+      fastthread (>= 1.0.1)
+      gem_plugin (>= 0.2.3)
     nokogiri (1.4.3.1)
     oauth (0.4.4)
     polyglot (0.3.1)
@@ -98,6 +107,7 @@ DEPENDENCIES
   jquery-rails
   memcache-client
   memcached-northscale
+  mongrel
   nokogiri
   oauth
   rails (= 3.0.0)

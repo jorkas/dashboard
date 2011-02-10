@@ -14,8 +14,9 @@ class Gowalla
     #sthlm  1361526
     #malmo  3379248
     #gbg    6361341
+    #singapore 6898169
     entries = Rails.cache.fetch("gowalla", :expires_in => 30.minutes) do
-      entries = Gowalla.parse_feed(3379248) + Gowalla.parse_feed(1361526) + Gowalla.parse_feed(6361341)
+      entries = Gowalla.parse_feed(3379248) + Gowalla.parse_feed(1361526) + Gowalla.parse_feed(6361341) + Gowalla.parse_feed(6898169)
       entries.sort! { |a,b| b.time <=> a.time }
     end
     entries[0...7]
@@ -24,9 +25,11 @@ class Gowalla
   def self.parse_xml(doc)
     doc.remove_namespaces!
     place = doc.at_css("feed>title").text
-    place["Gowalla Checkins at MyNewsdesk"] = ""
+    place.gsub!("Gowalla Checkins at MyNewsdesk ","")
+    place.gsub!("Gowalla Checkins at Mynewsdesk ","")
     place = "Stockholm office" if place.strip == "HQ"
     place = "Gothenburg office" if place.strip == ""
+    place = "Singapore office" if place.strip == "Singapore"
     xml_entries = doc.css("entry")
     entries = Array.new
     xml_entries.each do |entry|
