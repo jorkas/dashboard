@@ -35,7 +35,7 @@ class Calendar
   end
   
   def self.get_events
-    Rails.cache.fetch("calendars", :expires_in => 10.minutes) do
+    Rails.cache.fetch("calendars", :expires_in => 1.hours) do
       cals = ["London (10 pers)","New York (18 pers)","Oslo (8 pers)","Singapore (6 pers)"]
       cals.map!{|title| Calendar.new(title) }
       cals.map{|cal|
