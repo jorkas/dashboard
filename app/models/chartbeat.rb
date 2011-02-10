@@ -27,10 +27,10 @@ class Chartbeat
     visitors = recent_visitors
     referrers = visitors.map {|visitor| {:referrer => URI.parse(URI.escape(visitor['r'])), :title => visitor['i'] } unless visitor['r'].blank? }.compact
     referrers = referrers.select{|referrer| !%w"google mynews ish.my".include? referrer[:referrer].host[4..9] }
-    referrers.map{ |ref| 
+    referrers.map{ |ref|
       {
         :host => ref[:referrer].host.gsub('www.', '').strip,
-        :title => ref[:title][0,ref[:title].index("-")-1]
+        :title => ref[:title][0,(ref[:title].index("-") || 30)-1]
       }
     }[0,10]
   end
