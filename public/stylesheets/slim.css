@@ -239,6 +239,10 @@ span.red{color:#ad8e21;}
     clear: both;
 }
 
+#booked-rooms small {
+    font-size: 16px;
+}
+
 /*bars*/
 article.bars h3{
     /*color:#888;*/

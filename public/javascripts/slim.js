@@ -166,6 +166,17 @@ Dashboard.app = (function(){
             });
             $("#server-update").html(html);
         },
+        renderBookedRooms: function(data){
+            $(data).each(function(i,elm){
+                roomDiv = $("#room"+i)
+                roomDiv.find(".big").text(elm.title)
+                ulHTML = ""
+                $(elm.events).each(function(i,event){
+                    ulHTML += "<li><span class='number-highlight'>"+ event.start_time +"-"+ event.end_time +"</span> "+ event.title +" <small>"+ event.author +"</small></li>"
+                });
+                roomDiv.find("ul").html(ulHTML)
+            });
+        },
         renderCombinedUserStats: function(data){
             var summaryStats;
             var goals;

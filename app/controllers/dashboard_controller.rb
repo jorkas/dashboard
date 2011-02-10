@@ -9,6 +9,10 @@ class DashboardController < ApplicationController
   def visitors
   end
   
+  def rooms
+    render :layout => "slim"
+  end
+  
   def version
     @version = ENV['COMMIT_HASH'] || `git rev-parse HEAD`
     @version.strip!

@@ -3,7 +3,7 @@ Dashboard::Application.routes.draw do
   
   match 'slim' => "dashboard#slim"
   match 'visitors' => "dashboard#visitors"
-  match 'calendars' => "dashboard#calendars"
+  match 'rooms' => "dashboard#rooms"
   
   match 'gowalla' => "pshb#gowalla"
   match 'widgets/:action' => 'widgets#:action'
