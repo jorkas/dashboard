@@ -7,6 +7,7 @@ class DashboardController < ApplicationController
   end
   
   def visitors
+    render :layout => "rooms_layout"
   end
   
   def rooms

@@ -34,7 +34,7 @@ ul{list-style-type:none;}
     color: #EF5A22;
 }
 
-.big{
+p .big{
     font-family: 'Helvetica Neue',Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif;
     font-size: 30px;
     font-weight: 600;
@@ -48,7 +48,8 @@ ul{list-style-type:none;}
 }
 
 .grid_2 small,
-.grid_2 span {
+.grid_2 span,
+.grid_14 span {
     padding-left: 15px;
 }
 
@@ -73,4 +74,50 @@ ul{list-style-type:none;}
 
 #booked-rooms dd {
     margin-bottom: 15px;
+}
+
+.flipclock_wrapper {
+    text-align: center;
+    font-size: 450px;
+    line-height: 1em;
+    background:#E5EBED;
+    overflow: hidden;
+    -moz-border-radius: 12px; /* FF1+ */
+    -webkit-border-radius: 12px; /* Saf3-4 */
+    border-radius: 12px; /* Opera 10.5, IE9, Saf5, Chrome */
+    cwec: #E5EBED;31	155	182
+    
+}
+
+.flipclock_wrapper .big {
+  font-size: inherit;
+  padding: 0 3px;
+
+}
+.flipclock_wrapper .flipclock_overlay {
+  background-color: rgba(31, 155, 182, 0.0533594);
+  bottom: 20px;
+  height: 225px;
+  position: absolute;
+  width: 100%;
+  border-top: 5px solid rgba(101, 101, 101, 0.933594);
+  -moz-border-radius-bottomright: 12px;
+  -moz-border-radius-bottomleft: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+#pressreleases-latest p {
+    margin-bottom: 10px;
+}
+
+#pressreleases-latest{
+    height:60px;
+}
+#pressreleases-latest>span{
+    display:inline-block;
+    width: 1145px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
