@@ -154,6 +154,13 @@ span.yellow{color:#ad2b21;}
 span.green{color:#9bad21;}
 span.red{color:#ad8e21;}
 
+#server {
+    background: #4F4F4F;
+    color: black;
+    padding: 10px 0;
+    font-weight: normal;
+}
+
 #server .stats-val{
     font-size: inherit;
 /*    display:block;*/
