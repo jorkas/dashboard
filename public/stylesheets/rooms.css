@@ -2,7 +2,7 @@ body {
   margin-top:0px;
   background-color: #FFFFFF;
   color: #707070;
-  font: 25px/1.5em 'helvetica neue', helvetica, arial;
+  font: 22px/1.5em 'helvetica neue', helvetica, arial;
   letter-spacing: 0.05em;
   font-weight: normal;
   overflow: hidden;
@@ -67,7 +67,7 @@ ul{list-style-type:none;}
 #booked-rooms small {
     float: left;
     clear:left;
-    font-size: 13px;
+    font-size: 12px;
     line-height: 1em;
 }
 
