@@ -9,12 +9,12 @@ class Calendar
   end
   
   def events
-    @cal.events({'start-min' => Time.now.beginning_of_day.utc.xmlschema, 'start-max' => Time.now.end_of_day.utc.xmlschema,:singleevents => true}).map{|c|
+    @cal.events({'start-min' => Time.zone.now.beginning_of_day.utc.xmlschema, 'start-max' => Time.zone.now.end_of_day.utc.xmlschema,:singleevents => true}).map{|c|
       Event.new(
         :author => c.author_name,
         :title => c.title,
-        :start_time => c.start_time.strftime("%R"),
-        :end_time => c.end_time.strftime("%R"),
+        :start_time => Time.zone.parse(c.start_time.to_s).strftime("%R"),
+        :end_time => Time.zone.parse(c.end_time.to_s).strftime("%R"),
         :all_day => c.all_day
       )
     }.sort{|a,b| a.start_time <=> b.start_time}
