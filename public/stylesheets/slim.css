@@ -155,7 +155,7 @@ span.green{color:#9bad21;}
 span.red{color:#ad8e21;}
 
 #server {
-    background: #292929;
+    background: rgba(255, 255, 255, 0.1);
     padding: 5px 0;
 }
 
