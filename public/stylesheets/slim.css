@@ -155,7 +155,8 @@ span.green{color:#9bad21;}
 span.red{color:#ad8e21;}
 
 #server .stats-val{
-    display:block;
+    font-size: inherit;
+/*    display:block;*/
 }
 #percent-bar span{
     display:inline-block;

@@ -119,8 +119,8 @@ Dashboard.app = (function(){
         },10000);
     };
     var initBottomSlider = function(){
-        $("#recent-checkins").hide();
-        serverCheckinsSlider();
+        // $("#recent-checkins").hide();
+        // serverCheckinsSlider();
     };
     var rightLargeColumnSwapper = function(){
         $("#recent-referrers,#top-countries").each(function(i, elm){
@@ -162,7 +162,8 @@ Dashboard.app = (function(){
         renderNewRelic: function(data){
             var html = "";
             $(data).each(function(i,elm){
-              html += '<div class="grid_2">'+ elm.name +' <span class="stats-val '+ elm.color_value.toLowerCase() +'">'+ elm.formatted_metric_value +'</span></div>';
+                var grid = (i == 2) ? 2 : 3;
+                html += '<div class="grid_'+ grid +'">'+ elm.name +' <span class="stats-val '+ elm.color_value.toLowerCase() +'">'+ elm.formatted_metric_value +'</span></div>';
             });
             $("#server-update").html(html);
         },
