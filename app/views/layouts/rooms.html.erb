@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <%= stylesheet_link_tag "grid","rooms" %>
+  <%= javascript_include_tag 'jquery.min','easySlider1.7','slim','date.format','jquery.count_to'%>
+  <%= csrf_meta_tag %>
+  <meta http-equiv="refresh" content="3600"/>
+</head>
+<body>
+    <div id="container">
+        <%= yield %>
+    </div>
+</body>
+</html>
