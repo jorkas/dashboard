@@ -172,7 +172,7 @@ Dashboard.app = (function(){
                 roomDiv.find(".big").text(elm.title)
                 ulHTML = ""
                 $(elm.events).each(function(i,event){
-                    ulHTML += "<li><span class='number-highlight'>"+ event.start_time +"-"+ event.end_time +"</span> "+ event.title +" <small>"+ event.author +"</small></li>"
+                    ulHTML += "<li><div class='grid_3 alpha'><span class='number-highlight'>"+ event.start_time +"-"+ event.end_time +"</span><small>"+ event.author +"</small></div><div class='grid_6 omega'><span>"+ event.title +"</small></div></li>"
                 });
                 roomDiv.find("ul").html(ulHTML)
             });
