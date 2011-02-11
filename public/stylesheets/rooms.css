@@ -2,7 +2,7 @@ body {
   margin-top:0px;
   background-color: #FFFFFF;
   color: #707070;
-  font: 35px/1.5em 'helvetica neue', helvetica, arial;
+  font: 25px/1.5em 'helvetica neue', helvetica, arial;
   letter-spacing: 0.05em;
   font-weight: normal;
   overflow: hidden;
@@ -36,30 +36,26 @@ ul{list-style-type:none;}
 
 .big{
     font-family: 'Helvetica Neue',Helvetica,Arial,'Liberation Sans',FreeSans,sans-serif;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
     color: white;
     text-shadow: 0 -1px 1px #A56034;
     line-height: 34px;
-    padding: 22px;
+    padding: 15px;
     background: url(http://assets1.mynewsdesk.com/REV_6c1715f842d7160daa40a01b40d9e0e5113b3336/images/signup/bg-orange-repeat.png?1294933708);
     background-position: 0 -20px;
     display: block;
 }
 
-.grid_3 small,
-.grid_3 span {
-    padding-left: 22px;
+.grid_2 small,
+.grid_2 span {
+    padding-left: 15px;
 }
 
-
-
-
-
-
-
-
-
+.grid_5 span {
+    padding-right: 15px;
+    display: inline-block;
+}
 
 
 #booked-rooms li{
@@ -71,7 +67,7 @@ ul{list-style-type:none;}
 #booked-rooms small {
     float: left;
     clear:left;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 1em;
 }
 

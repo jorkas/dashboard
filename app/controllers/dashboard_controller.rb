@@ -10,7 +10,7 @@ class DashboardController < ApplicationController
   end
   
   def rooms
-    render :layout => "rooms"
+    render :layout => "rooms_layout"
   end
   
   def version
