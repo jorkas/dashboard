@@ -162,7 +162,7 @@ Dashboard.app = (function(){
         renderNewRelic: function(data){
             var html = "";
             $(data).each(function(i,elm){
-                var grid = (i == 2) ? 2 : 3;
+                var grid = (i == 2 || i == 5) ? 2 : 3;
                 html += '<div class="grid_'+ grid +'">'+ elm.name +' <span class="stats-val '+ elm.color_value.toLowerCase() +'">'+ elm.formatted_metric_value +'</span></div>';
             });
             $("#server-update").html(html);

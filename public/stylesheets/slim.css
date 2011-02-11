@@ -35,7 +35,7 @@ body {
     border-bottom:4px solid #333333;
 }
 article.widget{
-    padding:20px 0;
+    padding:15px 0;
 }
 article.border-top{
     border-top:4px solid #333333;
@@ -48,7 +48,7 @@ article.widget header{
     margin-bottom:20px;
 }
 .stats-row{
-    padding:20px 0;
+    padding:15px 0;
 }
 .stats-row.slim{
     font-size:20px;
@@ -155,10 +155,8 @@ span.green{color:#9bad21;}
 span.red{color:#ad8e21;}
 
 #server {
-    background: #4F4F4F;
-    color: black;
-    padding: 10px 0;
-    font-weight: normal;
+    background: #292929;
+    padding: 5px 0;
 }
 
 #server .stats-val{
