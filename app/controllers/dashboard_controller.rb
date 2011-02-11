@@ -7,11 +7,11 @@ class DashboardController < ApplicationController
   end
   
   def visitors
-    render :layout => "rooms_layout"
+    render :layout => "front_desk"
   end
   
   def rooms
-    render :layout => "rooms_layout"
+    render :layout => "front_desk"
   end
   
   def version
