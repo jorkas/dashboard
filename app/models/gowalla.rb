@@ -25,8 +25,8 @@ class Gowalla
   def self.parse_xml(doc)
     doc.remove_namespaces!
     place = doc.at_css("feed>title").text
-    place.gsub!("Gowalla Checkins at MyNewsdesk ","")
-    place.gsub!("Gowalla Checkins at Mynewsdesk ","")
+    place = place.gsub!("Gowalla Checkins at MyNewsdesk ","")
+    place = place.gsub!("Gowalla Checkins at Mynewsdesk ","")
     place = "Stockholm office" if place.strip == "HQ"
     place = "Gothenburg office" if place.strip == ""
     place = "Singapore office" if place.strip == "Singapore"
