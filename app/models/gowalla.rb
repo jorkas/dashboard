@@ -15,8 +15,9 @@ class Gowalla
     #malmo  3379248
     #gbg    6361341
     #singapore 6898169
+    #olso = 6521812
     entries = Rails.cache.fetch("gowalla", :expires_in => 30.minutes) do
-      entries = Gowalla.parse_feed(3379248) + Gowalla.parse_feed(1361526) + Gowalla.parse_feed(6361341) + Gowalla.parse_feed(6898169)
+      entries = Gowalla.parse_feed(6521812) + Gowalla.parse_feed(3379248) + Gowalla.parse_feed(1361526) + Gowalla.parse_feed(6361341) + Gowalla.parse_feed(6898169)
       entries.sort! { |a,b| b.time <=> a.time }
     end
     entries[0...7]
@@ -31,6 +32,7 @@ class Gowalla
     place = "Stockholm office" if place == "HQ"
     place = "Gothenburg office" if place == ""
     place = "Singapore office" if place == "Singapore"
+    place = "Oslo office" if place == "- Oslo"
     xml_entries = doc.css("entry")
     entries = Array.new
     xml_entries.each do |entry|
