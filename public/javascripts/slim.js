@@ -151,6 +151,9 @@ Dashboard.app = (function(){
         renderActiveUsersByCountry: function(data){
             getBarsHtml(data,400);
         },
+        renderCustomStats: function(data){
+            $("#custom-stats .fb-newsrooms").text(data.facebook_newsrooms);
+        },
         renderPressreleasesStats : function(data){
             $("#pressreleases-today").text(data.today);
             $("#pressreleases-yesterday").text(data.yesterday);

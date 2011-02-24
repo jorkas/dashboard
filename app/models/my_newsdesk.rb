@@ -14,6 +14,12 @@ class MyNewsdesk
       :customers => self.customers
     }
   end
+  
+  def self.custom_stats
+    {
+      :facebook_newsrooms => self.facebook_newsrooms
+    }
+  end
 
   def self.recent_pressreleases
     Rails.cache.fetch("recent_pressreleases", :expires_in => 1.minutes) do
@@ -32,6 +38,10 @@ class MyNewsdesk
   
   def self.pressreleases_last_week
       self.xml.at_css("pressreleases a_week_ago").text.to_i
+  end
+  
+  def self.facebook_newsrooms
+      self.xml.at_css("facebook_newsrooms").text.to_i
   end
   
   def self.followers

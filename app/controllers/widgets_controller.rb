@@ -82,4 +82,10 @@ class WidgetsController < ApplicationController
       format.json { render :json => Calendar.get_events }
     end
   end
+  
+  def custom_stats
+    respond_to do |format|
+      format.json { render :json => MyNewsdesk.custom_stats }
+    end
+  end
 end
