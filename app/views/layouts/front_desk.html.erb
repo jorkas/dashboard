@@ -7,7 +7,7 @@
   <%= csrf_meta_tag %>
   <meta http-equiv="refresh" content="3600"/>
 </head>
-<body>
+<body class="<%=params[:action]%>">
     <div id="container">
         <%= yield %>
     </div>
