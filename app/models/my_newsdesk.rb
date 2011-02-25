@@ -17,7 +17,10 @@ class MyNewsdesk
   
   def self.custom_stats
     {
-      :facebook_newsrooms => self.facebook_newsrooms
+      :facebook_newsrooms => {
+        :count => self.facebook_newsroom_count,
+        :latest => self.facebook_newsrooms[0..3]
+      }
     }
   end
 
@@ -40,8 +43,14 @@ class MyNewsdesk
       self.xml.at_css("pressreleases a_week_ago").text.to_i
   end
   
+  def self.facebook_newsroom_count
+      self.xml.at_css("facebook_newsrooms count").text.to_i
+  end
+  
   def self.facebook_newsrooms
-      self.xml.at_css("facebook_newsrooms").text.to_i
+      self.xml.css("facebook_newsrooms name").map{|element|
+        element.text
+      }
   end
   
   def self.followers

@@ -152,7 +152,12 @@ Dashboard.app = (function(){
             getBarsHtml(data,400);
         },
         renderCustomStats: function(data){
-            $("#custom-stats .fb-newsrooms").text(data.facebook_newsrooms);
+            $("#custom-stats .fb-newsrooms-count").text(data.facebook_newsrooms.count);
+            var html = "";
+            $(data.facebook_newsrooms.latest).each(function(i, elm){
+                html += "<p><span class=\"number-highlight\">→</span> "+elm+"</p>";
+            })
+            $("#custom-stats .fb-newsrooms-latest").html(html);
         },
         renderPressreleasesStats : function(data){
             $("#pressreleases-today").text(data.today);

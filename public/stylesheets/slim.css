@@ -245,6 +245,11 @@ span.red{color:#ad8e21;}
     clear: both;
 }
 
+.fb-newsrooms-latest p{
+    font-size: 20px;
+    line-height: 1em;
+}
+
 #booked-rooms li{
     clear: both;
     overflow: hidden;
