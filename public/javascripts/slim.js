@@ -285,11 +285,23 @@ Dashboard.app = (function(){
             $("#recent-checkins ul").html(strHtml);
         },
         renderSearches: function(data){
-            var strHtrml = "";
-            $(data).each(function(i,search){
-                strHtrml += "<li><span class=\"number-highlight\">→</span> "+search+"</li>";
+            var new_searches = "";
+            var current_searches = [];
+            
+            $("#recent-searches li").each(function(i, elm){
+                current_searches[i] = $(elm).html();
             });
-            $("#recentSearches").html(strHtrml);
+            
+            data = data.slice(0,5);
+            $(data).each(function(i,search){
+                var listr = "<span class=\"number-highlight\">→</span> "+search;
+                if($.inArray(listr, current_searches) == -1){
+                    var li = $("<li/>").html(listr).css("display","none");
+                    $("#recent-searches").prepend(li);
+                    li.animate({width: 'toggle'});
+                }
+            });
+            $("#recent-searches li:gt(6)").remove()
         }
     };
 })();

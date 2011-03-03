@@ -269,14 +269,14 @@ span.red{color:#ad8e21;}
     margin-bottom: 15px;
 }
 
-#recentSearches {
+#recent-searches {
     height: 52px;
     overflow: hidden;
 }
 
-#recentSearches li {
+#recent-searches li {
     font-size: 20px;
-    display:inline;
+    display:inline-block;
     margin-right: 10px;
     white-space:nowrap;
 }
