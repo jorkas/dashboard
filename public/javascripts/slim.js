@@ -257,8 +257,6 @@ Dashboard.app = (function(){
             changeValue($("#online-users"), data.stats.visits);
             $("#online-avg").html(parseInt(data.history.people_avg,10));
             $("#online-max").html(data.history.people_max);
-            $("#return-avg").html(parseInt(data.history.return_avg,10));
-            $("#return-max").html(data.history.return_max);
             
             $("#percent-bar").html(getActiveGraphHtml({
                 "active": data.stats.visits,
@@ -285,6 +283,13 @@ Dashboard.app = (function(){
                 }
             });
             $("#recent-checkins ul").html(strHtml);
+        },
+        renderSearches: function(data){
+            var strHtrml = "";
+            $(data).each(function(i,search){
+                strHtrml += "<li>→ "+search+"</li>";
+            });
+            $("#recentSearches").html(strHtrml);
         }
     };
 })();

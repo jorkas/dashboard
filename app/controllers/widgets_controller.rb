@@ -88,4 +88,10 @@ class WidgetsController < ApplicationController
       format.json { render :json => MyNewsdesk.custom_stats }
     end
   end
+  
+  def recent_searches
+    respond_to do |format|
+      format.json { render :json => MyNewsdesk.searches}
+    end
+  end
 end
