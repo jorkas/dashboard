@@ -109,6 +109,9 @@ p .big{
     display: inline-block;
 }
 
+#booked-rooms>div>div{
+    min-height: 300px;
+}
 
 #booked-rooms li{
     clear: both;
