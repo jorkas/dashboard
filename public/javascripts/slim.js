@@ -287,7 +287,7 @@ Dashboard.app = (function(){
         renderSearches: function(data){
             var strHtrml = "";
             $(data).each(function(i,search){
-                strHtrml += "<li>→ "+search+"</li>";
+                strHtrml += "<li><span class=\"number-highlight\">→</span> "+search+"</li>";
             });
             $("#recentSearches").html(strHtrml);
         }
