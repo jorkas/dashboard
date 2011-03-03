@@ -1,6 +1,7 @@
 class Analytics
   
   def initialize
+    return true if CONFIG['disable_garb']
     @profile = Rails.cache.fetch("garb_profile", :expires_in => 1.hour) do
       Garb::Session.login(CONFIG['garb_login'], CONFIG['garb_password'])
       Garb::Profile.first('UA-67918-1')
