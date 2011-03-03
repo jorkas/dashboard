@@ -35,6 +35,7 @@ GEM
     configuration (1.1.0)
     crack (0.1.8)
     daemons (1.1.0)
+    dalli (1.0.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     fastthread (1.0.7)
@@ -62,8 +63,6 @@ GEM
       activesupport (>= 2.3.6)
       mime-types
       treetop (>= 1.4.5)
-    memcache-client (1.8.5)
-    memcached-northscale (0.19.5.4)
     mime-types (1.16)
     mongrel (1.1.5)
       cgi_multipart_eof_fix (>= 2.4)
@@ -104,13 +103,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  dalli
   garb (= 0.8.4)
   gcal4ruby
   heroku
   httparty
   jquery-rails
-  memcache-client
-  memcached-northscale
   mongrel
   nokogiri
   oauth
