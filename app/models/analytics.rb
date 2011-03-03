@@ -8,6 +8,7 @@ class Analytics
   end
   
   def analytics_goals
+    return {:signup_trials => 0, :signup_follows => 0, :signup_journalists => 0 } if CONFIG['disable_garb']
     {
       :signup_trials => signup_trials,
       :signup_follows => signup_follows,
@@ -16,6 +17,7 @@ class Analytics
   end
   
   def total_visits
+    return {:now => "000000", :last => 0, :percent => 0,:last_year => 0, :last_year_percent => 0} if CONFIG['disable_garb']
     now_end_date = Time.zone.now - 1.day
     last_end_date = get_end_date(now_end_date, 30)
     

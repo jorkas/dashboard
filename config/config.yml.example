@@ -9,3 +9,4 @@ production:
   twitter_apisecret: "apikey secret for twitter"
   twitter_oauthtoken: "twitter oauth token"
   twitter_oauthtoken_secret: "twitter oauth token secret"
+  disable_garb: false
