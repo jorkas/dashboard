@@ -194,8 +194,7 @@ span.red{color:#ad8e21;}
     width: 80px;
     height: 80px;
     margin-right: 20px;
-    background: url(http://gowalla.com/images/default-user.jpg);
-    background-size: 80px;
+    background: url(/images/gowalla.jpg);
 }
 #recent-checkins small {
     display: block;
