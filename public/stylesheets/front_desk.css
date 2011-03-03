@@ -116,6 +116,10 @@ p .big{
     margin-bottom: 20px;
 }
 
+#booked-rooms li.more{
+    text-align: center;
+}
+
 #booked-rooms small {
     float: left;
     clear:left;
