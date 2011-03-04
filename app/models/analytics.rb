@@ -1,7 +1,7 @@
 class Analytics
   
   def initialize
-    return true if CONFIG['disable_garb']
+    return true if CONFIG['disable_garb'] == "on"
     @profile = Rails.cache.fetch("garb_profile", :expires_in => 1.hour) do
       Garb::Session.login(CONFIG['garb_login'], CONFIG['garb_password'])
       Garb::Profile.first('UA-67918-1')
@@ -9,7 +9,7 @@ class Analytics
   end
   
   def analytics_goals
-    return {:signup_trials => 0, :signup_follows => 0, :signup_journalists => 0 } if CONFIG['disable_garb']
+    return {:signup_trials => 0, :signup_follows => 0, :signup_journalists => 0 } if CONFIG['disable_garb'] == "on"
     {
       :signup_trials => signup_trials,
       :signup_follows => signup_follows,
@@ -18,7 +18,7 @@ class Analytics
   end
   
   def total_visits
-    return {:now => "000000", :last => 0, :percent => 0,:last_year => 0, :last_year_percent => 0} if CONFIG['disable_garb']
+    return {:now => "000000", :last => 0, :percent => 0,:last_year => 0, :last_year_percent => 0} if CONFIG['disable_garb'] == "on"
     now_end_date = Time.zone.now - 1.day
     last_end_date = get_end_date(now_end_date, 30)
     
