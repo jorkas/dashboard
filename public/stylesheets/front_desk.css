@@ -109,11 +109,18 @@ p .big{
     display: inline-block;
 }
 
+#booked-rooms>div>div{
+    min-height: 300px;
+}
 
 #booked-rooms li{
     clear: both;
     overflow: hidden;
     margin-bottom: 20px;
+}
+
+#booked-rooms li.more{
+    text-align: center;
 }
 
 #booked-rooms small {

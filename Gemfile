@@ -8,8 +8,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'heroku'
 gem 'jquery-rails'
 
-gem "memcache-client"
-gem 'memcached-northscale', :require => 'memcached'
+gem "dalli"
 
 gem 'garb', '0.8.4'
 gem 'nokogiri'

@@ -34,11 +34,12 @@
                 <section class="split right"> 
                     30-day max: <span id="online-max" class="stats-val number-highlight">&#160;</span>
                 </section>
-                <section class="split"> 
-                    Return average: <span id="return-avg" class="stats-val number-highlight">&#160;</span>
-                </section>
-                <section class="split right"> 
-                    Return max: <span id="return-max" class="stats-val number-highlight">&#160;</span>
+            </article>
+            <article class="widget alpha omega clearfix dynamic-loader" data-action="/widgets/recent_searches" data-callback="renderSearches" data-refresh-time="5000">
+                <section>
+                    <div class="grid_3 alpha">Recent searches:</div>
+                    <ul id="recent-searches" class="grid_6 omega">
+                    </ul>
                 </section>
             </article>
         </div>

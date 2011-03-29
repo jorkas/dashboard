@@ -4,6 +4,10 @@ var Dashboard = {};
 
 var app_version = "";
 
+$.fn.equalizeHeights = function(){
+ return this.height( Math.max.apply(this, $(this).map(function(i,e){ return $(e).height() }).get() ));
+};
+
 Dashboard.app = (function(){
     var rotator;
     var getActiveGraphHtml = function(data){
@@ -180,11 +184,23 @@ Dashboard.app = (function(){
                 roomDiv = $("#room"+i)
                 roomDiv.find(".big").text(elm.title)
                 ulHTML = ""
+                var hour = new Date();
+                dateFormat.masks.hour = "HH";
+                hour = hour.format("hour");
                 $(elm.events).each(function(i,event){
-                    ulHTML += "<li><div class='grid_2 alpha'><span class='number-highlight'>"+ event.start_time +"-"+ event.end_time +"</span><small>"+ event.author +"</small></div><div class='grid_5 omega'><span>"+ event.title +"</span></div></li>"
+                    if (event.end_time.split(":")[0] > hour) {
+                        ulHTML += "<li><div class='grid_2 alpha'><span class='number-highlight'>"+ event.start_time +"-"+ event.end_time +"</span><small>"+ event.author +"</small></div><div class='grid_5 omega'><span>"+ event.title +"</span></div></li>"
+                    };
                 });
                 roomDiv.find("ul").html(ulHTML)
+                
+                var more = roomDiv.find("ul li:gt(3)");
+                if (more.length > 0) {
+                    more.hide();
+                    roomDiv.find("ul").append("<li class='more'>...</li>");
+                };
             });
+            $("#room0,#room1,#room2,#room3").equalizeHeights();
         },
         renderCombinedUserStats: function(data){
             var summaryStats;
@@ -257,8 +273,6 @@ Dashboard.app = (function(){
             changeValue($("#online-users"), parseInt(data.stats.visits));
             $("#online-avg").html(parseInt(data.history.people_avg,10));
             $("#online-max").html(data.history.people_max);
-            $("#return-avg").html(parseInt(data.history.return_avg,10));
-            $("#return-max").html(data.history.return_max);
             
             $("#percent-bar").html(getActiveGraphHtml({
                 "active": data.stats.visits,
@@ -285,6 +299,25 @@ Dashboard.app = (function(){
                 }
             });
             $("#recent-checkins ul").html(strHtml);
+        },
+        renderSearches: function(data){
+            var new_searches = "";
+            var current_searches = [];
+            
+            $("#recent-searches li").each(function(i, elm){
+                current_searches[i] = $(elm).html();
+            });
+            
+            data = data.slice(0,5);
+            $(data).each(function(i,search){
+                var listr = "<span class=\"number-highlight\">→</span> "+search;
+                if($.inArray(listr, current_searches) == -1){
+                    var li = $("<li/>").html(listr).css("display","none");
+                    $("#recent-searches").prepend(li);
+                    li.animate({width: 'toggle'});
+                }
+            });
+            $("#recent-searches li:gt(6)").remove()
         }
     };
 })();

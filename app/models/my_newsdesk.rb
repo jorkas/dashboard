@@ -86,4 +86,19 @@ class MyNewsdesk
     end
     Nokogiri::XML(doc)
   end
+  
+  def self.add_search(query)
+    searches = Rails.cache.read("mynewsdesk_searches")
+    if searches.is_a?(Array)
+      searches = searches.dup
+      searches.unshift query
+    else
+      searches = [query]
+    end
+    Rails.cache.write("mynewsdesk_searches", searches[0...20])
+  end
+  
+  def self.searches
+    Rails.cache.read("mynewsdesk_searches").to_a
+  end
 end

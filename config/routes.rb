@@ -6,6 +6,7 @@ Dashboard::Application.routes.draw do
   match 'rooms' => "dashboard#rooms"
   
   match 'gowalla' => "pshb#gowalla"
+  post 'search' => "pshb#mynewsdesk_search"
   match 'widgets/:action' => 'widgets#:action'
 
   match 'version' => "dashboard#version"

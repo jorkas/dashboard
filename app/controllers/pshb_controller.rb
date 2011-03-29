@@ -17,4 +17,9 @@ class PshbController < ApplicationController
       render :action => "pshb", :status => 404, :layout => false
     end
   end
+  
+  def mynewsdesk_search
+    MyNewsdesk.add_search params[:search]
+    render :text => "", :status => 200, :layout => false
+  end
 end
