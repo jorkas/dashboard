@@ -72,7 +72,7 @@ Dashboard.app = (function(){
       return Math.round(val*Math.pow(10,decimals))/Math.pow(10,decimals);  
     };
     var changeValue = function(element, new_value) {
-        old_value = Number(element.text());
+        old_value = Number(parseInt(element.text(),10));
         diff = new_value - old_value;
         if (diff != 0) {
             element.countTo({
@@ -254,7 +254,7 @@ Dashboard.app = (function(){
             }
         },
         renderActiveUsersGraph: function(data){
-            changeValue($("#online-users"), data.stats.visits);
+            changeValue($("#online-users"), parseInt(data.stats.visits));
             $("#online-avg").html(parseInt(data.history.people_avg,10));
             $("#online-max").html(data.history.people_max);
             $("#return-avg").html(parseInt(data.history.return_avg,10));
